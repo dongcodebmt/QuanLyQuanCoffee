@@ -1,0 +1,30 @@
+D:\C#\Quan Ly Quan Coffee\Coffee Source\Coffee Source\bin\Debug\Coffee Source.exe.config
+D:\C#\Quan Ly Quan Coffee\Coffee Source\Coffee Source\bin\Debug\Coffee Source.exe
+D:\C#\Quan Ly Quan Coffee\Coffee Source\Coffee Source\bin\Debug\Coffee Source.pdb
+D:\C#\Quan Ly Quan Coffee\Coffee Source\Coffee Source\obj\Debug\Coffee Source.csprojAssemblyReference.cache
+D:\C#\Quan Ly Quan Coffee\Coffee Source\Coffee Source\obj\Debug\MainWindow.g.cs
+D:\C#\Quan Ly Quan Coffee\Coffee Source\Coffee Source\obj\Debug\App.g.cs
+D:\C#\Quan Ly Quan Coffee\Coffee Source\Coffee Source\obj\Debug\Coffee Source_MarkupCompile.cache
+D:\C#\Quan Ly Quan Coffee\Coffee Source\Coffee Source\obj\Debug\Coffee Source_MarkupCompile.lref
+D:\C#\Quan Ly Quan Coffee\Coffee Source\Coffee Source\obj\Debug\MainWindow.baml
+D:\C#\Quan Ly Quan Coffee\Coffee Source\Coffee Source\obj\Debug\Coffee Source.g.resources
+D:\C#\Quan Ly Quan Coffee\Coffee Source\Coffee Source\obj\Debug\Coffee_Source.Properties.Resources.resources
+D:\C#\Quan Ly Quan Coffee\Coffee Source\Coffee Source\obj\Debug\Coffee Source.csproj.GenerateResource.cache
+D:\C#\Quan Ly Quan Coffee\Coffee Source\Coffee Source\obj\Debug\Coffee Source.csproj.CoreCompileInputs.cache
+D:\C#\Quan Ly Quan Coffee\Coffee Source\Coffee Source\obj\Debug\Coffee Source.exe
+D:\C#\Quan Ly Quan Coffee\Coffee Source\Coffee Source\obj\Debug\Coffee Source.pdb
+D:\C#\Quan Ly Quan Coffee\Coffee Source\bin\Debug\Coffee Source.exe.config
+D:\C#\Quan Ly Quan Coffee\Coffee Source\bin\Debug\Coffee Source.exe
+D:\C#\Quan Ly Quan Coffee\Coffee Source\bin\Debug\Coffee Source.pdb
+D:\C#\Quan Ly Quan Coffee\Coffee Source\obj\Debug\Coffee Source.csprojAssemblyReference.cache
+D:\C#\Quan Ly Quan Coffee\Coffee Source\obj\Debug\MainWindow.g.cs
+D:\C#\Quan Ly Quan Coffee\Coffee Source\obj\Debug\App.g.cs
+D:\C#\Quan Ly Quan Coffee\Coffee Source\obj\Debug\Coffee Source_MarkupCompile.cache
+D:\C#\Quan Ly Quan Coffee\Coffee Source\obj\Debug\Coffee Source_MarkupCompile.lref
+D:\C#\Quan Ly Quan Coffee\Coffee Source\obj\Debug\MainWindow.baml
+D:\C#\Quan Ly Quan Coffee\Coffee Source\obj\Debug\Coffee Source.g.resources
+D:\C#\Quan Ly Quan Coffee\Coffee Source\obj\Debug\Coffee_Source.Properties.Resources.resources
+D:\C#\Quan Ly Quan Coffee\Coffee Source\obj\Debug\Coffee Source.csproj.GenerateResource.cache
+D:\C#\Quan Ly Quan Coffee\Coffee Source\obj\Debug\Coffee Source.csproj.CoreCompileInputs.cache
+D:\C#\Quan Ly Quan Coffee\Coffee Source\obj\Debug\Coffee Source.exe
+D:\C#\Quan Ly Quan Coffee\Coffee Source\obj\Debug\Coffee Source.pdb
