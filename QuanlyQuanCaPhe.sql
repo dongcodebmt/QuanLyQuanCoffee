@@ -1,0 +1,133 @@
+﻿DROP DATABASE IF EXISTS QuanlyQuanCaPhe
+GO
+
+CREATE DATABASE QuanlyQuanCaPhe
+GO
+
+USE QuanLyQuanCaPhe
+GO
+
+--Nên đặt kiểu dữ liệu có độ dài bằng nhau cho dễv
+
+CREATE TABLE TaiKhoan
+(
+	ma INT IDENTITY PRIMARY KEY,
+	tenDangNhap NVARCHAR(255) NOT NULL UNIQUE,
+	tenHienThi NVARCHAR(255) NOT NULL DEFAULT N'Chưa đặt tên',
+	matKhau NVARCHAR(255) NOT NULL,
+	trangThai INT NOT NULL DEFAULT 1 -- tài khoảng đang hoạt động,
+	CHECK (trangThai = 0 OR trangThai = 1)
+	--type int not null default 0
+)
+
+CREATE TABLE PhanQuen 
+(
+	ma INT PRIMARY KEY,
+	ten NVARCHAR(255) NOT NULL,
+)
+
+CREATE TABLE QuyenTaiKhoan
+(
+	--id INT NOT NULL IDENTITY UNIQUE,
+	maTaiKhoan INT NOT NULL,
+	maPhanQuyen INT NOT NULL,
+	PRIMARY KEY (maTaiKhoan,maPhanQuyen),
+	FOREIGN KEY (maTaiKhoan) REFERENCES TaiKhoan(ma),
+	FOREIGN KEY (maPhanQuyen) REFERENCES PhanQuen(ma),
+
+)
+
+CREATE TABLE Ban
+(
+	ma INT IDENTITY PRIMARY KEY,
+	ten NVARCHAR(255) NOT NULL DEFAULT N'Chưa đặt tên',
+	trangThai INT NOT NULL DEFAULT 0 -- trống || Có người,
+	CHECK (trangThai = 0 OR trangThai = 1)
+)
+
+CREATE TABLE LoaiMonAn
+(
+	ma INT IDENTITY PRIMARY KEY,
+	ten NVARCHAR(255) NOT NULL DEFAULT N'Chưa đặt tên'
+)
+
+CREATE TABLE DonVi
+(
+	ma INT IDENTITY PRIMARY KEY,
+	ten NVARCHAR(255) NOT NULL DEFAULT N'Chưa đặt tên'
+)
+
+CREATE TABLE NhaCungCap
+(
+	ma INT IDENTITY PRIMARY KEY,
+	ten NVARCHAR(255) NOT NULL,
+	diaChi NVARCHAR(255) NOT NULL,
+	SDT NVARCHAR(255) NOT NULL,
+	email NVARCHAR(255) NOT NULL,
+)
+
+CREATE TABLE MonAn
+(
+	ma INT IDENTITY PRIMARY KEY,
+	ten NVARCHAR(255) NOT NULL DEFAULT N'Chưa đặt tên',
+	maLoaiMonAn INT NOT NULL,
+	gia MONEY NOT NULL DEFAULT 0,
+	maDonVi INT NOT NULL,
+	
+	FOREIGN KEY (maDonVi) REFERENCES DonVi(ma),
+	FOREIGN KEY (maLoaiMonAn) REFERENCES LoaiMonAn(ma)
+)
+
+CREATE TABLE KhuyenMai
+(
+	ma INT IDENTITY PRIMARY KEY,
+	tyLe FLOAT NOT NULL,
+	CHECK (tyLe >= 0 AND tyLe <= 100)
+)
+
+CREATE TABLE HoaDon
+(
+	ma INT IDENTITY PRIMARY KEY,
+	ngayVao DATETIME NOT NULL DEFAULT GETDATE(),
+	ngayRa DATETIME,
+	maBan INT NOT NULL,
+	maKhuyenMai INT NOT NULL,
+	trangThai INT NOT NULL DEFAULT 0, -- 1 đã thanh toán ; 0 chưa thanh toán	
+	
+	FOREIGN KEY (maBan) REFERENCES Ban(ma),
+	FOREIGN KEY (maKhuyenMai) REFERENCES KhuyenMai(ma)
+)
+
+CREATE TABLE CTHD
+(
+	ma INT IDENTITY PRIMARY KEY,
+	maHoaDon INT NOT NULL,
+	maMonAn INT NOT NULL,
+	soLuong INT NOT NULL default 1,
+	
+	FOREIGN KEY (maHoaDon) REFERENCES HoaDon(ma),
+	FOREIGN KEY (maMonAn) REFERENCES MonAn(ma)
+)
+
+CREATE TABLE PhieuNhap
+(
+	ma INT IDENTITY PRIMARY KEY,
+	ngayNhap DATETIME NOT NULL
+)
+
+CREATE TABLE ThongTinPhieuNhap
+(
+	ma INT IDENTITY PRIMARY KEY,
+	maNCC INT NOT NULL,
+	maMonAn INT NOT NULL,
+	maPhieuNhap INT NOT NULL,
+	soLuong INT NOT NULL,
+	giaDauVao MONEY NOT NULL,
+	giaDauRa MONEY NOT NULL,
+	
+	FOREIGN KEY (maNCC) REFERENCES NhaCungCap(ma),
+	FOREIGN KEY (maMonAn) REFERENCES MonAn(ma),
+	FOREIGN KEY (maPhieuNhap) REFERENCES PhieuNhap(ma)
+)
+
+
