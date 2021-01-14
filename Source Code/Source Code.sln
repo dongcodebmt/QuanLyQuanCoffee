@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coffee Source", "Coffee Source\Coffee Source.csproj", "{0559DF50-7181-492F-9B76-24AB47087D5D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Source Code", "Source Code\Source Code.csproj", "{3FB01C46-EDBD-4E90-B8E7-502E67F6B19C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0559DF50-7181-492F-9B76-24AB47087D5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0559DF50-7181-492F-9B76-24AB47087D5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0559DF50-7181-492F-9B76-24AB47087D5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0559DF50-7181-492F-9B76-24AB47087D5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FB01C46-EDBD-4E90-B8E7-502E67F6B19C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FB01C46-EDBD-4E90-B8E7-502E67F6B19C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FB01C46-EDBD-4E90-B8E7-502E67F6B19C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FB01C46-EDBD-4E90-B8E7-502E67F6B19C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {36B9ACBC-73AE-44D4-961E-C87AB699C6B6}
+		SolutionGuid = {A5D35848-1BB0-4F30-A61C-218FCC73D7BF}
 	EndGlobalSection
 EndGlobal
