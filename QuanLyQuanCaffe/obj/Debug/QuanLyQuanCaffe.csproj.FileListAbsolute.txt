@@ -1,0 +1,13 @@
+C:\Users\Admin\Desktop\QuanLyQuanCoffee\QuanLyQuanCaffe\QuanLyQuanCaffe\bin\Debug\QuanLyQuanCaffe.exe.config
+C:\Users\Admin\Desktop\QuanLyQuanCoffee\QuanLyQuanCaffe\QuanLyQuanCaffe\bin\Debug\QuanLyQuanCaffe.exe
+C:\Users\Admin\Desktop\QuanLyQuanCoffee\QuanLyQuanCaffe\QuanLyQuanCaffe\bin\Debug\QuanLyQuanCaffe.pdb
+C:\Users\Admin\Desktop\QuanLyQuanCoffee\QuanLyQuanCaffe\QuanLyQuanCaffe\obj\Debug\QuanLyQuanCaffe.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\QuanLyQuanCoffee\QuanLyQuanCaffe\QuanLyQuanCaffe\obj\Debug\QuanLyQuanCaffe.FrmDangNhap.resources
+C:\Users\Admin\Desktop\QuanLyQuanCoffee\QuanLyQuanCaffe\QuanLyQuanCaffe\obj\Debug\QuanLyQuanCaffe.Properties.Resources.resources
+C:\Users\Admin\Desktop\QuanLyQuanCoffee\QuanLyQuanCaffe\QuanLyQuanCaffe\obj\Debug\QuanLyQuanCaffe.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\QuanLyQuanCoffee\QuanLyQuanCaffe\QuanLyQuanCaffe\obj\Debug\QuanLyQuanCaffe.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\QuanLyQuanCoffee\QuanLyQuanCaffe\QuanLyQuanCaffe\obj\Debug\QuanLyQuanCaffe.exe
+C:\Users\Admin\Desktop\QuanLyQuanCoffee\QuanLyQuanCaffe\QuanLyQuanCaffe\obj\Debug\QuanLyQuanCaffe.pdb
+C:\Users\Admin\Desktop\QuanLyQuanCoffee\QuanLyQuanCaffe\QuanLyQuanCaffe\obj\Debug\QuanLyQuanCaffe.frmQuanLy.resources
+C:\Users\Admin\Desktop\QuanLyQuanCoffee\QuanLyQuanCaffe\QuanLyQuanCaffe\obj\Debug\QuanLyQuanCaffe.frmThongTinTaiKhoan.resources
+C:\Users\Admin\Desktop\QuanLyQuanCoffee\QuanLyQuanCaffe\QuanLyQuanCaffe\obj\Debug\QuanLyQuanCaffe.frmQuanLyQuanCaffe.resources
