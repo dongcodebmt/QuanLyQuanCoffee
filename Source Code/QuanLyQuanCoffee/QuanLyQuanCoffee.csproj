@@ -104,7 +104,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ThongKeDoanhThu.rdlc" />
-    <EmbeddedResource Include="ThongTinQuanCaffe.rdlc" />
+    <EmbeddedResource Include="ThongTinQuanCoffee.rdlc" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
