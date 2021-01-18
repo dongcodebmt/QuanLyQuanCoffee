@@ -11,3 +11,6 @@ C:\Users\Admin\Desktop\QuanLyQuanCoffee\QuanLyQuanCaffe\QuanLyQuanCaffe\obj\Debu
 C:\Users\Admin\Desktop\QuanLyQuanCoffee\QuanLyQuanCaffe\QuanLyQuanCaffe\obj\Debug\QuanLyQuanCaffe.frmQuanLy.resources
 C:\Users\Admin\Desktop\QuanLyQuanCoffee\QuanLyQuanCaffe\QuanLyQuanCaffe\obj\Debug\QuanLyQuanCaffe.frmThongTinTaiKhoan.resources
 C:\Users\Admin\Desktop\QuanLyQuanCoffee\QuanLyQuanCaffe\QuanLyQuanCaffe\obj\Debug\QuanLyQuanCaffe.frmQuanLyQuanCaffe.resources
+C:\Users\Admin\Desktop\QuanLyQuanCoffee\QuanLyQuanCaffe\QuanLyQuanCaffe\obj\Debug\QuanLyQuanCaffe.frmQuanLyKho.resources
+C:\Users\Admin\Desktop\QuanLyQuanCoffee\QuanLyQuanCaffe\QuanLyQuanCaffe\obj\Debug\RdlCompile.cache
+C:\Users\Admin\Desktop\QuanLyQuanCoffee\QuanLyQuanCaffe\QuanLyQuanCaffe\obj\Debug\RdlCompile.compiled
