@@ -335,7 +335,6 @@ namespace QuanLyQuanCaffe
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Image = global::QuanLyQuanCaffe.Properties.Resources.quancf;
             this.pictureBox1.Location = new System.Drawing.Point(9, 9);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(221, 140);

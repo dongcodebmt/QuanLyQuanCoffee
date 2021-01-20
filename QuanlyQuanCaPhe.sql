@@ -7,34 +7,33 @@ GO
 USE QuanLyQuanCaPhe
 GO
 
---Nên đặt kiểu dữ liệu có độ dài bằng nhau cho dễv
-
 CREATE TABLE TaiKhoan
 (
 	ma INT IDENTITY PRIMARY KEY,
 	tenDangNhap NVARCHAR(255) NOT NULL UNIQUE,
-	tenHienThi NVARCHAR(255) NOT NULL DEFAULT N'Chưa đặt tên',
 	matKhau NVARCHAR(255) NOT NULL,
-	trangThai INT NOT NULL DEFAULT 1 -- tài khoảng đang hoạt động,
-	CHECK (trangThai = 0 OR trangThai = 1)
+	hoTen NVARCHAR(255) NOT NULL DEFAULT N'Chưa đặt tên',
+	namSinh NVARCHAR(255) NOT NULL,
+	SDT NVARCHAR(255) NOT NULL,
+	gioiTinh INT NOT NULL DEFAULT 0, --Nam
+	trangThai BIT NOT NULL DEFAULT 1 -- tài khoảng đang hoạt động,
 	--type int not null default 0
 )
 
-CREATE TABLE PhanQuen 
+CREATE TABLE Quyen 
 (
 	ma INT PRIMARY KEY,
 	ten NVARCHAR(255) NOT NULL,
 )
 
-CREATE TABLE QuyenTaiKhoan
+CREATE TABLE PhanQuyen
 (
-	--id INT NOT NULL IDENTITY UNIQUE,
+	id INT NOT NULL IDENTITY UNIQUE,
 	maTaiKhoan INT NOT NULL,
 	maPhanQuyen INT NOT NULL,
-	PRIMARY KEY (maTaiKhoan,maPhanQuyen),
+	--PRIMARY KEY (maTaiKhoan,maPhanQuyen),
 	FOREIGN KEY (maTaiKhoan) REFERENCES TaiKhoan(ma),
-	FOREIGN KEY (maPhanQuyen) REFERENCES PhanQuen(ma),
-
+	FOREIGN KEY (maPhanQuyen) REFERENCES Quyen(ma),
 )
 
 CREATE TABLE Ban
