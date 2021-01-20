@@ -66,7 +66,6 @@ namespace QuanLyQuanCaffe
             this.miThongTinTaiKhoan,
             this.miDoiMatKhau,
             this.miDangXuat});
-            this.miTaiKhoan.Image = ((System.Drawing.Image)(resources.GetObject("miTaiKhoan.Image")));
             this.miTaiKhoan.Name = "miTaiKhoan";
             this.miTaiKhoan.Size = new System.Drawing.Size(85, 20);
             this.miTaiKhoan.Text = "Tài khoản";
@@ -103,21 +102,18 @@ namespace QuanLyQuanCaffe
             // 
             this.miQuanLyCuaHang.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miQuanLyTaiKhoan});
-            this.miQuanLyCuaHang.Image = ((System.Drawing.Image)(resources.GetObject("miQuanLyCuaHang.Image")));
             this.miQuanLyCuaHang.Name = "miQuanLyCuaHang";
             this.miQuanLyCuaHang.Size = new System.Drawing.Size(128, 20);
             this.miQuanLyCuaHang.Text = "Quản lý cửa hàng";
             // 
             // miXuatNhapKho
             // 
-            this.miXuatNhapKho.Image = ((System.Drawing.Image)(resources.GetObject("miXuatNhapKho.Image")));
             this.miXuatNhapKho.Name = "miXuatNhapKho";
             this.miXuatNhapKho.Size = new System.Drawing.Size(112, 20);
             this.miXuatNhapKho.Text = "Xuất nhập kho";
             // 
             // miThoat
             // 
-            this.miThoat.Image = ((System.Drawing.Image)(resources.GetObject("miThoat.Image")));
             this.miThoat.Name = "miThoat";
             this.miThoat.Size = new System.Drawing.Size(126, 20);
             this.miThoat.Text = "Thoát phần mềm";

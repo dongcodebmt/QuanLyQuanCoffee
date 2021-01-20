@@ -139,9 +139,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="frmQuanLyMonAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLyMonAn.Designer.cs">
+      <DependentUpon>frmQuanLyMonAn.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmQuanLyKho.resx">
       <DependentUpon>frmQuanLyKho.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,14 +168,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <EmbeddedResource Include="frmQuanLyMonAn.resx">
+      <DependentUpon>frmQuanLyMonAn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ThongKeDoanhThu.rdlc" />
     <EmbeddedResource Include="ThongTinQuanCoffee.rdlc" />
     <None Include="packages.config" />
