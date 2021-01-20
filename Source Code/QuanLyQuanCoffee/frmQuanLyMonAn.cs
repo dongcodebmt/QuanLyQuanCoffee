@@ -22,9 +22,9 @@ namespace QuanLyQuanCaffe
 
         private void QuanLyMonAn_Load(object sender, EventArgs e)
         {
-            List < MonAn > listMonAn = model.MonAns.ToList();
-            List<LoaiMonAn> listLoaiMonAn = model.LoaiMonAns.ToList();
-            List<DonVi> listDonVi = model.DonVis.ToList();
+            List<MonAn> listMonAn = model.MonAn.ToList();
+            List<LoaiMonAn> listLoaiMonAn = model.LoaiMonAn.ToList();
+            List<DonVi> listDonVi = model.DonVi.ToList();
             FillComboBoxLoaiMonAn(listLoaiMonAn);
             FillComboBoxDonVi(listDonVi);
             BildingToDataGirdView(listMonAn);
@@ -121,14 +121,14 @@ namespace QuanLyQuanCaffe
         {
             
             
-            MonAn m1 = model.MonAns.FirstOrDefault(c => c.ma.ToString() == txtMaMonAn.Text);
+            MonAn m1 = model.MonAn.FirstOrDefault(c => c.ma.ToString() == txtMaMonAn.Text);
             if(m1 == null)
             {
                 MonAn m = new MonAn();
                 m.ten = txtTenMonAn.Text;
                 m.maLoaiMonAn = Convert.ToInt32(cbLoaiMonAn.SelectedValue);
                 m.maDonVi = Convert.ToInt32(cbDonVi.SelectedValue);
-                model.MonAns.Add(m);
+                model.MonAn.Add(m);
                 
             }
             else
@@ -141,7 +141,7 @@ namespace QuanLyQuanCaffe
                 
             }
             model.SaveChanges();
-            BildingToDataGirdView(model.MonAns.ToList());
+            BildingToDataGirdView(model.MonAn.ToList());
             SettingAllNull();
             btnThem.Visible = true;
             btnSua.Visible = true;

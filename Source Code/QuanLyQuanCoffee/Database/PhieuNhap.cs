@@ -12,7 +12,7 @@ namespace QuanLyQuanCaffe.Database
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PhieuNhap()
         {
-            ThongTinPhieuNhaps = new HashSet<ThongTinPhieuNhap>();
+            ThongTinPhieuNhap = new HashSet<ThongTinPhieuNhap>();
         }
 
         [Key]
@@ -21,6 +21,6 @@ namespace QuanLyQuanCaffe.Database
         public DateTime ngayNhap { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ThongTinPhieuNhap> ThongTinPhieuNhaps { get; set; }
+        public virtual ICollection<ThongTinPhieuNhap> ThongTinPhieuNhap { get; set; }
     }
 }
