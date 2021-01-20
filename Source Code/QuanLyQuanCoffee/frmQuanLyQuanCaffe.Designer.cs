@@ -31,10 +31,6 @@ namespace QuanLyQuanCaffe
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuanLyQuanCaffe));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lsvBill = new System.Windows.Forms.ListView();
@@ -43,10 +39,8 @@ namespace QuanLyQuanCaffe
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.nmFoodCount = new System.Windows.Forms.NumericUpDown();
             this.cbSwitchTable = new System.Windows.Forms.ComboBox();
-            this.btnAddFood = new System.Windows.Forms.Button();
             this.btnSwitchTable = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbTotalPrice = new System.Windows.Forms.Label();
@@ -55,6 +49,12 @@ namespace QuanLyQuanCaffe
             this.nmDiscount = new System.Windows.Forms.NumericUpDown();
             this.btnCheckout = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnAddFood = new System.Windows.Forms.Button();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -66,6 +66,7 @@ namespace QuanLyQuanCaffe
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.toolStripMenuItem2,
@@ -73,55 +74,30 @@ namespace QuanLyQuanCaffe
             this.toolStripMenuItem4});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(896, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1195, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(134, 20);
-            this.toolStripMenuItem1.Text = "Quản Lý Cửa Hàng";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem2.Image")));
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(138, 20);
-            this.toolStripMenuItem2.Text = "Thông tin tài khoản";
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem3.Image")));
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(115, 20);
-            this.toolStripMenuItem3.Text = "Xuất Nhập Kho";
-            // 
-            // toolStripMenuItem4
-            // 
-            this.toolStripMenuItem4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem4.Image")));
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(126, 20);
-            this.toolStripMenuItem4.Text = "Thoát Phần Mềm";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 24);
+            this.panel1.Location = new System.Drawing.Point(0, 28);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(419, 472);
+            this.panel1.Size = new System.Drawing.Size(559, 582);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.lsvBill);
-            this.panel3.Location = new System.Drawing.Point(9, 3);
+            this.panel3.Location = new System.Drawing.Point(12, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(401, 377);
+            this.panel3.Size = new System.Drawing.Size(535, 464);
             this.panel3.TabIndex = 6;
             // 
             // lsvBill
@@ -133,9 +109,10 @@ namespace QuanLyQuanCaffe
             this.columnHeader4});
             this.lsvBill.GridLines = true;
             this.lsvBill.HideSelection = false;
-            this.lsvBill.Location = new System.Drawing.Point(3, 3);
+            this.lsvBill.Location = new System.Drawing.Point(4, 4);
+            this.lsvBill.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lsvBill.Name = "lsvBill";
-            this.lsvBill.Size = new System.Drawing.Size(395, 371);
+            this.lsvBill.Size = new System.Drawing.Size(525, 456);
             this.lsvBill.TabIndex = 0;
             this.lsvBill.UseCompatibleStateImageBehavior = false;
             this.lsvBill.View = System.Windows.Forms.View.Details;
@@ -168,34 +145,23 @@ namespace QuanLyQuanCaffe
             this.panel2.Controls.Add(this.cbSwitchTable);
             this.panel2.Controls.Add(this.btnAddFood);
             this.panel2.Controls.Add(this.btnSwitchTable);
-            this.panel2.Location = new System.Drawing.Point(9, 386);
+            this.panel2.Location = new System.Drawing.Point(12, 475);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(401, 70);
+            this.panel2.Size = new System.Drawing.Size(535, 86);
             this.panel2.TabIndex = 5;
-            // 
-            // button1
-            // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(278, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 64);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "In Hóa Đơn";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // nmFoodCount
             // 
-            this.nmFoodCount.Location = new System.Drawing.Point(108, 30);
+            this.nmFoodCount.Location = new System.Drawing.Point(144, 37);
+            this.nmFoodCount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nmFoodCount.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
             this.nmFoodCount.Name = "nmFoodCount";
-            this.nmFoodCount.Size = new System.Drawing.Size(48, 20);
+            this.nmFoodCount.Size = new System.Drawing.Size(64, 22);
             this.nmFoodCount.TabIndex = 3;
             this.nmFoodCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nmFoodCount.Value = new decimal(new int[] {
@@ -207,29 +173,19 @@ namespace QuanLyQuanCaffe
             // cbSwitchTable
             // 
             this.cbSwitchTable.FormattingEnabled = true;
-            this.cbSwitchTable.Location = new System.Drawing.Point(162, 44);
+            this.cbSwitchTable.Location = new System.Drawing.Point(216, 54);
+            this.cbSwitchTable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbSwitchTable.Name = "cbSwitchTable";
-            this.cbSwitchTable.Size = new System.Drawing.Size(99, 21);
+            this.cbSwitchTable.Size = new System.Drawing.Size(131, 24);
             this.cbSwitchTable.TabIndex = 7;
             this.cbSwitchTable.SelectedIndexChanged += new System.EventHandler(this.cbSwitchTable_SelectedIndexChanged);
             // 
-            // btnAddFood
-            // 
-            this.btnAddFood.Image = ((System.Drawing.Image)(resources.GetObject("btnAddFood.Image")));
-            this.btnAddFood.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddFood.Location = new System.Drawing.Point(3, 3);
-            this.btnAddFood.Name = "btnAddFood";
-            this.btnAddFood.Size = new System.Drawing.Size(99, 64);
-            this.btnAddFood.TabIndex = 2;
-            this.btnAddFood.Text = "Thêm món";
-            this.btnAddFood.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddFood.UseVisualStyleBackColor = true;
-            // 
             // btnSwitchTable
             // 
-            this.btnSwitchTable.Location = new System.Drawing.Point(162, 6);
+            this.btnSwitchTable.Location = new System.Drawing.Point(216, 7);
+            this.btnSwitchTable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSwitchTable.Name = "btnSwitchTable";
-            this.btnSwitchTable.Size = new System.Drawing.Size(99, 32);
+            this.btnSwitchTable.Size = new System.Drawing.Size(132, 39);
             this.btnSwitchTable.TabIndex = 6;
             this.btnSwitchTable.Text = "Chuyển bàn";
             this.btnSwitchTable.UseVisualStyleBackColor = true;
@@ -241,17 +197,19 @@ namespace QuanLyQuanCaffe
             this.panel4.Controls.Add(this.btnDiscount);
             this.panel4.Controls.Add(this.nmDiscount);
             this.panel4.Controls.Add(this.btnCheckout);
-            this.panel4.Location = new System.Drawing.Point(440, 406);
+            this.panel4.Location = new System.Drawing.Point(587, 500);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(442, 78);
+            this.panel4.Size = new System.Drawing.Size(589, 96);
             this.panel4.TabIndex = 7;
             // 
             // lbTotalPrice
             // 
             this.lbTotalPrice.AutoSize = true;
-            this.lbTotalPrice.Location = new System.Drawing.Point(153, 18);
+            this.lbTotalPrice.Location = new System.Drawing.Point(204, 22);
+            this.lbTotalPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTotalPrice.Name = "lbTotalPrice";
-            this.lbTotalPrice.Size = new System.Drawing.Size(59, 13);
+            this.lbTotalPrice.Size = new System.Drawing.Size(76, 17);
             this.lbTotalPrice.TabIndex = 9;
             this.lbTotalPrice.Text = "Tổng cộng";
             // 
@@ -259,61 +217,123 @@ namespace QuanLyQuanCaffe
             // 
             this.txbTotalPrice.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbTotalPrice.ForeColor = System.Drawing.Color.OrangeRed;
-            this.txbTotalPrice.Location = new System.Drawing.Point(156, 34);
+            this.txbTotalPrice.Location = new System.Drawing.Point(208, 42);
+            this.txbTotalPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txbTotalPrice.Name = "txbTotalPrice";
             this.txbTotalPrice.ReadOnly = true;
-            this.txbTotalPrice.Size = new System.Drawing.Size(110, 25);
+            this.txbTotalPrice.Size = new System.Drawing.Size(145, 29);
             this.txbTotalPrice.TabIndex = 8;
             this.txbTotalPrice.Text = "0";
             this.txbTotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnDiscount
             // 
-            this.btnDiscount.Location = new System.Drawing.Point(12, 10);
+            this.btnDiscount.Location = new System.Drawing.Point(16, 12);
+            this.btnDiscount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDiscount.Name = "btnDiscount";
-            this.btnDiscount.Size = new System.Drawing.Size(99, 32);
+            this.btnDiscount.Size = new System.Drawing.Size(132, 39);
             this.btnDiscount.TabIndex = 5;
             this.btnDiscount.Text = "Giảm giá";
             this.btnDiscount.UseVisualStyleBackColor = true;
             // 
             // nmDiscount
             // 
-            this.nmDiscount.Location = new System.Drawing.Point(12, 49);
+            this.nmDiscount.Location = new System.Drawing.Point(16, 60);
+            this.nmDiscount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nmDiscount.Name = "nmDiscount";
-            this.nmDiscount.Size = new System.Drawing.Size(99, 20);
+            this.nmDiscount.Size = new System.Drawing.Size(132, 22);
             this.nmDiscount.TabIndex = 4;
             this.nmDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnCheckout
             // 
-            this.btnCheckout.Location = new System.Drawing.Point(299, 10);
+            this.btnCheckout.Location = new System.Drawing.Point(399, 12);
+            this.btnCheckout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCheckout.Name = "btnCheckout";
-            this.btnCheckout.Size = new System.Drawing.Size(93, 64);
+            this.btnCheckout.Size = new System.Drawing.Size(124, 79);
             this.btnCheckout.TabIndex = 3;
             this.btnCheckout.Text = "Thanh toán";
             this.btnCheckout.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Location = new System.Drawing.Point(434, 34);
+            this.groupBox1.Location = new System.Drawing.Point(579, 42);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(448, 354);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(597, 436);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thực Đơn";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // button1
+            // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(371, 7);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(140, 79);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "In Hóa Đơn";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnAddFood
+            // 
+            this.btnAddFood.Image = ((System.Drawing.Image)(resources.GetObject("btnAddFood.Image")));
+            this.btnAddFood.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddFood.Location = new System.Drawing.Point(4, 4);
+            this.btnAddFood.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddFood.Name = "btnAddFood";
+            this.btnAddFood.Size = new System.Drawing.Size(132, 79);
+            this.btnAddFood.TabIndex = 2;
+            this.btnAddFood.Text = "Thêm món";
+            this.btnAddFood.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddFood.UseVisualStyleBackColor = true;
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(165, 24);
+            this.toolStripMenuItem1.Text = "Quản Lý Cửa Hàng";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem2.Image")));
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(171, 24);
+            this.toolStripMenuItem2.Text = "Thông tin tài khoản";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem3.Image")));
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(143, 24);
+            this.toolStripMenuItem3.Text = "Xuất Nhập Kho";
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem4.Image")));
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(155, 24);
+            this.toolStripMenuItem4.Text = "Thoát Phần Mềm";
+            // 
             // frmQuanLyQuanCaffe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(896, 496);
+            this.ClientSize = new System.Drawing.Size(1195, 610);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmQuanLyQuanCaffe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phần Mềm Quản Lý Quán Caffe";
