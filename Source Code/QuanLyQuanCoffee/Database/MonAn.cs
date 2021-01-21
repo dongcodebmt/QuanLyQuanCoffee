@@ -12,8 +12,8 @@ namespace QuanLyQuanCaffe.Database
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public MonAn()
         {
-            CTHD = new HashSet<CTHD>();
-            ThongTinPhieuNhap = new HashSet<ThongTinPhieuNhap>();
+            CTHDs = new HashSet<CTHD>();
+            ThongTinPhieuNhaps = new HashSet<ThongTinPhieuNhap>();
         }
 
         [Key]
@@ -31,13 +31,13 @@ namespace QuanLyQuanCaffe.Database
         public int maDonVi { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTHD> CTHD { get; set; }
+        public virtual ICollection<CTHD> CTHDs { get; set; }
 
         public virtual DonVi DonVi { get; set; }
 
         public virtual LoaiMonAn LoaiMonAn { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ThongTinPhieuNhap> ThongTinPhieuNhap { get; set; }
+        public virtual ICollection<ThongTinPhieuNhap> ThongTinPhieuNhaps { get; set; }
     }
 }

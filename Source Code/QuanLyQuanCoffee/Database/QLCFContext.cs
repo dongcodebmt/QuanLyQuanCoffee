@@ -22,7 +22,7 @@ namespace QuanLyQuanCaffe.Database
         public virtual DbSet<NhaCungCap> NhaCungCap { get; set; }
         public virtual DbSet<PhieuNhap> PhieuNhap { get; set; }
         public virtual DbSet<Quyen> Quyen { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagram { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoan { get; set; }
         public virtual DbSet<ThongTinPhieuNhap> ThongTinPhieuNhap { get; set; }
         public virtual DbSet<PhanQuyen> PhanQuyen { get; set; }
@@ -30,31 +30,31 @@ namespace QuanLyQuanCaffe.Database
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Ban>()
-                .HasMany(e => e.HoaDon)
+                .HasMany(e => e.HoaDons)
                 .WithRequired(e => e.Ban)
                 .HasForeignKey(e => e.maBan)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<DonVi>()
-                .HasMany(e => e.MonAn)
+                .HasMany(e => e.MonAns)
                 .WithRequired(e => e.DonVi)
                 .HasForeignKey(e => e.maDonVi)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<HoaDon>()
-                .HasMany(e => e.CTHD)
+                .HasMany(e => e.CTHDs)
                 .WithRequired(e => e.HoaDon)
                 .HasForeignKey(e => e.maHoaDon)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<KhuyenMai>()
-                .HasMany(e => e.HoaDon)
+                .HasMany(e => e.HoaDons)
                 .WithRequired(e => e.KhuyenMai)
                 .HasForeignKey(e => e.maKhuyenMai)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<LoaiMonAn>()
-                .HasMany(e => e.MonAn)
+                .HasMany(e => e.MonAns)
                 .WithRequired(e => e.LoaiMonAn)
                 .HasForeignKey(e => e.maLoaiMonAn)
                 .WillCascadeOnDelete(false);
@@ -64,37 +64,37 @@ namespace QuanLyQuanCaffe.Database
                 .HasPrecision(19, 4);
 
             modelBuilder.Entity<MonAn>()
-                .HasMany(e => e.CTHD)
+                .HasMany(e => e.CTHDs)
                 .WithRequired(e => e.MonAn)
                 .HasForeignKey(e => e.maMonAn)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<MonAn>()
-                .HasMany(e => e.ThongTinPhieuNhap)
+                .HasMany(e => e.ThongTinPhieuNhaps)
                 .WithRequired(e => e.MonAn)
                 .HasForeignKey(e => e.maMonAn)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<NhaCungCap>()
-                .HasMany(e => e.ThongTinPhieuNhap)
+                .HasMany(e => e.ThongTinPhieuNhaps)
                 .WithRequired(e => e.NhaCungCap)
                 .HasForeignKey(e => e.maNCC)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<PhieuNhap>()
-                .HasMany(e => e.ThongTinPhieuNhap)
+                .HasMany(e => e.ThongTinPhieuNhaps)
                 .WithRequired(e => e.PhieuNhap)
                 .HasForeignKey(e => e.maPhieuNhap)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Quyen>()
-                .HasMany(e => e.PhanQuyen)
+                .HasMany(e => e.PhanQuyens)
                 .WithRequired(e => e.Quyen)
                 .HasForeignKey(e => e.maPhanQuyen)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<TaiKhoan>()
-                .HasMany(e => e.PhanQuyen)
+                .HasMany(e => e.PhanQuyens)
                 .WithRequired(e => e.TaiKhoan)
                 .HasForeignKey(e => e.maTaiKhoan)
                 .WillCascadeOnDelete(false);

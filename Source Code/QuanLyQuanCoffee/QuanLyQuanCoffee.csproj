@@ -86,7 +86,7 @@
     <Compile Include="Database\PhieuNhap.cs" />
     <Compile Include="Database\QLCFContext.cs" />
     <Compile Include="Database\Quyen.cs" />
-    <Compile Include="Database\sysdiagrams.cs" />
+    <Compile Include="Database\sysdiagram.cs" />
     <Compile Include="Database\TaiKhoan.cs" />
     <Compile Include="Database\ThongTinPhieuNhap.cs" />
     <Compile Include="frmMain.cs">
@@ -145,6 +145,12 @@
     <Compile Include="frmQuanLyMonAn.Designer.cs">
       <DependentUpon>frmQuanLyMonAn.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQuanLyBanHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLyBanHang.Designer.cs">
+      <DependentUpon>frmQuanLyBanHang.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmQuanLyKho.resx">
       <DependentUpon>frmQuanLyKho.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLyMonAn.resx">
       <DependentUpon>frmQuanLyMonAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLyBanHang.resx">
+      <DependentUpon>frmQuanLyBanHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThongKeDoanhThu.rdlc" />
     <EmbeddedResource Include="ThongTinQuanCoffee.rdlc" />

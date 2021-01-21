@@ -12,7 +12,7 @@ namespace QuanLyQuanCaffe.Database
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public HoaDon()
         {
-            CTHD = new HashSet<CTHD>();
+            CTHDs = new HashSet<CTHD>();
         }
 
         [Key]
@@ -31,7 +31,7 @@ namespace QuanLyQuanCaffe.Database
         public virtual Ban Ban { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTHD> CTHD { get; set; }
+        public virtual ICollection<CTHD> CTHDs { get; set; }
 
         public virtual KhuyenMai KhuyenMai { get; set; }
     }
