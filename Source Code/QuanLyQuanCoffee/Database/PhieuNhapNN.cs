@@ -6,21 +6,21 @@ namespace QuanLyQuanCaffe.Database
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("PhieuNhap")]
-    public partial class PhieuNhap
+    [Table("PhieuNhapNN")]
+    public partial class PhieuNhapNN
     {
         [Key]
         public int ma { get; set; }
 
         public DateTime ngayNhap { get; set; }
 
-        public int maKho { get; set; }
+        public int maNguyenLieu { get; set; }
 
-        public int soLuong { get; set; }
+        public double soLuong { get; set; }
 
         [Column(TypeName = "money")]
         public decimal giaDauVao { get; set; }
 
-        public virtual Kho Kho { get; set; }
+        public virtual NguyenLieu NguyenLieu { get; set; }
     }
 }

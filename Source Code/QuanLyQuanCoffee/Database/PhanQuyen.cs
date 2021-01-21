@@ -10,17 +10,10 @@ namespace QuanLyQuanCaffe.Database
     public partial class PhanQuyen
     {
         [Key]
-        [Column(Order = 0)]
-        public int id { get; set; }
+        public int ma { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int maTaiKhoan { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int maPhanQuyen { get; set; }
 
         public virtual Quyen Quyen { get; set; }

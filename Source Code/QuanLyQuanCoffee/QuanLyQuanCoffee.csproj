@@ -75,20 +75,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\Ban.cs" />
+    <Compile Include="Database\CongThuc.cs" />
     <Compile Include="Database\CTHD.cs" />
     <Compile Include="Database\DonVi.cs" />
     <Compile Include="Database\HoaDon.cs" />
+    <Compile Include="Database\Kho.cs" />
     <Compile Include="Database\KhuyenMai.cs" />
     <Compile Include="Database\LoaiMonAn.cs" />
     <Compile Include="Database\MonAn.cs" />
-    <Compile Include="Database\NhaCungCap.cs" />
+    <Compile Include="Database\NguyenLieu.cs" />
     <Compile Include="Database\PhanQuyen.cs" />
     <Compile Include="Database\PhieuNhap.cs" />
+    <Compile Include="Database\PhieuNhapNN.cs" />
     <Compile Include="Database\QLCFContext.cs" />
     <Compile Include="Database\Quyen.cs" />
-    <Compile Include="Database\sysdiagram.cs" />
+    <Compile Include="Database\sysdiagrams.cs" />
     <Compile Include="Database\TaiKhoan.cs" />
-    <Compile Include="Database\ThongTinPhieuNhap.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>

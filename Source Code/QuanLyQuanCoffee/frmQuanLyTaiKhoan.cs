@@ -38,21 +38,21 @@ namespace QuanLyQuanCaffe
             int STT = 1;
             for (int i = 0; i < listTaiKhoan.Count; i++, STT++)
             {
-                PhanQuyen tk = listTaiKhoan[i];
-                string sex;
-                if (tk.TaiKhoan.gioiTinh == 0)
-                {
-                    sex = "Không xác định";
-                } 
-                else if (tk.TaiKhoan.gioiTinh == 1) 
-                {
-                    sex = "Nam";
-                } 
-                else
-                {
-                    sex = "Nữ";
-                }
-                dt.Rows.Add(new string[] { STT.ToString(), tk.TaiKhoan.tenDangNhap, tk.TaiKhoan.hoTen, tk.TaiKhoan.namSinh, tk.TaiKhoan.SDT, sex, tk.Quyen.ten });
+                //PhanQuyen tk = listTaiKhoan[i];
+                //string sex;
+                //if (tk.TaiKhoan.gioiTinh == 0)
+                //{
+                //    sex = "Không xác định";
+                //} 
+                //else if (tk.TaiKhoan.gioiTinh == 1) 
+                //{
+                //    sex = "Nam";
+                //} 
+                //else
+                //{
+                //    sex = "Nữ";
+                //}
+                //dt.Rows.Add(new string[] { STT.ToString(), tk.TaiKhoan.tenDangNhap, tk.TaiKhoan.hoTen, tk.TaiKhoan.namSinh, tk.TaiKhoan.SDT, sex, tk.Quyen.ten });
             }
             dataTaiKhoan.DataSource = dt;
         }

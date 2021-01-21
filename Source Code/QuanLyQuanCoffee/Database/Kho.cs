@@ -6,33 +6,24 @@ namespace QuanLyQuanCaffe.Database
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("HoaDon")]
-    public partial class HoaDon
+    [Table("Kho")]
+    public partial class Kho
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public HoaDon()
+        public Kho()
         {
-            CTHD = new HashSet<CTHD>();
+            PhieuNhap = new HashSet<PhieuNhap>();
         }
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ma { get; set; }
 
-        public DateTime ngayVao { get; set; }
+        public int tonKho { get; set; }
 
-        public DateTime? ngayRa { get; set; }
-
-        public int maBan { get; set; }
-
-        public int maKhuyenMai { get; set; }
-
-        public int trangThai { get; set; }
-
-        public virtual Ban Ban { get; set; }
+        public virtual MonAn MonAn { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTHD> CTHD { get; set; }
-
-        public virtual KhuyenMai KhuyenMai { get; set; }
+        public virtual ICollection<PhieuNhap> PhieuNhap { get; set; }
     }
 }

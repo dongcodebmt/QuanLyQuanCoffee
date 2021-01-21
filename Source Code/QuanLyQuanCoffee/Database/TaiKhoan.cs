@@ -12,7 +12,7 @@ namespace QuanLyQuanCaffe.Database
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TaiKhoan()
         {
-            PhanQuyens = new HashSet<PhanQuyen>();
+            PhanQuyen = new HashSet<PhanQuyen>();
         }
 
         [Key]
@@ -38,11 +38,13 @@ namespace QuanLyQuanCaffe.Database
         [StringLength(255)]
         public string SDT { get; set; }
 
-        public int gioiTinh { get; set; }
+        [Required]
+        [StringLength(255)]
+        public string gioiTinh { get; set; }
 
         public bool trangThai { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PhanQuyen> PhanQuyens { get; set; }
+        public virtual ICollection<PhanQuyen> PhanQuyen { get; set; }
     }
 }
