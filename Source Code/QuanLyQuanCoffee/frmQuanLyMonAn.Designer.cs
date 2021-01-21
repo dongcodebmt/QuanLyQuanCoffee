@@ -32,6 +32,10 @@ namespace QuanLyQuanCaffe
             this.dataMonAn = new System.Windows.Forms.DataGridView();
             this.lbName = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnHuy = new System.Windows.Forms.Button();
+            this.txtGia = new System.Windows.Forms.TextBox();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.lbGia = new System.Windows.Forms.Label();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.cbDonVi = new System.Windows.Forms.ComboBox();
@@ -42,10 +46,6 @@ namespace QuanLyQuanCaffe
             this.lbLoai = new System.Windows.Forms.Label();
             this.lbTenMon = new System.Windows.Forms.Label();
             this.lbMaMon = new System.Windows.Forms.Label();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.btnHuy = new System.Windows.Forms.Button();
-            this.txtGia = new System.Windows.Forms.TextBox();
-            this.lbGia = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataMonAn)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +66,7 @@ namespace QuanLyQuanCaffe
             // 
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Times New Roman", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(268, 21);
+            this.lbName.Location = new System.Drawing.Point(268, 9);
             this.lbName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(256, 40);
@@ -97,6 +97,46 @@ namespace QuanLyQuanCaffe
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin món ăn";
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.Location = new System.Drawing.Point(149, 222);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(75, 23);
+            this.btnHuy.TabIndex = 3;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Cick);
+            // 
+            // txtGia
+            // 
+            this.txtGia.Location = new System.Drawing.Point(97, 103);
+            this.txtGia.Margin = new System.Windows.Forms.Padding(2);
+            this.txtGia.Name = "txtGia";
+            this.txtGia.Size = new System.Drawing.Size(150, 20);
+            this.txtGia.TabIndex = 8;
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Location = new System.Drawing.Point(45, 222);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(75, 23);
+            this.btnLuu.TabIndex = 3;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // lbGia
+            // 
+            this.lbGia.AutoSize = true;
+            this.lbGia.Location = new System.Drawing.Point(17, 106);
+            this.lbGia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbGia.Name = "lbGia";
+            this.lbGia.Size = new System.Drawing.Size(23, 13);
+            this.lbGia.TabIndex = 7;
+            this.lbGia.Text = "Giá";
             // 
             // btnSua
             // 
@@ -193,46 +233,6 @@ namespace QuanLyQuanCaffe
             this.lbMaMon.Size = new System.Drawing.Size(60, 13);
             this.lbMaMon.TabIndex = 0;
             this.lbMaMon.Text = "Mã món ăn";
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Location = new System.Drawing.Point(45, 222);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(75, 23);
-            this.btnLuu.TabIndex = 3;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.UseVisualStyleBackColor = true;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.Location = new System.Drawing.Point(149, 222);
-            this.btnHuy.Margin = new System.Windows.Forms.Padding(2);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(75, 23);
-            this.btnHuy.TabIndex = 3;
-            this.btnHuy.Text = "Hủy";
-            this.btnHuy.UseVisualStyleBackColor = true;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Cick);
-            // 
-            // txtGia
-            // 
-            this.txtGia.Location = new System.Drawing.Point(97, 103);
-            this.txtGia.Margin = new System.Windows.Forms.Padding(2);
-            this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(150, 20);
-            this.txtGia.TabIndex = 8;
-            // 
-            // lbGia
-            // 
-            this.lbGia.AutoSize = true;
-            this.lbGia.Location = new System.Drawing.Point(17, 106);
-            this.lbGia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbGia.Name = "lbGia";
-            this.lbGia.Size = new System.Drawing.Size(23, 13);
-            this.lbGia.TabIndex = 7;
-            this.lbGia.Text = "Giá";
             // 
             // frmQuanLyMonAn
             // 

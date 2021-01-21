@@ -155,9 +155,19 @@ namespace QuanLyQuanCaffe
 
         private void miQuanLyBanHang_Click(object sender, EventArgs e)
         {
-            if (!CheckForm("frmQuanLyCuaHang"))
+            if (!CheckForm("frmQuanLyBanHang"))
             {
-                frmQuanLyCuaHang frm = new frmQuanLyCuaHang();
+                frmQuanLyBanHang frm = new frmQuanLyBanHang();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
+
+        private void miQuanLyKhuyenMai_Click(object sender, EventArgs e)
+        {
+            if (!CheckForm("frmQuanLyKhuyenMai"))
+            {
+                frmQuanLyKhuyenMai frm = new frmQuanLyKhuyenMai();
                 frm.MdiParent = this;
                 frm.Show();
             }

@@ -43,6 +43,7 @@ namespace QuanLyQuanCaffe
             this.btnSua = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataKhuyenMai)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,7 +130,7 @@ namespace QuanLyQuanCaffe
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(53, 203);
+            this.btnThem.Location = new System.Drawing.Point(29, 203);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
             this.btnThem.TabIndex = 5;
@@ -139,7 +140,7 @@ namespace QuanLyQuanCaffe
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(168, 203);
+            this.btnSua.Location = new System.Drawing.Point(128, 203);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
             this.btnSua.TabIndex = 6;
@@ -149,7 +150,7 @@ namespace QuanLyQuanCaffe
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(53, 203);
+            this.btnLuu.Location = new System.Drawing.Point(29, 203);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 23);
             this.btnLuu.TabIndex = 7;
@@ -159,7 +160,7 @@ namespace QuanLyQuanCaffe
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(168, 203);
+            this.btnHuy.Location = new System.Drawing.Point(128, 203);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(75, 23);
             this.btnHuy.TabIndex = 8;
@@ -167,11 +168,22 @@ namespace QuanLyQuanCaffe
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
+            // btnXoa
+            // 
+            this.btnXoa.Location = new System.Drawing.Point(220, 203);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(75, 23);
+            this.btnXoa.TabIndex = 9;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
             // frmQuanLyKhuyenMai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(852, 300);
+            this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnSua);
@@ -210,5 +222,6 @@ namespace QuanLyQuanCaffe
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.Button btnXoa;
     }
 }

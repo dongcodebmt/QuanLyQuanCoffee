@@ -132,11 +132,11 @@
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQuanLyCuaHang.cs">
+    <Compile Include="frmQuanLyBanHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQuanLyCuaHang.Designer.cs">
-      <DependentUpon>frmQuanLyCuaHang.cs</DependentUpon>
+    <Compile Include="frmQuanLyBanHang.Designer.cs">
+      <DependentUpon>frmQuanLyBanHang.cs</DependentUpon>
     </Compile>
     <Compile Include="frmQuanLyKhuyenMai.cs">
       <SubType>Form</SubType>
@@ -164,12 +164,6 @@
     <Compile Include="frmQuanLyMonAn.Designer.cs">
       <DependentUpon>frmQuanLyMonAn.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQuanLyBanHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmQuanLyBanHang.Designer.cs">
-      <DependentUpon>frmQuanLyBanHang.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,8 +176,8 @@
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQuanLyCuaHang.resx">
-      <DependentUpon>frmQuanLyCuaHang.cs</DependentUpon>
+    <EmbeddedResource Include="frmQuanLyBanHang.resx">
+      <DependentUpon>frmQuanLyBanHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLyKhuyenMai.resx">
       <DependentUpon>frmQuanLyKhuyenMai.cs</DependentUpon>
@@ -200,9 +194,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLyMonAn.resx">
       <DependentUpon>frmQuanLyMonAn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmQuanLyBanHang.resx">
-      <DependentUpon>frmQuanLyBanHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThongKeDoanhThu.rdlc" />
     <EmbeddedResource Include="ThongTinQuanCoffee.rdlc" />

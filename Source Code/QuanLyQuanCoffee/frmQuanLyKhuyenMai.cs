@@ -27,7 +27,7 @@ namespace QuanLyQuanCaffe
         {
             ButtonLock(false);
             TB_CBLock(false);
-            BilingListToDataGridView(model.KhuyenMai.ToList());
+            BilingListToDataGridView(model.KhuyenMai.Where(x => x.trangThai == true).ToList());
             DataSetting();
         }
         private void BilingListToDataGridView(List<KhuyenMai> khuyenMais)
@@ -87,6 +87,7 @@ namespace QuanLyQuanCaffe
                 khuyenMai.ten = txtTen.Text;
                 khuyenMai.maKhyenMai = txtMaKM.Text.ToUpper();
                 khuyenMai.tyLe = Int32.Parse(txtTyLe.Text);
+                khuyenMai.trangThai = true;
                 model.KhuyenMai.Add(khuyenMai);
             }
             else
@@ -94,10 +95,11 @@ namespace QuanLyQuanCaffe
                 KM.ten = txtTen.Text;
                 KM.maKhyenMai = txtMaKM.Text.ToUpper();
                 KM.tyLe = Int32.Parse(txtTyLe.Text);
+                KM.trangThai = true;
             }
 
             model.SaveChanges();
-            BilingListToDataGridView(model.KhuyenMai.ToList());
+            BilingListToDataGridView(model.KhuyenMai.Where(x => x.trangThai == true).ToList());
             ButtonLock(false);
             TB_CBLock(false);
             TB_CBNull();
@@ -108,11 +110,12 @@ namespace QuanLyQuanCaffe
             btnLuu.Visible = isLock;
             btnThem.Visible = !isLock;
             btnSua.Visible = !isLock;
+            btnXoa.Visible = !isLock;
         }
 
         private void TB_CBLock(bool isLock)
         {
-            txtMa.Enabled = isLock;
+            txtMa.Enabled = false;
             txtTen.Enabled = isLock;
             txtMaKM.Enabled = isLock;
             txtTyLe.Enabled = isLock;
@@ -123,6 +126,22 @@ namespace QuanLyQuanCaffe
             txtTen.Text = null;
             txtMaKM.Text = null;
             txtTyLe.Text = null;
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            KhuyenMai khuyenMai = model.KhuyenMai.FirstOrDefault(x => x.maKhyenMai.ToUpper() == txtMaKM.Text.ToUpper());
+            if (khuyenMai != null)
+            {
+                khuyenMai.trangThai = false;
+                model.SaveChanges();
+            }
+            else
+            {
+                MessageBox.Show("Khuyến mãi không tồn tại");
+            }
+            TB_CBNull();
+            BilingListToDataGridView(model.KhuyenMai.Where(x => x.trangThai == true).ToList());
         }
     }
 }

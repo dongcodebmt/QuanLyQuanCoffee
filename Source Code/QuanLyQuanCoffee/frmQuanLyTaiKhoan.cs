@@ -125,6 +125,7 @@ namespace QuanLyQuanCaffe
             {
                 MessageBox.Show("Tài khoản không tồn tại");
             }
+            TB_CBNull();
             BilingMacDinh();
         }
 

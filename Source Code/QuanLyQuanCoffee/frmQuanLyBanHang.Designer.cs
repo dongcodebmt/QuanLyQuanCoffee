@@ -30,178 +30,30 @@ namespace QuanLyQuanCaffe
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuanLyBanHang));
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbMonAn = new System.Windows.Forms.ComboBox();
-            this.nmFoodCount = new System.Windows.Forms.NumericUpDown();
-            this.btnAddFood = new System.Windows.Forms.Button();
-            this.btnSwitchTable = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lbTotalPrice = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.cbKhuyenMai = new System.Windows.Forms.ComboBox();
-            this.txbTongTien = new System.Windows.Forms.TextBox();
-            this.btnCheckout = new System.Windows.Forms.Button();
-            this.flpBan = new System.Windows.Forms.FlowLayoutPanel();
             this.lsvCTHD = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lsvBan = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lbSoLuong = new System.Windows.Forms.Label();
+            this.lbMonAn = new System.Windows.Forms.Label();
+            this.cbMonAn = new System.Windows.Forms.ComboBox();
+            this.nmSLMonAn = new System.Windows.Forms.NumericUpDown();
+            this.btnThemMon = new System.Windows.Forms.Button();
+            this.btnChuyenBan = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lbKhuyenMai = new System.Windows.Forms.Label();
+            this.cbKhuyenMai = new System.Windows.Forms.ComboBox();
+            this.btnInHD = new System.Windows.Forms.Button();
+            this.btTongCong = new System.Windows.Forms.Label();
+            this.txbTongTien = new System.Windows.Forms.TextBox();
+            this.btnThanhToan = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmFoodCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmSLMonAn)).BeginInit();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.cbMonAn);
-            this.panel2.Controls.Add(this.nmFoodCount);
-            this.panel2.Controls.Add(this.btnAddFood);
-            this.panel2.Controls.Add(this.btnSwitchTable);
-            this.panel2.Location = new System.Drawing.Point(12, 395);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(398, 70);
-            this.panel2.TabIndex = 10;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(205, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Món ăn";
-            // 
-            // cbMonAn
-            // 
-            this.cbMonAn.FormattingEnabled = true;
-            this.cbMonAn.Location = new System.Drawing.Point(169, 26);
-            this.cbMonAn.Name = "cbMonAn";
-            this.cbMonAn.Size = new System.Drawing.Size(121, 21);
-            this.cbMonAn.TabIndex = 7;
-            // 
-            // nmFoodCount
-            // 
-            this.nmFoodCount.Location = new System.Drawing.Point(108, 30);
-            this.nmFoodCount.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
-            this.nmFoodCount.Name = "nmFoodCount";
-            this.nmFoodCount.Size = new System.Drawing.Size(48, 20);
-            this.nmFoodCount.TabIndex = 3;
-            this.nmFoodCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nmFoodCount.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // btnAddFood
-            // 
-            this.btnAddFood.Image = ((System.Drawing.Image)(resources.GetObject("btnAddFood.Image")));
-            this.btnAddFood.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddFood.Location = new System.Drawing.Point(3, 3);
-            this.btnAddFood.Name = "btnAddFood";
-            this.btnAddFood.Size = new System.Drawing.Size(99, 64);
-            this.btnAddFood.TabIndex = 2;
-            this.btnAddFood.Text = "Thêm món";
-            this.btnAddFood.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddFood.UseVisualStyleBackColor = true;
-            // 
-            // btnSwitchTable
-            // 
-            this.btnSwitchTable.Location = new System.Drawing.Point(296, 22);
-            this.btnSwitchTable.Name = "btnSwitchTable";
-            this.btnSwitchTable.Size = new System.Drawing.Size(99, 32);
-            this.btnSwitchTable.TabIndex = 6;
-            this.btnSwitchTable.Text = "Chuyển bàn";
-            this.btnSwitchTable.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(357, 8);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 61);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "In Hóa Đơn";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // lbTotalPrice
-            // 
-            this.lbTotalPrice.AutoSize = true;
-            this.lbTotalPrice.Location = new System.Drawing.Point(153, 18);
-            this.lbTotalPrice.Name = "lbTotalPrice";
-            this.lbTotalPrice.Size = new System.Drawing.Size(59, 13);
-            this.lbTotalPrice.TabIndex = 9;
-            this.lbTotalPrice.Text = "Tổng cộng";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.button2);
-            this.panel4.Controls.Add(this.cbKhuyenMai);
-            this.panel4.Controls.Add(this.button1);
-            this.panel4.Controls.Add(this.lbTotalPrice);
-            this.panel4.Controls.Add(this.txbTongTien);
-            this.panel4.Controls.Add(this.btnCheckout);
-            this.panel4.Location = new System.Drawing.Point(416, 387);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(458, 78);
-            this.panel4.TabIndex = 11;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(22, 8);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Khuyến mãi";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // cbKhuyenMai
-            // 
-            this.cbKhuyenMai.FormattingEnabled = true;
-            this.cbKhuyenMai.Location = new System.Drawing.Point(3, 34);
-            this.cbKhuyenMai.Name = "cbKhuyenMai";
-            this.cbKhuyenMai.Size = new System.Drawing.Size(121, 21);
-            this.cbKhuyenMai.TabIndex = 10;
-            // 
-            // txbTongTien
-            // 
-            this.txbTongTien.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTongTien.ForeColor = System.Drawing.Color.OrangeRed;
-            this.txbTongTien.Location = new System.Drawing.Point(126, 30);
-            this.txbTongTien.Name = "txbTongTien";
-            this.txbTongTien.ReadOnly = true;
-            this.txbTongTien.Size = new System.Drawing.Size(110, 25);
-            this.txbTongTien.TabIndex = 8;
-            this.txbTongTien.Text = "0";
-            this.txbTongTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // btnCheckout
-            // 
-            this.btnCheckout.Location = new System.Drawing.Point(255, 8);
-            this.btnCheckout.Name = "btnCheckout";
-            this.btnCheckout.Size = new System.Drawing.Size(80, 61);
-            this.btnCheckout.TabIndex = 3;
-            this.btnCheckout.Text = "Thanh toán";
-            this.btnCheckout.UseVisualStyleBackColor = true;
-            this.btnCheckout.Click += new System.EventHandler(this.btnThanhToan_Click);
-            // 
-            // flpBan
-            // 
-            this.flpBan.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.flpBan.Location = new System.Drawing.Point(428, 25);
-            this.flpBan.Name = "flpBan";
-            this.flpBan.Size = new System.Drawing.Size(443, 356);
-            this.flpBan.TabIndex = 12;
             // 
             // lsvCTHD
             // 
@@ -212,10 +64,10 @@ namespace QuanLyQuanCaffe
             this.columnHeader4});
             this.lsvCTHD.GridLines = true;
             this.lsvCTHD.HideSelection = false;
-            this.lsvCTHD.Location = new System.Drawing.Point(12, 23);
+            this.lsvCTHD.Location = new System.Drawing.Point(12, 12);
             this.lsvCTHD.Name = "lsvCTHD";
-            this.lsvCTHD.Size = new System.Drawing.Size(395, 358);
-            this.lsvCTHD.TabIndex = 13;
+            this.lsvCTHD.Size = new System.Drawing.Size(398, 313);
+            this.lsvCTHD.TabIndex = 17;
             this.lsvCTHD.UseCompatibleStateImageBehavior = false;
             this.lsvCTHD.View = System.Windows.Forms.View.Details;
             // 
@@ -239,24 +91,181 @@ namespace QuanLyQuanCaffe
             this.columnHeader4.Text = "Tổng tiền";
             this.columnHeader4.Width = 78;
             // 
+            // lsvBan
+            // 
+            this.lsvBan.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lsvBan.Location = new System.Drawing.Point(438, 14);
+            this.lsvBan.Name = "lsvBan";
+            this.lsvBan.Size = new System.Drawing.Size(433, 311);
+            this.lsvBan.TabIndex = 16;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.lbSoLuong);
+            this.panel2.Controls.Add(this.lbMonAn);
+            this.panel2.Controls.Add(this.cbMonAn);
+            this.panel2.Controls.Add(this.nmSLMonAn);
+            this.panel2.Controls.Add(this.btnThemMon);
+            this.panel2.Controls.Add(this.btnChuyenBan);
+            this.panel2.Location = new System.Drawing.Point(12, 348);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(398, 97);
+            this.panel2.TabIndex = 14;
+            // 
+            // lbSoLuong
+            // 
+            this.lbSoLuong.AutoSize = true;
+            this.lbSoLuong.Location = new System.Drawing.Point(31, 66);
+            this.lbSoLuong.Name = "lbSoLuong";
+            this.lbSoLuong.Size = new System.Drawing.Size(49, 13);
+            this.lbSoLuong.TabIndex = 12;
+            this.lbSoLuong.Text = "Số lượng";
+            // 
+            // lbMonAn
+            // 
+            this.lbMonAn.AutoSize = true;
+            this.lbMonAn.Location = new System.Drawing.Point(31, 18);
+            this.lbMonAn.Name = "lbMonAn";
+            this.lbMonAn.Size = new System.Drawing.Size(43, 13);
+            this.lbMonAn.TabIndex = 11;
+            this.lbMonAn.Text = "Món ăn";
+            // 
+            // cbMonAn
+            // 
+            this.cbMonAn.FormattingEnabled = true;
+            this.cbMonAn.Location = new System.Drawing.Point(86, 15);
+            this.cbMonAn.Name = "cbMonAn";
+            this.cbMonAn.Size = new System.Drawing.Size(204, 21);
+            this.cbMonAn.TabIndex = 7;
+            // 
+            // nmSLMonAn
+            // 
+            this.nmSLMonAn.Location = new System.Drawing.Point(86, 61);
+            this.nmSLMonAn.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.nmSLMonAn.Name = "nmSLMonAn";
+            this.nmSLMonAn.Size = new System.Drawing.Size(48, 20);
+            this.nmSLMonAn.TabIndex = 3;
+            this.nmSLMonAn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nmSLMonAn.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // btnThemMon
+            // 
+            this.btnThemMon.Image = ((System.Drawing.Image)(resources.GetObject("btnThemMon.Image")));
+            this.btnThemMon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThemMon.Location = new System.Drawing.Point(296, 52);
+            this.btnThemMon.Name = "btnThemMon";
+            this.btnThemMon.Size = new System.Drawing.Size(98, 42);
+            this.btnThemMon.TabIndex = 2;
+            this.btnThemMon.Text = "Thêm món";
+            this.btnThemMon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThemMon.UseVisualStyleBackColor = true;
+            this.btnThemMon.Click += new System.EventHandler(this.btnThemMon_Click);
+            // 
+            // btnChuyenBan
+            // 
+            this.btnChuyenBan.Location = new System.Drawing.Point(296, 3);
+            this.btnChuyenBan.Name = "btnChuyenBan";
+            this.btnChuyenBan.Size = new System.Drawing.Size(99, 42);
+            this.btnChuyenBan.TabIndex = 6;
+            this.btnChuyenBan.Text = "Chuyển bàn";
+            this.btnChuyenBan.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.lbKhuyenMai);
+            this.panel4.Controls.Add(this.cbKhuyenMai);
+            this.panel4.Controls.Add(this.btnInHD);
+            this.panel4.Controls.Add(this.btTongCong);
+            this.panel4.Controls.Add(this.txbTongTien);
+            this.panel4.Controls.Add(this.btnThanhToan);
+            this.panel4.Location = new System.Drawing.Point(438, 348);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(436, 97);
+            this.panel4.TabIndex = 15;
+            // 
+            // lbKhuyenMai
+            // 
+            this.lbKhuyenMai.AutoSize = true;
+            this.lbKhuyenMai.Location = new System.Drawing.Point(12, 18);
+            this.lbKhuyenMai.Name = "lbKhuyenMai";
+            this.lbKhuyenMai.Size = new System.Drawing.Size(62, 13);
+            this.lbKhuyenMai.TabIndex = 11;
+            this.lbKhuyenMai.Text = "Khuyến mãi";
+            // 
+            // cbKhuyenMai
+            // 
+            this.cbKhuyenMai.FormattingEnabled = true;
+            this.cbKhuyenMai.Location = new System.Drawing.Point(108, 15);
+            this.cbKhuyenMai.Name = "cbKhuyenMai";
+            this.cbKhuyenMai.Size = new System.Drawing.Size(174, 21);
+            this.cbKhuyenMai.TabIndex = 10;
+            // 
+            // btnInHD
+            // 
+            this.btnInHD.Image = ((System.Drawing.Image)(resources.GetObject("btnInHD.Image")));
+            this.btnInHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInHD.Location = new System.Drawing.Point(326, 51);
+            this.btnInHD.Name = "btnInHD";
+            this.btnInHD.Size = new System.Drawing.Size(98, 42);
+            this.btnInHD.TabIndex = 4;
+            this.btnInHD.Text = "In Hóa Đơn";
+            this.btnInHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnInHD.UseVisualStyleBackColor = true;
+            // 
+            // btTongCong
+            // 
+            this.btTongCong.AutoSize = true;
+            this.btTongCong.Location = new System.Drawing.Point(12, 67);
+            this.btTongCong.Name = "btTongCong";
+            this.btTongCong.Size = new System.Drawing.Size(59, 13);
+            this.btTongCong.TabIndex = 9;
+            this.btTongCong.Text = "Tổng cộng";
+            // 
+            // txbTongTien
+            // 
+            this.txbTongTien.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTongTien.ForeColor = System.Drawing.Color.OrangeRed;
+            this.txbTongTien.Location = new System.Drawing.Point(108, 61);
+            this.txbTongTien.Name = "txbTongTien";
+            this.txbTongTien.ReadOnly = true;
+            this.txbTongTien.Size = new System.Drawing.Size(174, 25);
+            this.txbTongTien.TabIndex = 8;
+            this.txbTongTien.Text = "0";
+            this.txbTongTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // btnThanhToan
+            // 
+            this.btnThanhToan.Location = new System.Drawing.Point(326, 3);
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.Size = new System.Drawing.Size(98, 42);
+            this.btnThanhToan.TabIndex = 3;
+            this.btnThanhToan.Text = "Thanh toán";
+            this.btnThanhToan.UseVisualStyleBackColor = true;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
+            // 
             // frmQuanLyBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(902, 476);
+            this.ClientSize = new System.Drawing.Size(886, 462);
             this.Controls.Add(this.lsvCTHD);
-            this.Controls.Add(this.flpBan);
+            this.Controls.Add(this.lsvBan);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
             this.Name = "frmQuanLyBanHang";
-            this.Text = "QuanLyBanHang";
-            this.TransparencyKey = System.Drawing.Color.White;
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
-            this.Load += new System.EventHandler(this.QuanLyBanHang_Load);
+            this.Text = "Quản lý bán hàng";
+            this.Load += new System.EventHandler(this.frmQuanLyCuaHang_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmFoodCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmSLMonAn)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);
@@ -265,24 +274,25 @@ namespace QuanLyQuanCaffe
 
         #endregion
 
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.NumericUpDown nmFoodCount;
-        private System.Windows.Forms.Button btnAddFood;
-        private System.Windows.Forms.Button btnSwitchTable;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label lbTotalPrice;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox txbTongTien;
-        private System.Windows.Forms.Button btnCheckout;
-        private System.Windows.Forms.FlowLayoutPanel flpBan;
-        private System.Windows.Forms.ComboBox cbMonAn;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox cbKhuyenMai;
         private System.Windows.Forms.ListView lsvCTHD;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.FlowLayoutPanel lsvBan;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lbMonAn;
+        private System.Windows.Forms.ComboBox cbMonAn;
+        private System.Windows.Forms.NumericUpDown nmSLMonAn;
+        private System.Windows.Forms.Button btnThemMon;
+        private System.Windows.Forms.Button btnChuyenBan;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.ComboBox cbKhuyenMai;
+        private System.Windows.Forms.Button btnInHD;
+        private System.Windows.Forms.Label btTongCong;
+        private System.Windows.Forms.TextBox txbTongTien;
+        private System.Windows.Forms.Button btnThanhToan;
+        private System.Windows.Forms.Label lbSoLuong;
+        private System.Windows.Forms.Label lbKhuyenMai;
     }
 }

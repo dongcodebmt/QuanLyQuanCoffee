@@ -52,12 +52,10 @@ namespace QuanLyQuanCaffe
 
         private void FillDataToComboBox()
         {
-            List<MonAn> monAns = model.MonAn.Where(x => x.DonVi.ma == 1).ToList();
-            List<NguyenLieu> nguyenLieus = model.NguyenLieu.ToList();
-            cbMonAn.DataSource = monAns;
+            cbMonAn.DataSource = model.MonAn.Where(x => x.DonVi.ma == 1).ToList();
             cbMonAn.DisplayMember = "ten";
             cbMonAn.ValueMember = "ma";
-            cbNguyenLieu.DataSource = nguyenLieus;
+            cbNguyenLieu.DataSource = model.NguyenLieu.ToList();
             cbNguyenLieu.DisplayMember = "ten";
             cbNguyenLieu.ValueMember = "ma";
         }
@@ -101,8 +99,8 @@ namespace QuanLyQuanCaffe
                 model.CongThuc.Remove(ct);
                 model.SaveChanges();
             }
-            BilingListToDataGridView(model.CongThuc.ToList());
             TB_CBNull();
+            BilingListToDataGridView(model.CongThuc.ToList());
         }
 
         private void btnLuu_Click(object sender, EventArgs e)

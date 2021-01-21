@@ -45,7 +45,7 @@ CREATE TABLE Ban
 (
 	ma INT IDENTITY PRIMARY KEY,
 	ten NVARCHAR(255) NOT NULL DEFAULT N'Chưa đặt tên',
-	trangThai BIT NOT NULL DEFAULT 0, -- trống || Có người
+	trangThai BIT NOT NULL DEFAULT 1,
 	CHECK (trangThai = 0 OR trangThai = 1)
 )
 
