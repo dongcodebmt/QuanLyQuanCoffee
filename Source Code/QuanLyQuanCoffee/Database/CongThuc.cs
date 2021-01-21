@@ -10,16 +10,13 @@ namespace QuanLyQuanCaffe.Database
     public partial class CongThuc
     {
         [Key]
-        [Column(Order = 0)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int ma { get; set; }
+
         public int maMon { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int maNguyenLieu { get; set; }
 
-        public double? chiPhi { get; set; }
+        public double chiPhi { get; set; }
 
         public virtual MonAn MonAn { get; set; }
 

@@ -22,13 +22,9 @@ namespace QuanLyQuanCaffe
 
         private void QuanLyBanHang_Load(object sender, EventArgs e)
         {
-            
-            List<Ban> listBan = model.Ban.ToList();
-            List<MonAn> listMonAn = model.MonAn.ToList();
-            List<KhuyenMai> listKhuyenMai = model.KhuyenMai.ToList();
-            LoadTableBtn(listBan);
-            FillComboxMonAn(listMonAn);
-            FillComboxKhuyenMai(listKhuyenMai);
+            LoadTableBtn(model.Ban.ToList());
+            FillComboxMonAn(model.MonAn.ToList());
+            FillComboxKhuyenMai(model.KhuyenMai.ToList());
         }
         private void LoadTableBtn(List<Ban> listBan)
         {
@@ -39,20 +35,18 @@ namespace QuanLyQuanCaffe
                     string i;
                     btn.Click += Btn_Click;
                     btn.Tag = item;
-                    if (item.trangThai == 1)
+                    if (item.trangThai == true)
                     {
                      i = "Có người";
                      btn.BackColor = Color.HotPink;
-                    }
-                     else
+                }
+                else
                      {
                           i = "Trống";
                           btn.BackColor = Color.Blue;
                      }
                     btn.Text = item.ten + Environment.NewLine + i;
                     flpBan.Controls.Add(btn);
-
-                
                    }
         }
 

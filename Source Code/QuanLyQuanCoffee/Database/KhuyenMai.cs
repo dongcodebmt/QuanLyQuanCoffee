@@ -28,6 +28,8 @@ namespace QuanLyQuanCaffe.Database
 
         public double tyLe { get; set; }
 
+        public bool trangThai { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HoaDon> HoaDon { get; set; }
     }

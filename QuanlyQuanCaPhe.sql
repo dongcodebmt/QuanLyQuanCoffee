@@ -1,10 +1,10 @@
-﻿DROP DATABASE IF EXISTS QuanlyQuanCaPhe
+﻿DROP DATABASE IF EXISTS QLCF
 GO
 
-CREATE DATABASE QuanlyQuanCaPhe
+CREATE DATABASE QLCF
 GO
 
-USE QuanLyQuanCaPhe
+USE QLCF
 GO
 
 CREATE TABLE TaiKhoan
@@ -19,12 +19,16 @@ CREATE TABLE TaiKhoan
 	trangThai BIT NOT NULL DEFAULT 1 -- tài khoảng đang hoạt động,
 	--type int not null default 0
 )
+INSERT INTO TaiKhoan VALUES (N'admin', N'$2a$11$CxMrw9716vWAcPo6GQoNmOiNMGH/GOJ1P5tGeRTb4kpgcXguD1Vfi', N'Quản trị viên hệ thống', N'2000', N'18001091', N'Nam', 1);
 
 CREATE TABLE Quyen 
 (
 	ma INT PRIMARY KEY,
 	ten NVARCHAR(255) NOT NULL,
 )
+INSERT INTO Quyen VALUES (1, N'Quản trị viên');
+INSERT INTO Quyen VALUES (2, N'Quản lý');
+INSERT INTO Quyen VALUES (3, N'Nhân viên');
 
 CREATE TABLE PhanQuyen
 (
@@ -35,12 +39,13 @@ CREATE TABLE PhanQuyen
 	FOREIGN KEY (maTaiKhoan) REFERENCES TaiKhoan(ma),
 	FOREIGN KEY (maPhanQuyen) REFERENCES Quyen(ma),
 )
+INSERT INTO PhanQuyen VALUES (1, 1);
 
 CREATE TABLE Ban
 (
 	ma INT IDENTITY PRIMARY KEY,
 	ten NVARCHAR(255) NOT NULL DEFAULT N'Chưa đặt tên',
-	trangThai INT NOT NULL DEFAULT 0 -- trống || Có người,
+	trangThai BIT NOT NULL DEFAULT 0, -- trống || Có người
 	CHECK (trangThai = 0 OR trangThai = 1)
 )
 
@@ -49,12 +54,19 @@ CREATE TABLE LoaiMonAn
 	ma INT IDENTITY PRIMARY KEY,
 	ten NVARCHAR(255) NOT NULL DEFAULT N'Chưa đặt tên'
 )
+INSERT INTO LoaiMonAn VALUES (N'Nước giải khát');
+INSERT INTO LoaiMonAn VALUES (N'Bánh ngọt');
 
 CREATE TABLE DonVi
 (
 	ma INT IDENTITY PRIMARY KEY,
 	ten NVARCHAR(255) NOT NULL DEFAULT N'Chưa đặt tên'
 )
+INSERT INTO DonVi VALUES (N'Ly');
+INSERT INTO DonVi VALUES (N'Lon');
+INSERT INTO DonVi VALUES (N'Chai');
+INSERT INTO DonVi VALUES (N'Trái');
+INSERT INTO DonVi VALUES (N'Cái');
 
 CREATE TABLE MonAn
 (
@@ -63,6 +75,7 @@ CREATE TABLE MonAn
 	maLoaiMonAn INT NOT NULL,
 	gia MONEY NOT NULL DEFAULT 0,
 	maDonVi INT NOT NULL,
+	trangThai BIT NOT NULL,
 	
 	FOREIGN KEY (maDonVi) REFERENCES DonVi(ma),
 	FOREIGN KEY (maLoaiMonAn) REFERENCES LoaiMonAn(ma)
@@ -119,6 +132,7 @@ CREATE TABLE KhuyenMai
 	ten NVARCHAR(255) NOT NULL DEFAULT N'Chưa đặt tên',
 	maKhyenMai NVARCHAR(255) NOT NULL UNIQUE,
 	tyLe FLOAT NOT NULL,
+	trangThai BIT NOT NULL,
 	CHECK (tyLe >= 0 AND tyLe <= 100)
 )
 
@@ -128,8 +142,8 @@ CREATE TABLE HoaDon
 	ngayVao DATETIME NOT NULL DEFAULT GETDATE(),
 	ngayRa DATETIME,
 	maBan INT NOT NULL,
-	maKhuyenMai INT NOT NULL,
-	trangThai INT NOT NULL DEFAULT 0, -- 1 đã thanh toán ; 0 chưa thanh toán	
+	maKhuyenMai INT,
+	trangThai BIT NOT NULL DEFAULT 0, -- 1 đã thanh toán ; 0 chưa thanh toán	
 	
 	FOREIGN KEY (maBan) REFERENCES Ban(ma),
 	FOREIGN KEY (maKhuyenMai) REFERENCES KhuyenMai(ma)

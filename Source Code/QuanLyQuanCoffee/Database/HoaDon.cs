@@ -24,9 +24,9 @@ namespace QuanLyQuanCaffe.Database
 
         public int maBan { get; set; }
 
-        public int maKhuyenMai { get; set; }
+        public int? maKhuyenMai { get; set; }
 
-        public int trangThai { get; set; }
+        public bool trangThai { get; set; }
 
         public virtual Ban Ban { get; set; }
 

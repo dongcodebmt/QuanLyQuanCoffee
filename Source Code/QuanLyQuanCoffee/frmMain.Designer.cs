@@ -38,12 +38,14 @@ namespace QuanLyQuanCaffe
             this.miQuanLyCuaHang = new System.Windows.Forms.ToolStripMenuItem();
             this.miQuanLyTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
             this.miXuatNhapKho = new System.Windows.Forms.ToolStripMenuItem();
-            this.miThongTin = new System.Windows.Forms.ToolStripMenuItem();
-            this.miSinhVienThucHien = new System.Windows.Forms.ToolStripMenuItem();
-            this.miThoat = new System.Windows.Forms.ToolStripMenuItem();
             this.miNhapKho = new System.Windows.Forms.ToolStripMenuItem();
             this.miNhapNguyenLieu = new System.Windows.Forms.ToolStripMenuItem();
             this.miNhapCongThuc = new System.Windows.Forms.ToolStripMenuItem();
+            this.miThongTin = new System.Windows.Forms.ToolStripMenuItem();
+            this.miSinhVienThucHien = new System.Windows.Forms.ToolStripMenuItem();
+            this.miThoat = new System.Windows.Forms.ToolStripMenuItem();
+            this.miQuanLyMonAn = new System.Windows.Forms.ToolStripMenuItem();
+            this.miQuanLyBanHang = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,35 +77,37 @@ namespace QuanLyQuanCaffe
             // miDangNhap
             // 
             this.miDangNhap.Name = "miDangNhap";
-            this.miDangNhap.Size = new System.Drawing.Size(180, 22);
+            this.miDangNhap.Size = new System.Drawing.Size(177, 22);
             this.miDangNhap.Text = "Đăng nhập";
             this.miDangNhap.Click += new System.EventHandler(this.miDangNhap_Click);
             // 
             // miThongTinTaiKhoan
             // 
             this.miThongTinTaiKhoan.Name = "miThongTinTaiKhoan";
-            this.miThongTinTaiKhoan.Size = new System.Drawing.Size(180, 22);
+            this.miThongTinTaiKhoan.Size = new System.Drawing.Size(177, 22);
             this.miThongTinTaiKhoan.Text = "Thông tin tài khoản";
             this.miThongTinTaiKhoan.Click += new System.EventHandler(this.miThongTinTaiKhoan_Click);
             // 
             // miDoiMatKhau
             // 
             this.miDoiMatKhau.Name = "miDoiMatKhau";
-            this.miDoiMatKhau.Size = new System.Drawing.Size(180, 22);
+            this.miDoiMatKhau.Size = new System.Drawing.Size(177, 22);
             this.miDoiMatKhau.Text = "Đổi mật khẩu";
             this.miDoiMatKhau.Click += new System.EventHandler(this.miDoiMatKhau_Click);
             // 
             // miDangXuat
             // 
             this.miDangXuat.Name = "miDangXuat";
-            this.miDangXuat.Size = new System.Drawing.Size(180, 22);
+            this.miDangXuat.Size = new System.Drawing.Size(177, 22);
             this.miDangXuat.Text = "Đăng xuất";
             this.miDangXuat.Click += new System.EventHandler(this.miDangXuat_Click);
             // 
             // miQuanLyCuaHang
             // 
             this.miQuanLyCuaHang.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miQuanLyTaiKhoan});
+            this.miQuanLyTaiKhoan,
+            this.miQuanLyMonAn,
+            this.miQuanLyBanHang});
             this.miQuanLyCuaHang.Name = "miQuanLyCuaHang";
             this.miQuanLyCuaHang.Size = new System.Drawing.Size(112, 20);
             this.miQuanLyCuaHang.Text = "Quản lý cửa hàng";
@@ -125,29 +129,6 @@ namespace QuanLyQuanCaffe
             this.miXuatNhapKho.Size = new System.Drawing.Size(96, 20);
             this.miXuatNhapKho.Text = "Xuất nhập kho";
             // 
-            // miThongTin
-            // 
-            this.miThongTin.Checked = true;
-            this.miThongTin.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.miThongTin.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miSinhVienThucHien});
-            this.miThongTin.Name = "miThongTin";
-            this.miThongTin.Size = new System.Drawing.Size(70, 20);
-            this.miThongTin.Text = "Thông tin";
-            // 
-            // miSinhVienThucHien
-            // 
-            this.miSinhVienThucHien.Name = "miSinhVienThucHien";
-            this.miSinhVienThucHien.Size = new System.Drawing.Size(180, 22);
-            this.miSinhVienThucHien.Text = "Sinh viên thực hiện";
-            // 
-            // miThoat
-            // 
-            this.miThoat.Name = "miThoat";
-            this.miThoat.Size = new System.Drawing.Size(110, 20);
-            this.miThoat.Text = "Thoát phần mềm";
-            this.miThoat.Click += new System.EventHandler(this.miThoat_Click);
-            // 
             // miNhapKho
             // 
             this.miNhapKho.Name = "miNhapKho";
@@ -168,6 +149,43 @@ namespace QuanLyQuanCaffe
             this.miNhapCongThuc.Size = new System.Drawing.Size(180, 22);
             this.miNhapCongThuc.Text = "Nhập công thức";
             this.miNhapCongThuc.Click += new System.EventHandler(this.miNhapCongThuc_Click);
+            // 
+            // miThongTin
+            // 
+            this.miThongTin.Checked = true;
+            this.miThongTin.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.miThongTin.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miSinhVienThucHien});
+            this.miThongTin.Name = "miThongTin";
+            this.miThongTin.Size = new System.Drawing.Size(70, 20);
+            this.miThongTin.Text = "Thông tin";
+            // 
+            // miSinhVienThucHien
+            // 
+            this.miSinhVienThucHien.Name = "miSinhVienThucHien";
+            this.miSinhVienThucHien.Size = new System.Drawing.Size(175, 22);
+            this.miSinhVienThucHien.Text = "Sinh viên thực hiện";
+            // 
+            // miThoat
+            // 
+            this.miThoat.Name = "miThoat";
+            this.miThoat.Size = new System.Drawing.Size(110, 20);
+            this.miThoat.Text = "Thoát phần mềm";
+            this.miThoat.Click += new System.EventHandler(this.miThoat_Click);
+            // 
+            // miQuanLyMonAn
+            // 
+            this.miQuanLyMonAn.Name = "miQuanLyMonAn";
+            this.miQuanLyMonAn.Size = new System.Drawing.Size(180, 22);
+            this.miQuanLyMonAn.Text = "Quản lý món ăn";
+            this.miQuanLyMonAn.Click += new System.EventHandler(this.miQuanLyMonAn_Click);
+            // 
+            // miQuanLyBanHang
+            // 
+            this.miQuanLyBanHang.Name = "miQuanLyBanHang";
+            this.miQuanLyBanHang.Size = new System.Drawing.Size(180, 22);
+            this.miQuanLyBanHang.Text = "Quản lý bán hàng";
+            this.miQuanLyBanHang.Click += new System.EventHandler(this.miQuanLyBanHang_Click);
             // 
             // frmMain
             // 
@@ -204,5 +222,7 @@ namespace QuanLyQuanCaffe
         private System.Windows.Forms.ToolStripMenuItem miNhapKho;
         private System.Windows.Forms.ToolStripMenuItem miNhapNguyenLieu;
         private System.Windows.Forms.ToolStripMenuItem miNhapCongThuc;
+        private System.Windows.Forms.ToolStripMenuItem miQuanLyMonAn;
+        private System.Windows.Forms.ToolStripMenuItem miQuanLyBanHang;
     }
 }

@@ -93,7 +93,8 @@ namespace QuanLyQuanCaffe
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
-        {            MonAn m1 = model.MonAn.FirstOrDefault(c => c.ma.ToString() == txtMaMonAn.Text);
+        {            
+            MonAn m1 = model.MonAn.FirstOrDefault(c => c.ma.ToString() == txtMaMonAn.Text);
             if(m1 == null)
             {
                 MonAn m = new MonAn();
@@ -111,7 +112,10 @@ namespace QuanLyQuanCaffe
                 m1.maDonVi = Convert.ToInt32(cbDonVi.SelectedValue);
             }
             model.SaveChanges();
-            BildingToDataGirdView(model.MonAn.ToList());
+            BildingToDataGirdView(model.MonAn.ToList()); 
+            ButtonLock(false);
+            TB_CBLock(false);
+            TB_CBNull();
         }
 
         private void btnHuy_Cick(object sender, EventArgs e)

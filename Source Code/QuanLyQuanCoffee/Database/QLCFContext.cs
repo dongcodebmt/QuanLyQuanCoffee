@@ -26,7 +26,6 @@ namespace QuanLyQuanCaffe.Database
         public virtual DbSet<PhieuNhap> PhieuNhap { get; set; }
         public virtual DbSet<PhieuNhapNN> PhieuNhapNN { get; set; }
         public virtual DbSet<Quyen> Quyen { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoan { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -57,9 +56,8 @@ namespace QuanLyQuanCaffe.Database
 
             modelBuilder.Entity<KhuyenMai>()
                 .HasMany(e => e.HoaDon)
-                .WithRequired(e => e.KhuyenMai)
-                .HasForeignKey(e => e.maKhuyenMai)
-                .WillCascadeOnDelete(false);
+                .WithOptional(e => e.KhuyenMai)
+                .HasForeignKey(e => e.maKhuyenMai);
 
             modelBuilder.Entity<LoaiMonAn>()
                 .HasMany(e => e.MonAn)

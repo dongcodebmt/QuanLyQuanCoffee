@@ -22,7 +22,7 @@ namespace QuanLyQuanCaffe.Database
         [StringLength(255)]
         public string ten { get; set; }
 
-        public int trangThai { get; set; }
+        public bool trangThai { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HoaDon> HoaDon { get; set; }

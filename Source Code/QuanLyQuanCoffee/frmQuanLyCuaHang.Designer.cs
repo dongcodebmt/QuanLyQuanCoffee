@@ -1,7 +1,7 @@
 ﻿
 namespace QuanLyQuanCaffe
 {
-    partial class frmQuanLyBanHang
+    partial class frmQuanLyCuaHang
     {
         /// <summary>
         /// Required designer variable.
@@ -29,30 +29,74 @@ namespace QuanLyQuanCaffe
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuanLyBanHang));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuanLyCuaHang));
+            this.dataCTHD = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dataBan = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.cbMonAn = new System.Windows.Forms.ComboBox();
             this.nmFoodCount = new System.Windows.Forms.NumericUpDown();
             this.btnAddFood = new System.Windows.Forms.Button();
             this.btnSwitchTable = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lbTotalPrice = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.cbKhuyenMai = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lbTotalPrice = new System.Windows.Forms.Label();
             this.txbTongTien = new System.Windows.Forms.TextBox();
             this.btnCheckout = new System.Windows.Forms.Button();
-            this.flpBan = new System.Windows.Forms.FlowLayoutPanel();
-            this.lsvCTHD = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmFoodCount)).BeginInit();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // dataCTHD
+            // 
+            this.dataCTHD.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.dataCTHD.GridLines = true;
+            this.dataCTHD.HideSelection = false;
+            this.dataCTHD.Location = new System.Drawing.Point(12, 12);
+            this.dataCTHD.Name = "dataCTHD";
+            this.dataCTHD.Size = new System.Drawing.Size(395, 358);
+            this.dataCTHD.TabIndex = 17;
+            this.dataCTHD.UseCompatibleStateImageBehavior = false;
+            this.dataCTHD.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Tên món ăn";
+            this.columnHeader1.Width = 196;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Số lượng";
+            this.columnHeader2.Width = 56;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Giá";
+            this.columnHeader3.Width = 63;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Tổng tiền";
+            this.columnHeader4.Width = 78;
+            // 
+            // dataBan
+            // 
+            this.dataBan.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataBan.Location = new System.Drawing.Point(428, 14);
+            this.dataBan.Name = "dataBan";
+            this.dataBan.Size = new System.Drawing.Size(443, 356);
+            this.dataBan.TabIndex = 16;
             // 
             // panel2
             // 
@@ -61,10 +105,10 @@ namespace QuanLyQuanCaffe
             this.panel2.Controls.Add(this.nmFoodCount);
             this.panel2.Controls.Add(this.btnAddFood);
             this.panel2.Controls.Add(this.btnSwitchTable);
-            this.panel2.Location = new System.Drawing.Point(12, 395);
+            this.panel2.Location = new System.Drawing.Point(12, 384);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(398, 70);
-            this.panel2.TabIndex = 10;
+            this.panel2.TabIndex = 14;
             // 
             // label1
             // 
@@ -122,6 +166,36 @@ namespace QuanLyQuanCaffe
             this.btnSwitchTable.Text = "Chuyển bàn";
             this.btnSwitchTable.UseVisualStyleBackColor = true;
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.button2);
+            this.panel4.Controls.Add(this.cbKhuyenMai);
+            this.panel4.Controls.Add(this.button1);
+            this.panel4.Controls.Add(this.lbTotalPrice);
+            this.panel4.Controls.Add(this.txbTongTien);
+            this.panel4.Controls.Add(this.btnCheckout);
+            this.panel4.Location = new System.Drawing.Point(416, 376);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(458, 78);
+            this.panel4.TabIndex = 15;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(22, 8);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Khuyến mãi";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // cbKhuyenMai
+            // 
+            this.cbKhuyenMai.FormattingEnabled = true;
+            this.cbKhuyenMai.Location = new System.Drawing.Point(3, 34);
+            this.cbKhuyenMai.Name = "cbKhuyenMai";
+            this.cbKhuyenMai.Size = new System.Drawing.Size(121, 21);
+            this.cbKhuyenMai.TabIndex = 10;
+            // 
             // button1
             // 
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
@@ -143,36 +217,6 @@ namespace QuanLyQuanCaffe
             this.lbTotalPrice.TabIndex = 9;
             this.lbTotalPrice.Text = "Tổng cộng";
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.button2);
-            this.panel4.Controls.Add(this.cbKhuyenMai);
-            this.panel4.Controls.Add(this.button1);
-            this.panel4.Controls.Add(this.lbTotalPrice);
-            this.panel4.Controls.Add(this.txbTongTien);
-            this.panel4.Controls.Add(this.btnCheckout);
-            this.panel4.Location = new System.Drawing.Point(416, 387);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(458, 78);
-            this.panel4.TabIndex = 11;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(22, 8);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Khuyến mãi";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // cbKhuyenMai
-            // 
-            this.cbKhuyenMai.FormattingEnabled = true;
-            this.cbKhuyenMai.Location = new System.Drawing.Point(3, 34);
-            this.cbKhuyenMai.Name = "cbKhuyenMai";
-            this.cbKhuyenMai.Size = new System.Drawing.Size(121, 21);
-            this.cbKhuyenMai.TabIndex = 10;
-            // 
             // txbTongTien
             // 
             this.txbTongTien.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -193,67 +237,19 @@ namespace QuanLyQuanCaffe
             this.btnCheckout.TabIndex = 3;
             this.btnCheckout.Text = "Thanh toán";
             this.btnCheckout.UseVisualStyleBackColor = true;
-            this.btnCheckout.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
-            // flpBan
-            // 
-            this.flpBan.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.flpBan.Location = new System.Drawing.Point(428, 25);
-            this.flpBan.Name = "flpBan";
-            this.flpBan.Size = new System.Drawing.Size(443, 356);
-            this.flpBan.TabIndex = 12;
-            // 
-            // lsvCTHD
-            // 
-            this.lsvCTHD.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
-            this.lsvCTHD.GridLines = true;
-            this.lsvCTHD.HideSelection = false;
-            this.lsvCTHD.Location = new System.Drawing.Point(12, 23);
-            this.lsvCTHD.Name = "lsvCTHD";
-            this.lsvCTHD.Size = new System.Drawing.Size(395, 358);
-            this.lsvCTHD.TabIndex = 13;
-            this.lsvCTHD.UseCompatibleStateImageBehavior = false;
-            this.lsvCTHD.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Tên món ăn";
-            this.columnHeader1.Width = 196;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Số lượng";
-            this.columnHeader2.Width = 56;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Giá";
-            this.columnHeader3.Width = 63;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Tổng tiền";
-            this.columnHeader4.Width = 78;
-            // 
-            // frmQuanLyBanHang
+            // frmQuanLyCuaHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(902, 476);
-            this.Controls.Add(this.lsvCTHD);
-            this.Controls.Add(this.flpBan);
+            this.ClientSize = new System.Drawing.Size(888, 463);
+            this.Controls.Add(this.dataCTHD);
+            this.Controls.Add(this.dataBan);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
-            this.Name = "frmQuanLyBanHang";
-            this.Text = "QuanLyBanHang";
-            this.TransparencyKey = System.Drawing.Color.White;
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
-            this.Load += new System.EventHandler(this.QuanLyBanHang_Load);
+            this.Name = "frmQuanLyCuaHang";
+            this.Text = "Quản lý cửa hàng";
+            this.Load += new System.EventHandler(this.frmQuanLyCuaHang_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmFoodCount)).EndInit();
@@ -265,24 +261,24 @@ namespace QuanLyQuanCaffe
 
         #endregion
 
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.NumericUpDown nmFoodCount;
-        private System.Windows.Forms.Button btnAddFood;
-        private System.Windows.Forms.Button btnSwitchTable;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label lbTotalPrice;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox txbTongTien;
-        private System.Windows.Forms.Button btnCheckout;
-        private System.Windows.Forms.FlowLayoutPanel flpBan;
-        private System.Windows.Forms.ComboBox cbMonAn;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox cbKhuyenMai;
-        private System.Windows.Forms.ListView lsvCTHD;
+        private System.Windows.Forms.ListView dataCTHD;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.FlowLayoutPanel dataBan;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbMonAn;
+        private System.Windows.Forms.NumericUpDown nmFoodCount;
+        private System.Windows.Forms.Button btnAddFood;
+        private System.Windows.Forms.Button btnSwitchTable;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox cbKhuyenMai;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lbTotalPrice;
+        private System.Windows.Forms.TextBox txbTongTien;
+        private System.Windows.Forms.Button btnCheckout;
     }
 }

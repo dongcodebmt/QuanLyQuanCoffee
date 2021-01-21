@@ -142,5 +142,25 @@ namespace QuanLyQuanCaffe
                 frm.Show();
             }
         }
+
+        private void miQuanLyMonAn_Click(object sender, EventArgs e)
+        {
+            if (!CheckForm("frmQuanLyMonAn"))
+            {
+                frmQuanLyMonAn frm = new frmQuanLyMonAn();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
+
+        private void miQuanLyBanHang_Click(object sender, EventArgs e)
+        {
+            if (!CheckForm("frmQuanLyCuaHang"))
+            {
+                frmQuanLyCuaHang frm = new frmQuanLyCuaHang();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
     }
 }
