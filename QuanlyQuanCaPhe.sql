@@ -15,7 +15,7 @@ CREATE TABLE TaiKhoan
 	hoTen NVARCHAR(255) NOT NULL DEFAULT N'Chưa đặt tên',
 	namSinh NVARCHAR(255) NOT NULL,
 	SDT NVARCHAR(255) NOT NULL,
-	gioiTinh INT NOT NULL DEFAULT 0, --Nam
+	gioiTinh NVARCHAR(255) NOT NULL DEFAULT N'Không xác định',
 	trangThai BIT NOT NULL DEFAULT 1 -- tài khoảng đang hoạt động,
 	--type int not null default 0
 )
@@ -28,7 +28,7 @@ CREATE TABLE Quyen
 
 CREATE TABLE PhanQuyen
 (
-	id INT NOT NULL IDENTITY UNIQUE,
+	ma INT NOT NULL IDENTITY PRIMARY KEY,
 	maTaiKhoan INT NOT NULL,
 	maPhanQuyen INT NOT NULL,
 	--PRIMARY KEY (maTaiKhoan,maPhanQuyen),
@@ -81,6 +81,7 @@ CREATE TABLE KhuyenMai
 (
 	ma INT IDENTITY PRIMARY KEY,
 	ten NVARCHAR(255) NOT NULL DEFAULT N'Chưa đặt tên',
+	maKhyenMai NVARCHAR(255) NOT NULL UNIQUE,
 	tyLe FLOAT NOT NULL,
 	CHECK (tyLe >= 0 AND tyLe <= 100)
 )

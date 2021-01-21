@@ -29,8 +29,9 @@ namespace QuanLyQuanCaffe
         {
             miDangNhap.Enabled = !isLock;
             miThongTinTaiKhoan.Enabled = isLock;
+            miDoiMatKhau.Enabled = isLock;
             miDangXuat.Enabled = isLock;
-            miQuanLyTaiKhoan.Enabled = isLock;
+            miQuanLyCuaHang.Enabled = isLock;
             miXuatNhapKho.Enabled = isLock;
         }
 
@@ -107,6 +108,36 @@ namespace QuanLyQuanCaffe
             if (!CheckForm("frmQuanLyTaiKhoan"))
             {
                 frmQuanLyTaiKhoan frm = new frmQuanLyTaiKhoan();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
+
+        private void miNhapKho_Click(object sender, EventArgs e)
+        {
+            if (!CheckForm("frmNhapKho"))
+            {
+                frmNhapKho frm = new frmNhapKho();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
+
+        private void miNhapNguyenLieu_Click(object sender, EventArgs e)
+        {
+            if (!CheckForm("frmNhapNguyenLieu"))
+            {
+                frmNhapNguyenLieu frm = new frmNhapNguyenLieu();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
+
+        private void miNhapCongThuc_Click(object sender, EventArgs e)
+        {
+            if (!CheckForm("frmNhapCongThuc"))
+            {
+                frmNhapCongThuc frm = new frmNhapCongThuc();
                 frm.MdiParent = this;
                 frm.Show();
             }

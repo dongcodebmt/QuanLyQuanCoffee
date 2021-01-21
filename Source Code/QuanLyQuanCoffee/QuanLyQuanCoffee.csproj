@@ -75,31 +75,45 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\Ban.cs" />
+    <Compile Include="Database\CongThuc.cs" />
     <Compile Include="Database\CTHD.cs" />
     <Compile Include="Database\DonVi.cs" />
     <Compile Include="Database\HoaDon.cs" />
+    <Compile Include="Database\Kho.cs" />
     <Compile Include="Database\KhuyenMai.cs" />
     <Compile Include="Database\LoaiMonAn.cs" />
     <Compile Include="Database\MonAn.cs" />
-    <Compile Include="Database\NhaCungCap.cs" />
+    <Compile Include="Database\NguyenLieu.cs" />
     <Compile Include="Database\PhanQuyen.cs" />
     <Compile Include="Database\PhieuNhap.cs" />
+    <Compile Include="Database\PhieuNhapNN.cs" />
     <Compile Include="Database\QLCFContext.cs" />
     <Compile Include="Database\Quyen.cs" />
     <Compile Include="Database\sysdiagrams.cs" />
     <Compile Include="Database\TaiKhoan.cs" />
-    <Compile Include="Database\ThongTinPhieuNhap.cs" />
+    <Compile Include="frmNhapKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhapKho.Designer.cs">
+      <DependentUpon>frmNhapKho.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQuanLyKho.cs">
+    <Compile Include="frmNhapCongThuc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQuanLyKho.Designer.cs">
-      <DependentUpon>frmQuanLyKho.cs</DependentUpon>
+    <Compile Include="frmNhapCongThuc.Designer.cs">
+      <DependentUpon>frmNhapCongThuc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhapNguyenLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhapNguyenLieu.Designer.cs">
+      <DependentUpon>frmNhapNguyenLieu.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDoiMatKhau.cs">
       <SubType>Form</SubType>
@@ -118,6 +132,12 @@
     </Compile>
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanLyKhuyenMai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLyKhuyenMai.Designer.cs">
+      <DependentUpon>frmQuanLyKhuyenMai.cs</DependentUpon>
     </Compile>
     <Compile Include="frmQuanLyQuanCaffe.cs">
       <SubType>Form</SubType>
@@ -145,8 +165,17 @@
     <Compile Include="frmQuanLyMonAn.Designer.cs">
       <DependentUpon>frmQuanLyMonAn.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmQuanLyKho.resx">
-      <DependentUpon>frmQuanLyKho.cs</DependentUpon>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhapKho.resx">
+      <DependentUpon>frmNhapKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhapCongThuc.resx">
+      <DependentUpon>frmNhapCongThuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhapNguyenLieu.resx">
+      <DependentUpon>frmNhapNguyenLieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
@@ -156,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLyKhuyenMai.resx">
+      <DependentUpon>frmQuanLyKhuyenMai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLyQuanCaffe.resx">
       <DependentUpon>frmQuanLyQuanCaffe.cs</DependentUpon>

@@ -29,7 +29,6 @@ namespace QuanLyQuanCaffe
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.menuMain = new System.Windows.Forms.MenuStrip();
             this.miTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
             this.miDangNhap = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,11 +36,14 @@ namespace QuanLyQuanCaffe
             this.miDoiMatKhau = new System.Windows.Forms.ToolStripMenuItem();
             this.miDangXuat = new System.Windows.Forms.ToolStripMenuItem();
             this.miQuanLyCuaHang = new System.Windows.Forms.ToolStripMenuItem();
-            this.miXuatNhapKho = new System.Windows.Forms.ToolStripMenuItem();
-            this.miThoat = new System.Windows.Forms.ToolStripMenuItem();
-            this.thôngTinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sinhViênThựcHiệnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miQuanLyTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
+            this.miXuatNhapKho = new System.Windows.Forms.ToolStripMenuItem();
+            this.miThongTin = new System.Windows.Forms.ToolStripMenuItem();
+            this.miSinhVienThucHien = new System.Windows.Forms.ToolStripMenuItem();
+            this.miThoat = new System.Windows.Forms.ToolStripMenuItem();
+            this.miNhapKho = new System.Windows.Forms.ToolStripMenuItem();
+            this.miNhapNguyenLieu = new System.Windows.Forms.ToolStripMenuItem();
+            this.miNhapCongThuc = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +53,7 @@ namespace QuanLyQuanCaffe
             this.miTaiKhoan,
             this.miQuanLyCuaHang,
             this.miXuatNhapKho,
-            this.thôngTinToolStripMenuItem,
+            this.miThongTin,
             this.miThoat});
             this.menuMain.Location = new System.Drawing.Point(0, 0);
             this.menuMain.Name = "menuMain";
@@ -67,7 +69,7 @@ namespace QuanLyQuanCaffe
             this.miDoiMatKhau,
             this.miDangXuat});
             this.miTaiKhoan.Name = "miTaiKhoan";
-            this.miTaiKhoan.Size = new System.Drawing.Size(85, 20);
+            this.miTaiKhoan.Size = new System.Drawing.Size(69, 20);
             this.miTaiKhoan.Text = "Tài khoản";
             // 
             // miDangNhap
@@ -103,37 +105,8 @@ namespace QuanLyQuanCaffe
             this.miQuanLyCuaHang.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miQuanLyTaiKhoan});
             this.miQuanLyCuaHang.Name = "miQuanLyCuaHang";
-            this.miQuanLyCuaHang.Size = new System.Drawing.Size(128, 20);
+            this.miQuanLyCuaHang.Size = new System.Drawing.Size(112, 20);
             this.miQuanLyCuaHang.Text = "Quản lý cửa hàng";
-            // 
-            // miXuatNhapKho
-            // 
-            this.miXuatNhapKho.Name = "miXuatNhapKho";
-            this.miXuatNhapKho.Size = new System.Drawing.Size(112, 20);
-            this.miXuatNhapKho.Text = "Xuất nhập kho";
-            // 
-            // miThoat
-            // 
-            this.miThoat.Name = "miThoat";
-            this.miThoat.Size = new System.Drawing.Size(126, 20);
-            this.miThoat.Text = "Thoát phần mềm";
-            this.miThoat.Click += new System.EventHandler(this.miThoat_Click);
-            // 
-            // thôngTinToolStripMenuItem
-            // 
-            this.thôngTinToolStripMenuItem.Checked = true;
-            this.thôngTinToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.thôngTinToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sinhViênThựcHiệnToolStripMenuItem});
-            this.thôngTinToolStripMenuItem.Name = "thôngTinToolStripMenuItem";
-            this.thôngTinToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
-            this.thôngTinToolStripMenuItem.Text = "Thông tin";
-            // 
-            // sinhViênThựcHiệnToolStripMenuItem
-            // 
-            this.sinhViênThựcHiệnToolStripMenuItem.Name = "sinhViênThựcHiệnToolStripMenuItem";
-            this.sinhViênThựcHiệnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.sinhViênThựcHiệnToolStripMenuItem.Text = "Sinh viên thực hiện";
             // 
             // miQuanLyTaiKhoan
             // 
@@ -141,6 +114,60 @@ namespace QuanLyQuanCaffe
             this.miQuanLyTaiKhoan.Size = new System.Drawing.Size(180, 22);
             this.miQuanLyTaiKhoan.Text = "Quản lý tài khoản";
             this.miQuanLyTaiKhoan.Click += new System.EventHandler(this.miQuanLyTaiKhoan_Click);
+            // 
+            // miXuatNhapKho
+            // 
+            this.miXuatNhapKho.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miNhapKho,
+            this.miNhapNguyenLieu,
+            this.miNhapCongThuc});
+            this.miXuatNhapKho.Name = "miXuatNhapKho";
+            this.miXuatNhapKho.Size = new System.Drawing.Size(96, 20);
+            this.miXuatNhapKho.Text = "Xuất nhập kho";
+            // 
+            // miThongTin
+            // 
+            this.miThongTin.Checked = true;
+            this.miThongTin.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.miThongTin.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miSinhVienThucHien});
+            this.miThongTin.Name = "miThongTin";
+            this.miThongTin.Size = new System.Drawing.Size(70, 20);
+            this.miThongTin.Text = "Thông tin";
+            // 
+            // miSinhVienThucHien
+            // 
+            this.miSinhVienThucHien.Name = "miSinhVienThucHien";
+            this.miSinhVienThucHien.Size = new System.Drawing.Size(180, 22);
+            this.miSinhVienThucHien.Text = "Sinh viên thực hiện";
+            // 
+            // miThoat
+            // 
+            this.miThoat.Name = "miThoat";
+            this.miThoat.Size = new System.Drawing.Size(110, 20);
+            this.miThoat.Text = "Thoát phần mềm";
+            this.miThoat.Click += new System.EventHandler(this.miThoat_Click);
+            // 
+            // miNhapKho
+            // 
+            this.miNhapKho.Name = "miNhapKho";
+            this.miNhapKho.Size = new System.Drawing.Size(180, 22);
+            this.miNhapKho.Text = "Nhập kho";
+            this.miNhapKho.Click += new System.EventHandler(this.miNhapKho_Click);
+            // 
+            // miNhapNguyenLieu
+            // 
+            this.miNhapNguyenLieu.Name = "miNhapNguyenLieu";
+            this.miNhapNguyenLieu.Size = new System.Drawing.Size(180, 22);
+            this.miNhapNguyenLieu.Text = "Nhập nguyên liệu";
+            this.miNhapNguyenLieu.Click += new System.EventHandler(this.miNhapNguyenLieu_Click);
+            // 
+            // miNhapCongThuc
+            // 
+            this.miNhapCongThuc.Name = "miNhapCongThuc";
+            this.miNhapCongThuc.Size = new System.Drawing.Size(180, 22);
+            this.miNhapCongThuc.Text = "Nhập công thức";
+            this.miNhapCongThuc.Click += new System.EventHandler(this.miNhapCongThuc_Click);
             // 
             // frmMain
             // 
@@ -171,8 +198,11 @@ namespace QuanLyQuanCaffe
         private System.Windows.Forms.ToolStripMenuItem miThongTinTaiKhoan;
         private System.Windows.Forms.ToolStripMenuItem miDangXuat;
         private System.Windows.Forms.ToolStripMenuItem miDoiMatKhau;
-        private System.Windows.Forms.ToolStripMenuItem thôngTinToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sinhViênThựcHiệnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem miThongTin;
+        private System.Windows.Forms.ToolStripMenuItem miSinhVienThucHien;
         private System.Windows.Forms.ToolStripMenuItem miQuanLyTaiKhoan;
+        private System.Windows.Forms.ToolStripMenuItem miNhapKho;
+        private System.Windows.Forms.ToolStripMenuItem miNhapNguyenLieu;
+        private System.Windows.Forms.ToolStripMenuItem miNhapCongThuc;
     }
 }

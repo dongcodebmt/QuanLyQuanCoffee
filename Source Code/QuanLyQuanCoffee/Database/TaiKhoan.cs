@@ -38,7 +38,9 @@ namespace QuanLyQuanCaffe.Database
         [StringLength(255)]
         public string SDT { get; set; }
 
-        public int gioiTinh { get; set; }
+        [Required]
+        [StringLength(255)]
+        public string gioiTinh { get; set; }
 
         public bool trangThai { get; set; }
 

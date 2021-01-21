@@ -29,8 +29,8 @@ namespace QuanLyQuanCaffe
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
+            this.dataMonAn = new System.Windows.Forms.DataGridView();
+            this.lbName = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -38,59 +38,70 @@ namespace QuanLyQuanCaffe
             this.cbLoaiMonAn = new System.Windows.Forms.ComboBox();
             this.txtTenMonAn = new System.Windows.Forms.TextBox();
             this.txtMaMonAn = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbDonVi = new System.Windows.Forms.Label();
+            this.lbLoai = new System.Windows.Forms.Label();
+            this.lbTenMon = new System.Windows.Forms.Label();
+            this.lbMaMon = new System.Windows.Forms.Label();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtGia = new System.Windows.Forms.TextBox();
+            this.lbGia = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataMonAn)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataMonAn
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(388, 134);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(657, 327);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.SelectionChanged);
+            this.dataMonAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataMonAn.Location = new System.Drawing.Point(291, 74);
+            this.dataMonAn.Margin = new System.Windows.Forms.Padding(2);
+            this.dataMonAn.Name = "dataMonAn";
+            this.dataMonAn.RowHeadersWidth = 51;
+            this.dataMonAn.RowTemplate.Height = 24;
+            this.dataMonAn.Size = new System.Drawing.Size(504, 301);
+            this.dataMonAn.TabIndex = 0;
+            this.dataMonAn.SelectionChanged += new System.EventHandler(this.SelectionChanged);
             // 
-            // label1
+            // lbName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(485, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(321, 49);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Quản lý món ăn";
+            this.lbName.AutoSize = true;
+            this.lbName.Font = new System.Drawing.Font("Times New Roman", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.Location = new System.Drawing.Point(268, 21);
+            this.lbName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(256, 40);
+            this.lbName.TabIndex = 1;
+            this.lbName.Text = "Quản lý món ăn";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnHuy);
+            this.groupBox1.Controls.Add(this.txtGia);
+            this.groupBox1.Controls.Add(this.btnLuu);
+            this.groupBox1.Controls.Add(this.lbGia);
             this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.btnThem);
             this.groupBox1.Controls.Add(this.cbDonVi);
             this.groupBox1.Controls.Add(this.cbLoaiMonAn);
             this.groupBox1.Controls.Add(this.txtTenMonAn);
             this.groupBox1.Controls.Add(this.txtMaMonAn);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(23, 134);
+            this.groupBox1.Controls.Add(this.lbDonVi);
+            this.groupBox1.Controls.Add(this.lbLoai);
+            this.groupBox1.Controls.Add(this.lbTenMon);
+            this.groupBox1.Controls.Add(this.lbMaMon);
+            this.groupBox1.Location = new System.Drawing.Point(11, 86);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(359, 327);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(269, 266);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin món ăn";
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(139, 278);
+            this.btnSua.Location = new System.Drawing.Point(149, 222);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
             this.btnSua.TabIndex = 6;
@@ -100,7 +111,8 @@ namespace QuanLyQuanCaffe
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(27, 278);
+            this.btnThem.Location = new System.Drawing.Point(45, 222);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
             this.btnThem.TabIndex = 5;
@@ -111,72 +123,81 @@ namespace QuanLyQuanCaffe
             // cbDonVi
             // 
             this.cbDonVi.FormattingEnabled = true;
-            this.cbDonVi.Location = new System.Drawing.Point(160, 206);
+            this.cbDonVi.Location = new System.Drawing.Point(97, 172);
+            this.cbDonVi.Margin = new System.Windows.Forms.Padding(2);
             this.cbDonVi.Name = "cbDonVi";
-            this.cbDonVi.Size = new System.Drawing.Size(121, 24);
+            this.cbDonVi.Size = new System.Drawing.Size(150, 21);
             this.cbDonVi.TabIndex = 4;
             // 
             // cbLoaiMonAn
             // 
             this.cbLoaiMonAn.FormattingEnabled = true;
-            this.cbLoaiMonAn.Location = new System.Drawing.Point(160, 157);
+            this.cbLoaiMonAn.Location = new System.Drawing.Point(97, 137);
+            this.cbLoaiMonAn.Margin = new System.Windows.Forms.Padding(2);
             this.cbLoaiMonAn.Name = "cbLoaiMonAn";
-            this.cbLoaiMonAn.Size = new System.Drawing.Size(121, 24);
+            this.cbLoaiMonAn.Size = new System.Drawing.Size(150, 21);
             this.cbLoaiMonAn.TabIndex = 4;
             // 
             // txtTenMonAn
             // 
-            this.txtTenMonAn.Location = new System.Drawing.Point(160, 110);
+            this.txtTenMonAn.Location = new System.Drawing.Point(97, 69);
+            this.txtTenMonAn.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenMonAn.Name = "txtTenMonAn";
-            this.txtTenMonAn.Size = new System.Drawing.Size(168, 22);
+            this.txtTenMonAn.Size = new System.Drawing.Size(150, 20);
             this.txtTenMonAn.TabIndex = 3;
             // 
             // txtMaMonAn
             // 
-            this.txtMaMonAn.Location = new System.Drawing.Point(160, 64);
+            this.txtMaMonAn.Location = new System.Drawing.Point(97, 35);
+            this.txtMaMonAn.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaMonAn.Name = "txtMaMonAn";
-            this.txtMaMonAn.Size = new System.Drawing.Size(168, 22);
+            this.txtMaMonAn.Size = new System.Drawing.Size(150, 20);
             this.txtMaMonAn.TabIndex = 3;
             // 
-            // label5
+            // lbDonVi
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(56, 209);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 17);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Đơn vị";
+            this.lbDonVi.AutoSize = true;
+            this.lbDonVi.Location = new System.Drawing.Point(17, 175);
+            this.lbDonVi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbDonVi.Name = "lbDonVi";
+            this.lbDonVi.Size = new System.Drawing.Size(38, 13);
+            this.lbDonVi.TabIndex = 3;
+            this.lbDonVi.Text = "Đơn vị";
             // 
-            // label4
+            // lbLoai
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(56, 160);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 17);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Loại món ăn";
+            this.lbLoai.AutoSize = true;
+            this.lbLoai.Location = new System.Drawing.Point(17, 140);
+            this.lbLoai.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbLoai.Name = "lbLoai";
+            this.lbLoai.Size = new System.Drawing.Size(65, 13);
+            this.lbLoai.TabIndex = 2;
+            this.lbLoai.Text = "Loại món ăn";
             // 
-            // label3
+            // lbTenMon
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(53, 110);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 17);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Tên món";
+            this.lbTenMon.AutoSize = true;
+            this.lbTenMon.Location = new System.Drawing.Point(17, 72);
+            this.lbTenMon.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbTenMon.Name = "lbTenMon";
+            this.lbTenMon.Size = new System.Drawing.Size(49, 13);
+            this.lbTenMon.TabIndex = 1;
+            this.lbTenMon.Text = "Tên món";
             // 
-            // label2
+            // lbMaMon
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(53, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 17);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Mã món ăn";
+            this.lbMaMon.AutoSize = true;
+            this.lbMaMon.Location = new System.Drawing.Point(17, 38);
+            this.lbMaMon.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbMaMon.Name = "lbMaMon";
+            this.lbMaMon.Size = new System.Drawing.Size(60, 13);
+            this.lbMaMon.TabIndex = 0;
+            this.lbMaMon.Text = "Mã món ăn";
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(275, 491);
+            this.btnLuu.Location = new System.Drawing.Point(45, 222);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 23);
             this.btnLuu.TabIndex = 3;
@@ -186,7 +207,8 @@ namespace QuanLyQuanCaffe
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(494, 491);
+            this.btnHuy.Location = new System.Drawing.Point(149, 222);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(2);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(75, 23);
             this.btnHuy.TabIndex = 3;
@@ -194,20 +216,37 @@ namespace QuanLyQuanCaffe
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Cick);
             // 
+            // txtGia
+            // 
+            this.txtGia.Location = new System.Drawing.Point(97, 103);
+            this.txtGia.Margin = new System.Windows.Forms.Padding(2);
+            this.txtGia.Name = "txtGia";
+            this.txtGia.Size = new System.Drawing.Size(150, 20);
+            this.txtGia.TabIndex = 8;
+            // 
+            // lbGia
+            // 
+            this.lbGia.AutoSize = true;
+            this.lbGia.Location = new System.Drawing.Point(17, 106);
+            this.lbGia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbGia.Name = "lbGia";
+            this.lbGia.Size = new System.Drawing.Size(23, 13);
+            this.lbGia.TabIndex = 7;
+            this.lbGia.Text = "Giá";
+            // 
             // frmQuanLyMonAn
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1075, 526);
-            this.Controls.Add(this.btnHuy);
-            this.Controls.Add(this.btnLuu);
+            this.ClientSize = new System.Drawing.Size(806, 394);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.lbName);
+            this.Controls.Add(this.dataMonAn);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmQuanLyMonAn";
             this.Text = "QuanLyMonAn";
             this.Load += new System.EventHandler(this.QuanLyMonAn_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataMonAn)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -217,13 +256,13 @@ namespace QuanLyQuanCaffe
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataMonAn;
+        private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbDonVi;
+        private System.Windows.Forms.Label lbLoai;
+        private System.Windows.Forms.Label lbTenMon;
+        private System.Windows.Forms.Label lbMaMon;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.ComboBox cbDonVi;
@@ -232,5 +271,7 @@ namespace QuanLyQuanCaffe
         private System.Windows.Forms.TextBox txtMaMonAn;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.TextBox txtGia;
+        private System.Windows.Forms.Label lbGia;
     }
 }

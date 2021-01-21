@@ -22,38 +22,36 @@ namespace QuanLyQuanCaffe
 
         private void QuanLyMonAn_Load(object sender, EventArgs e)
         {
-            List<MonAn> listMonAn = model.MonAn.ToList();
-            List<LoaiMonAn> listLoaiMonAn = model.LoaiMonAn.ToList();
-            List<DonVi> listDonVi = model.DonVi.ToList();
-            FillComboBoxLoaiMonAn(listLoaiMonAn);
-            FillComboBoxDonVi(listDonVi);
-            BildingToDataGirdView(listMonAn);
-            txtMaMonAn.ReadOnly = true;
-            btnLuu.Visible = false;
-            btnHuy.Visible = false;
-            Setting();
-            ReadOnlyAll();
+            FillComboBoxLoaiMonAn(model.LoaiMonAn.ToList());
+            FillComboBoxDonVi(model.DonVi.ToList());
+            BildingToDataGirdView(model.MonAn.ToList());
+            DataSetting();
+            txtMaMonAn.Enabled = false;
+            ButtonLock(false);
+            TB_CBLock(false);
+            TB_CBNull();
 
         }
-        private void Setting()
+        private void DataSetting()
         {
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataMonAn.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
         private void BildingToDataGirdView(List<MonAn> listMonAn)
         {
             int STT = 1;
             DataTable dt = new DataTable();
             dt.Columns.Add("STT");
-            dt.Columns.Add("Mã Món Ăn");
-            dt.Columns.Add("Tên Món ăn");
+            dt.Columns.Add("Mã món ăn");
+            dt.Columns.Add("Tên món ăn");
+            dt.Columns.Add("Giá");
             dt.Columns.Add("Loai Món ăn");
             dt.Columns.Add("Đơn vị");
             for (int i = 0; i < listMonAn.Count; i++,STT++)
             {
                 MonAn m = listMonAn[i];
-                dt.Rows.Add(new string[] { STT.ToString(), m.ma.ToString(), m.ten, m.LoaiMonAn.ten, m.DonVi.ten });
+                dt.Rows.Add(new string[] { STT.ToString(), m.ma.ToString(), m.ten, m.gia.ToString(), m.LoaiMonAn.ten, m.DonVi.ten });
             }
-            dataGridView1.DataSource = dt;
+            dataMonAn.DataSource = dt;
         }
         private void FillComboBoxLoaiMonAn(List<LoaiMonAn> listLoaiMonAn)
         {
@@ -68,102 +66,82 @@ namespace QuanLyQuanCaffe
             cbDonVi.ValueMember = "ma";
         }
 
-        private void ReadOnlyAll()
-        {
-            
-            txtTenMonAn.ReadOnly = true;
-            cbLoaiMonAn.Enabled = false;
-            cbDonVi.Enabled = false;
-        }
-
-        private void UnReadOnlyAll()
-        {
-            
-            txtTenMonAn.ReadOnly = false;
-            cbLoaiMonAn.Enabled = true;
-            cbDonVi.Enabled = true;
-        }
-
         private void SelectionChanged(object sender, EventArgs e)
         {
-            if(dataGridView1.SelectedRows.Count >0 && dataGridView1.SelectedRows[0].Cells[0] != null)
+            if(dataMonAn.SelectedRows.Count >0 && dataMonAn.SelectedRows[0].Cells[0] != null)
             {
-                txtMaMonAn.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
-                txtTenMonAn.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
-                cbLoaiMonAn.SelectedIndex = cbLoaiMonAn.FindStringExact(dataGridView1.SelectedRows[0].Cells[3].Value.ToString());
-                cbDonVi.SelectedIndex = cbDonVi.FindStringExact(dataGridView1.SelectedRows[0].Cells[4].Value.ToString());
-
+                txtMaMonAn.Text = dataMonAn.SelectedRows[0].Cells[1].Value.ToString();
+                txtTenMonAn.Text = dataMonAn.SelectedRows[0].Cells[2].Value.ToString();
+                txtGia.Text = dataMonAn.SelectedRows[0].Cells[3].Value.ToString();
+                cbLoaiMonAn.SelectedIndex = cbLoaiMonAn.FindStringExact(dataMonAn.SelectedRows[0].Cells[4].Value.ToString());
+                cbDonVi.SelectedIndex = cbDonVi.FindStringExact(dataMonAn.SelectedRows[0].Cells[5].Value.ToString());
             }
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            UnReadOnlyAll();
-            btnThem.Visible = false;
-            btnSua.Visible = false;
-            btnLuu.Visible = true;
-            btnHuy.Visible = true;
-            SettingAllNull();
+            ButtonLock(true);
+            TB_CBLock(true);
+            TB_CBNull();
 
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            UnReadOnlyAll();
-            btnThem.Visible = false;
-            btnSua.Visible = false;
-            btnLuu.Visible = true;
-            btnHuy.Visible = true;
-            
+            ButtonLock(true);
+            TB_CBLock(true);
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
-        {
-            
-            
-            MonAn m1 = model.MonAn.FirstOrDefault(c => c.ma.ToString() == txtMaMonAn.Text);
+        {            MonAn m1 = model.MonAn.FirstOrDefault(c => c.ma.ToString() == txtMaMonAn.Text);
             if(m1 == null)
             {
                 MonAn m = new MonAn();
                 m.ten = txtTenMonAn.Text;
+                m.gia = decimal.Parse(txtGia.Text);
                 m.maLoaiMonAn = Convert.ToInt32(cbLoaiMonAn.SelectedValue);
                 m.maDonVi = Convert.ToInt32(cbDonVi.SelectedValue);
                 model.MonAn.Add(m);
-                
             }
             else
             {
-               
+                m1.gia = decimal.Parse(txtGia.Text);
                 m1.ten = txtTenMonAn.Text;
                 m1.maLoaiMonAn = Convert.ToInt32(cbLoaiMonAn.SelectedValue);
                 m1.maDonVi = Convert.ToInt32(cbDonVi.SelectedValue);
-                
-                
             }
             model.SaveChanges();
             BildingToDataGirdView(model.MonAn.ToList());
-            SettingAllNull();
-            btnThem.Visible = true;
-            btnSua.Visible = true;
-            btnLuu.Visible = false;
-            btnHuy.Visible = false;
         }
 
         private void btnHuy_Cick(object sender, EventArgs e)
         {
-            ReadOnlyAll();
-            SettingAllNull();
-            btnThem.Visible = true;
-            btnSua.Visible = true;
-            btnLuu.Visible = false;
-            btnHuy.Visible = false;
+            ButtonLock(false);
+            TB_CBLock(false);
+            TB_CBNull();
         }
-        private void SettingAllNull()
+
+        private void TB_CBLock(bool isLock)
         {
-            txtMaMonAn.Text = "";
-            txtTenMonAn.Text = "";
-            cbLoaiMonAn.SelectedIndex = 1;
-            cbDonVi.SelectedIndex = 1;
+            txtTenMonAn.Enabled = isLock;
+            txtGia.Enabled = isLock;
+            cbLoaiMonAn.Enabled = isLock;
+            cbDonVi.Enabled = isLock;
+        }
+        private void ButtonLock(bool isLock)
+        {
+            btnHuy.Visible = isLock;
+            btnLuu.Visible = isLock;
+            btnThem.Visible = !isLock;
+            btnSua.Visible = !isLock;
+        }
+        private void TB_CBNull()
+        {
+            txtMaMonAn.Text = null;
+            txtTenMonAn.Text = null;
+            txtGia.Text = null;
+            cbLoaiMonAn.SelectedItem = null;
+            cbDonVi.SelectedItem = null;
         }
     }
 }

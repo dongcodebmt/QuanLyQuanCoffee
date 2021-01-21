@@ -6,13 +6,14 @@ namespace QuanLyQuanCaffe.Database
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("NhaCungCap")]
-    public partial class NhaCungCap
+    [Table("NguyenLieu")]
+    public partial class NguyenLieu
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public NhaCungCap()
+        public NguyenLieu()
         {
-            ThongTinPhieuNhap = new HashSet<ThongTinPhieuNhap>();
+            CongThuc = new HashSet<CongThuc>();
+            PhieuNhapNN = new HashSet<PhieuNhapNN>();
         }
 
         [Key]
@@ -22,19 +23,12 @@ namespace QuanLyQuanCaffe.Database
         [StringLength(255)]
         public string ten { get; set; }
 
-        [Required]
-        [StringLength(255)]
-        public string diaChi { get; set; }
-
-        [Required]
-        [StringLength(255)]
-        public string SDT { get; set; }
-
-        [Required]
-        [StringLength(255)]
-        public string email { get; set; }
+        public double trongLuong { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ThongTinPhieuNhap> ThongTinPhieuNhap { get; set; }
+        public virtual ICollection<CongThuc> CongThuc { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PhieuNhapNN> PhieuNhapNN { get; set; }
     }
 }
