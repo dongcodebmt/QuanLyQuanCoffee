@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyQuanCaffe.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,13 @@ namespace QuanLyQuanCaffe
 {
     public partial class frmQuanLyQuanCaffe : Form
     {
+        QLCFContext model;
         public frmQuanLyQuanCaffe()
         {
+            model = new QLCFContext();
+            List<Ban> listBan = model.Ban.ToList();
             InitializeComponent();
+            LoadTable(listBan);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -45,6 +50,23 @@ namespace QuanLyQuanCaffe
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+        private void LoadTable(List<Ban> listBan)
+        {
+            foreach(Ban item in listBan)
+            {
+                Button btn = new Button() { Width = 80, Height = 80};
+                string i;
+                if (item.trangThai == 1)
+                {
+                    i = "Có người";
+                }
+                else
+                    i = "Trống";
+                btn.Text = item.ten + Environment.NewLine + i;
+                flpBan.Controls.Add(btn);
+                
+            }    
         }
     }
 }

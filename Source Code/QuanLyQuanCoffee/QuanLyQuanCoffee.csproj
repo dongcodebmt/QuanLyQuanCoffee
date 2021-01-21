@@ -165,18 +165,12 @@
     <Compile Include="frmQuanLyMonAn.Designer.cs">
       <DependentUpon>frmQuanLyMonAn.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmNhapKho.resx">
-      <DependentUpon>frmNhapKho.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmNhapCongThuc.resx">
-      <DependentUpon>frmNhapCongThuc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmNhapNguyenLieu.resx">
-      <DependentUpon>frmNhapNguyenLieu.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="frmQuanLyBanHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLyBanHang.Designer.cs">
+      <DependentUpon>frmQuanLyBanHang.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLyMonAn.resx">
       <DependentUpon>frmQuanLyMonAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLyBanHang.resx">
+      <DependentUpon>frmQuanLyBanHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThongKeDoanhThu.rdlc" />
     <EmbeddedResource Include="ThongTinQuanCoffee.rdlc" />
