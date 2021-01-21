@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnAddFood.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnThemMon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAA7NJREFUWEe1
         l1tIU3Ecx313GiiWIKggJnNS7tY2Ny9hK00tELF8ECWwdY8eQiPIty4E+bBZRhB4e6qniKgsu9LFStA1
@@ -139,7 +139,7 @@
         QHHFH6fefRZAMzKmRWYgbqptJNAg4ec5Dkevx25qHS7jV7iEkZT0F0qOtoVbr+sbAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnInHD.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAACL5JREFUWEfV
         lglQVFcWhjXjloAKuAyLrRAQTEBWRUB2EBoUlygqQREjGgERCCCKYzSuY3SUEdQgGCOiRB3BJYiKNiAg

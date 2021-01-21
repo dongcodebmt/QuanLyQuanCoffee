@@ -14,6 +14,7 @@ namespace QuanLyQuanCaffe
     public partial class frmQuanLyCuaHang : Form
     {
         QLCFContext model;
+        private static int maBanHT;
         public frmQuanLyCuaHang()
         {
             InitializeComponent();
@@ -29,14 +30,15 @@ namespace QuanLyQuanCaffe
 
         private void LoadTableBtn(List<Ban> listBan)
         {
-
             foreach (Ban item in listBan)
             {
                 Button btn = new Button() { Width = 80, Height = 80 };
                 string i;
                 btn.Click += Btn_Click;
                 btn.Tag = item;
-                if (item.trangThai == true)
+                HoaDon hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == item.ma && c.ngayRa == null);
+                //if (item.trangThai == true)
+                if (hoaDon != null)
                 {
                     i = "Có người";
                     btn.BackColor = Color.HotPink;
@@ -47,38 +49,39 @@ namespace QuanLyQuanCaffe
                     btn.BackColor = Color.Blue;
                 }
                 btn.Text = item.ten + Environment.NewLine + i;
-                dataBan.Controls.Add(btn);
+                lsvBan.Controls.Add(btn);
             }
         }
         private void Btn_Click(object sender, EventArgs e)
         {
             int maBan = ((sender as Button).Tag as Ban).ma;
+            maBanHT = maBan;
             ShowHoaDon(maBan);
         }
         private void ShowHoaDon(int id)
         {
-            dataCTHD.Items.Clear();
+            lsvCTHD.Items.Clear();
             HoaDon hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == id && c.ngayRa == null);
             if (hoaDon != null)
             {
                 int maHD = hoaDon.ma;
                 List<CTHD> listCT = model.CTHD.Where(c => c.maHoaDon == maHD).ToList();
-                decimal tongtien = 0;
+                decimal tongTien = 0;
                 foreach (CTHD item in listCT)
                 {
                     ListViewItem lsvItem = new ListViewItem(item.MonAn.ten);
                     lsvItem.SubItems.Add(item.soLuong.ToString());
-                    decimal giatien = Decimal.Round(item.MonAn.gia, 2);
-                    lsvItem.SubItems.Add(giatien.ToString());
+                    decimal giaTien = Decimal.Round(item.MonAn.gia, 2);
+                    lsvItem.SubItems.Add(giaTien.ToString());
 
                     decimal tong = (item.soLuong * item.MonAn.gia);
-                    tongtien += tong;
+                    tongTien += tong;
                     decimal rounded = Decimal.Round(tong, 2);
                     lsvItem.SubItems.Add(rounded.ToString());
 
-                    dataCTHD.Items.Add(lsvItem);
+                    lsvCTHD.Items.Add(lsvItem);
                 }
-                decimal tongTienRound = Decimal.Round(tongtien, 2);
+                decimal tongTienRound = Decimal.Round(tongTien, 2);
                 txbTongTien.Text = tongTienRound.ToString();
             }
         }
@@ -93,6 +96,53 @@ namespace QuanLyQuanCaffe
             cbKhuyenMai.DataSource = listKhuyenMai;
             cbKhuyenMai.DisplayMember = "ten";
             cbKhuyenMai.ValueMember = "ma";
+        }
+
+        private void btnThemMon_Click(object sender, EventArgs e)
+        {
+            int maMon = Int32.Parse(cbMonAn.SelectedValue.ToString());
+            int SLMon = (int)nmSLMonAn.Value;
+            HoaDon hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == maBanHT && c.ngayRa == null);
+            if (hoaDon == null)
+            {
+                HoaDon HD = new HoaDon();
+                HD.ngayVao = DateTime.Now;
+                HD.ngayRa = null;
+                HD.maBan = maBanHT;
+                HD.maKhuyenMai = null;
+                HD.trangThai = false;
+                model.HoaDon.Add(HD);
+                model.SaveChanges();
+            }
+
+            hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == maBanHT && c.ngayRa == null);
+            CTHD cTHD = model.CTHD.FirstOrDefault(c => c.maHoaDon == hoaDon.ma && c.maMonAn == maMon);
+            if (cTHD != null)
+            {
+                cTHD.soLuong = cTHD.soLuong + SLMon;
+                model.SaveChanges();
+            }
+            else
+            {
+                CTHD x = new CTHD();
+                x.maHoaDon = hoaDon.ma;
+                x.maMonAn = maMon;
+                x.soLuong = SLMon;
+                model.CTHD.Add(x);
+                model.SaveChanges();
+            }
+            ShowHoaDon(maBanHT);
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            HoaDon hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == maBanHT && c.ngayRa == null);
+            if (hoaDon != null)
+            {
+                hoaDon.ngayRa = DateTime.Now;
+                model.SaveChanges();
+            }
+            LoadTableBtn(model.Ban.ToList());
         }
     }
 }
