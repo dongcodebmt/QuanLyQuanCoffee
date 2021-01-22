@@ -157,28 +157,28 @@ namespace QuanLyQuanCaffe
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            
-                HoaDon hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == maBanHT && c.ngayRa == null);
-                if (hoaDon != null)
+            HoaDon hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == maBanHT && c.ngayRa == null);
+            if (hoaDon != null)
+            {
+                var maKM = cbKhuyenMai.SelectedValue;
+
+                if (maKM != null)
                 {
-                    var maKM = cbKhuyenMai.SelectedValue;
-
-                    if (maKM != null)
-                    {
-                        hoaDon.ngayRa = DateTime.Now;
-                        hoaDon.maKhuyenMai = (int)maKM;
-                        hoaDon.trangThai = true;
-                    }
-                    else
-                    {
-                        hoaDon.ngayRa = DateTime.Now;
-                        hoaDon.trangThai = true;
-                    }
-
-                    model.SaveChanges();
+                    hoaDon.ngayRa = DateTime.Now;
+                    hoaDon.maKhuyenMai = (int)maKM;
+                    hoaDon.trangThai = true;
                 }
-                LoadTableBtn(model.Ban.ToList());
-            
+                else
+                {
+                    hoaDon.ngayRa = DateTime.Now;
+                    hoaDon.trangThai = true;
+                }
+
+                model.SaveChanges();
+            }
+            LoadTableBtn(model.Ban.ToList());
+            ShowHoaDon(maBanHT);
+            txbTongTien.Text = null;
         }
 
         private void btnKhuyenMai_Click(object sender, EventArgs e)
@@ -261,8 +261,8 @@ namespace QuanLyQuanCaffe
         private void btnChuyenBan_Click(object sender, EventArgs e)
         {
             int maBan = Int32.Parse(cbBan.SelectedValue.ToString());
-            HoaDon hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == maBan);
-            HoaDon hoaDonHT = model.HoaDon.FirstOrDefault(c => c.maBan == maBanHT);
+            HoaDon hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == maBan && c.ngayRa == null);
+            HoaDon hoaDonHT = model.HoaDon.FirstOrDefault(c => c.maBan == maBanHT && c.ngayRa == null);
             if (hoaDon == null)
             {
                 hoaDonHT.maBan = maBan;
