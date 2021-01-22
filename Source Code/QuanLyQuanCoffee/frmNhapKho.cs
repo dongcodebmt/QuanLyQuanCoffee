@@ -79,7 +79,7 @@ namespace QuanLyQuanCaffe
 
                 if (rbtnThung.Checked == true && txtSLLe.Text != "")
                 {
-                    soLuong = soLuong * Int32.Parse(txtSoLuong.Text);
+                    soLuong = soLuong * Int32.Parse(txtSLLe.Text);
                 }
                 else if (rbtnLe.Checked != true)
                 {

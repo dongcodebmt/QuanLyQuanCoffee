@@ -27,6 +27,7 @@ namespace QuanLyQuanCaffe
             LoadTableBtn(model.Ban.ToList());
             FillComboxMonAn(model.MonAn.ToList());
             FillComboxKhuyenMai(model.KhuyenMai.ToList());
+            FillDataToCBBan(model.Ban.ToList());
             cbKhuyenMai.SelectedItem = null;
         }
 
@@ -54,15 +55,14 @@ namespace QuanLyQuanCaffe
                 btn.Text = item.ten + Environment.NewLine + i;
                 lsvBan.Controls.Add(btn);
             }
-            btnThanhToan.Enabled = false;
-            btnThemMon.Enabled = false;
+            ButtonLock(false);
         }
         private void Btn_Click(object sender, EventArgs e)
         {
             int maBan = ((sender as Button).Tag as Ban).ma;
+            lbTenBan.Text = ((sender as Button).Tag as Ban).ten;
             maBanHT = maBan;
-            btnThanhToan.Enabled = true;
-            btnThemMon.Enabled = true;
+            ButtonLock(true);
             ShowHoaDon(maBan);
         }
         private void ShowHoaDon(int id)
@@ -103,7 +103,6 @@ namespace QuanLyQuanCaffe
             cbKhuyenMai.DataSource = listKhuyenMai;
             cbKhuyenMai.DisplayMember = "ten";
             cbKhuyenMai.ValueMember = "ma";
-            
         }
 
         private void btnThemMon_Click(object sender, EventArgs e)
@@ -153,8 +152,7 @@ namespace QuanLyQuanCaffe
                 ShowHoaDon(maBanHT);
                 LoadTableBtn(model.Ban.ToList());
             }
-            btnThanhToan.Enabled = true;
-            btnThemMon.Enabled = true;
+            ButtonLock(true);
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
@@ -250,6 +248,45 @@ namespace QuanLyQuanCaffe
             string query = "UPDATE NguyenLieu SET NguyenLieu.trongLuong = NguyenLieu.trongLuong - CongThuc.chiPhi*" + soLuong + " FROM MonAn, CongThuc, NguyenLieu WHERE MonAn.ma = maMon AND NguyenLieu.ma = maNguyenLieu AND MonAn.ma = " + maMon;
             _ = model.Database.ExecuteSqlCommand(query);
             return true;
+        }
+        private void ButtonLock(bool isLock)
+        {
+            btnThanhToan.Enabled = isLock;
+            btnThemMon.Enabled = isLock;
+            btnKhuyenMai.Enabled = isLock;
+            btnInHD.Enabled = isLock;
+            btnChuyenBan.Enabled = isLock;
+        }
+
+        private void btnChuyenBan_Click(object sender, EventArgs e)
+        {
+            int maBan = Int32.Parse(cbBan.SelectedValue.ToString());
+            HoaDon hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == maBan);
+            HoaDon hoaDonHT = model.HoaDon.FirstOrDefault(c => c.maBan == maBanHT);
+            if (hoaDon == null)
+            {
+                hoaDonHT.maBan = maBan;
+                model.SaveChanges();
+            }
+            else
+            {
+                List<CTHD> cTHDs = model.CTHD.Where(c => c.maHoaDon == hoaDonHT.ma).ToList();
+                foreach (var item in cTHDs)
+                {
+                    item.maHoaDon = hoaDon.ma;
+                }
+                model.HoaDon.Remove(hoaDonHT);
+                model.SaveChanges();
+            }
+            LoadTableBtn(model.Ban.ToList());
+            ShowHoaDon(maBanHT);
+        }
+
+        private void FillDataToCBBan(List<Ban> bans)
+        {
+            cbBan.DataSource = bans;
+            cbBan.DisplayMember = "ten";
+            cbBan.ValueMember = "ma";
         }
     }
 }

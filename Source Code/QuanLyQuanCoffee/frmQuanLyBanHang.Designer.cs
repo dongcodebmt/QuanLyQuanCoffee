@@ -37,19 +37,21 @@ namespace QuanLyQuanCaffe
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lsvBan = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lbSoLuong = new System.Windows.Forms.Label();
+            this.lbBan = new System.Windows.Forms.Label();
             this.lbMonAn = new System.Windows.Forms.Label();
             this.cbMonAn = new System.Windows.Forms.ComboBox();
             this.nmSLMonAn = new System.Windows.Forms.NumericUpDown();
             this.btnThemMon = new System.Windows.Forms.Button();
             this.btnChuyenBan = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnKhuyenMai = new System.Windows.Forms.Button();
             this.cbKhuyenMai = new System.Windows.Forms.ComboBox();
             this.btnInHD = new System.Windows.Forms.Button();
             this.btTongCong = new System.Windows.Forms.Label();
             this.txbTongTien = new System.Windows.Forms.TextBox();
             this.btnThanhToan = new System.Windows.Forms.Button();
-            this.btnKhuyenMai = new System.Windows.Forms.Button();
+            this.cbBan = new System.Windows.Forms.ComboBox();
+            this.lbTenBan = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmSLMonAn)).BeginInit();
             this.panel4.SuspendLayout();
@@ -64,9 +66,9 @@ namespace QuanLyQuanCaffe
             this.columnHeader4});
             this.lsvCTHD.GridLines = true;
             this.lsvCTHD.HideSelection = false;
-            this.lsvCTHD.Location = new System.Drawing.Point(12, 12);
+            this.lsvCTHD.Location = new System.Drawing.Point(12, 42);
             this.lsvCTHD.Name = "lsvCTHD";
-            this.lsvCTHD.Size = new System.Drawing.Size(398, 313);
+            this.lsvCTHD.Size = new System.Drawing.Size(398, 283);
             this.lsvCTHD.TabIndex = 17;
             this.lsvCTHD.UseCompatibleStateImageBehavior = false;
             this.lsvCTHD.View = System.Windows.Forms.View.Details;
@@ -101,7 +103,8 @@ namespace QuanLyQuanCaffe
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.lbSoLuong);
+            this.panel2.Controls.Add(this.cbBan);
+            this.panel2.Controls.Add(this.lbBan);
             this.panel2.Controls.Add(this.lbMonAn);
             this.panel2.Controls.Add(this.cbMonAn);
             this.panel2.Controls.Add(this.nmSLMonAn);
@@ -112,19 +115,19 @@ namespace QuanLyQuanCaffe
             this.panel2.Size = new System.Drawing.Size(398, 97);
             this.panel2.TabIndex = 14;
             // 
-            // lbSoLuong
+            // lbBan
             // 
-            this.lbSoLuong.AutoSize = true;
-            this.lbSoLuong.Location = new System.Drawing.Point(31, 66);
-            this.lbSoLuong.Name = "lbSoLuong";
-            this.lbSoLuong.Size = new System.Drawing.Size(49, 13);
-            this.lbSoLuong.TabIndex = 12;
-            this.lbSoLuong.Text = "Số lượng";
+            this.lbBan.AutoSize = true;
+            this.lbBan.Location = new System.Drawing.Point(3, 20);
+            this.lbBan.Name = "lbBan";
+            this.lbBan.Size = new System.Drawing.Size(26, 13);
+            this.lbBan.TabIndex = 12;
+            this.lbBan.Text = "Bàn";
             // 
             // lbMonAn
             // 
             this.lbMonAn.AutoSize = true;
-            this.lbMonAn.Location = new System.Drawing.Point(31, 18);
+            this.lbMonAn.Location = new System.Drawing.Point(3, 67);
             this.lbMonAn.Name = "lbMonAn";
             this.lbMonAn.Size = new System.Drawing.Size(43, 13);
             this.lbMonAn.TabIndex = 11;
@@ -133,14 +136,14 @@ namespace QuanLyQuanCaffe
             // cbMonAn
             // 
             this.cbMonAn.FormattingEnabled = true;
-            this.cbMonAn.Location = new System.Drawing.Point(86, 15);
+            this.cbMonAn.Location = new System.Drawing.Point(51, 63);
             this.cbMonAn.Name = "cbMonAn";
-            this.cbMonAn.Size = new System.Drawing.Size(204, 21);
+            this.cbMonAn.Size = new System.Drawing.Size(186, 21);
             this.cbMonAn.TabIndex = 7;
             // 
             // nmSLMonAn
             // 
-            this.nmSLMonAn.Location = new System.Drawing.Point(86, 61);
+            this.nmSLMonAn.Location = new System.Drawing.Point(243, 64);
             this.nmSLMonAn.Minimum = new decimal(new int[] {
             100,
             0,
@@ -160,7 +163,7 @@ namespace QuanLyQuanCaffe
             // 
             this.btnThemMon.Image = ((System.Drawing.Image)(resources.GetObject("btnThemMon.Image")));
             this.btnThemMon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemMon.Location = new System.Drawing.Point(296, 52);
+            this.btnThemMon.Location = new System.Drawing.Point(297, 52);
             this.btnThemMon.Name = "btnThemMon";
             this.btnThemMon.Size = new System.Drawing.Size(98, 42);
             this.btnThemMon.TabIndex = 2;
@@ -171,12 +174,13 @@ namespace QuanLyQuanCaffe
             // 
             // btnChuyenBan
             // 
-            this.btnChuyenBan.Location = new System.Drawing.Point(296, 3);
+            this.btnChuyenBan.Location = new System.Drawing.Point(297, 5);
             this.btnChuyenBan.Name = "btnChuyenBan";
-            this.btnChuyenBan.Size = new System.Drawing.Size(99, 42);
+            this.btnChuyenBan.Size = new System.Drawing.Size(98, 42);
             this.btnChuyenBan.TabIndex = 6;
             this.btnChuyenBan.Text = "Chuyển bàn";
             this.btnChuyenBan.UseVisualStyleBackColor = true;
+            this.btnChuyenBan.Click += new System.EventHandler(this.btnChuyenBan_Click);
             // 
             // panel4
             // 
@@ -190,6 +194,16 @@ namespace QuanLyQuanCaffe
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(436, 97);
             this.panel4.TabIndex = 15;
+            // 
+            // btnKhuyenMai
+            // 
+            this.btnKhuyenMai.Location = new System.Drawing.Point(207, 15);
+            this.btnKhuyenMai.Name = "btnKhuyenMai";
+            this.btnKhuyenMai.Size = new System.Drawing.Size(75, 23);
+            this.btnKhuyenMai.TabIndex = 11;
+            this.btnKhuyenMai.Text = "Khuyến mãi";
+            this.btnKhuyenMai.UseVisualStyleBackColor = true;
+            this.btnKhuyenMai.Click += new System.EventHandler(this.btnKhuyenMai_Click);
             // 
             // cbKhuyenMai
             // 
@@ -242,21 +256,30 @@ namespace QuanLyQuanCaffe
             this.btnThanhToan.UseVisualStyleBackColor = true;
             this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
-            // btnKhuyenMai
+            // cbBan
             // 
-            this.btnKhuyenMai.Location = new System.Drawing.Point(207, 15);
-            this.btnKhuyenMai.Name = "btnKhuyenMai";
-            this.btnKhuyenMai.Size = new System.Drawing.Size(75, 23);
-            this.btnKhuyenMai.TabIndex = 11;
-            this.btnKhuyenMai.Text = "Khuyến mãi";
-            this.btnKhuyenMai.UseVisualStyleBackColor = true;
-            this.btnKhuyenMai.Click += new System.EventHandler(this.btnKhuyenMai_Click);
+            this.cbBan.FormattingEnabled = true;
+            this.cbBan.Location = new System.Drawing.Point(51, 15);
+            this.cbBan.Name = "cbBan";
+            this.cbBan.Size = new System.Drawing.Size(186, 21);
+            this.cbBan.TabIndex = 13;
+            // 
+            // lbTenBan
+            // 
+            this.lbTenBan.AutoSize = true;
+            this.lbTenBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTenBan.Location = new System.Drawing.Point(12, 14);
+            this.lbTenBan.Name = "lbTenBan";
+            this.lbTenBan.Size = new System.Drawing.Size(209, 25);
+            this.lbTenBan.TabIndex = 18;
+            this.lbTenBan.Text = "Vui lòng chọn bàn!";
             // 
             // frmQuanLyBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 462);
+            this.Controls.Add(this.lbTenBan);
             this.Controls.Add(this.lsvCTHD);
             this.Controls.Add(this.lsvBan);
             this.Controls.Add(this.panel2);
@@ -270,6 +293,7 @@ namespace QuanLyQuanCaffe
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -293,7 +317,9 @@ namespace QuanLyQuanCaffe
         private System.Windows.Forms.Label btTongCong;
         private System.Windows.Forms.TextBox txbTongTien;
         private System.Windows.Forms.Button btnThanhToan;
-        private System.Windows.Forms.Label lbSoLuong;
+        private System.Windows.Forms.Label lbBan;
         private System.Windows.Forms.Button btnKhuyenMai;
+        private System.Windows.Forms.ComboBox cbBan;
+        private System.Windows.Forms.Label lbTenBan;
     }
 }
