@@ -54,11 +54,15 @@ namespace QuanLyQuanCaffe
                 btn.Text = item.ten + Environment.NewLine + i;
                 lsvBan.Controls.Add(btn);
             }
+            btnThanhToan.Enabled = false;
+            btnThemMon.Enabled = false;
         }
         private void Btn_Click(object sender, EventArgs e)
         {
             int maBan = ((sender as Button).Tag as Ban).ma;
             maBanHT = maBan;
+            btnThanhToan.Enabled = true;
+            btnThemMon.Enabled = true;
             ShowHoaDon(maBan);
         }
         private void ShowHoaDon(int id)
@@ -99,18 +103,24 @@ namespace QuanLyQuanCaffe
             cbKhuyenMai.DataSource = listKhuyenMai;
             cbKhuyenMai.DisplayMember = "ten";
             cbKhuyenMai.ValueMember = "ma";
+            
         }
 
         private void btnThemMon_Click(object sender, EventArgs e)
         {
+            int maMon = Int32.Parse(cbMonAn.SelectedValue.ToString());
+            int SLMon = (int)nmSLMonAn.Value;
+
             if (maBanHT == 0)
             {
                 MessageBox.Show("Vui lòng chọn bàn!");
-            } 
+            }
+            else if (!LayMonAn(maMon, SLMon))
+            {
+                MessageBox.Show("Đã hết món!");
+            }
             else
             {
-                int maMon = Int32.Parse(cbMonAn.SelectedValue.ToString());
-                int SLMon = (int)nmSLMonAn.Value;
                 HoaDon hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == maBanHT && c.ngayRa == null);
                 if (hoaDon == null)
                 {
@@ -141,27 +151,36 @@ namespace QuanLyQuanCaffe
                     model.SaveChanges();
                 }
                 ShowHoaDon(maBanHT);
-                LayMonAn(maMon, SLMon);
                 LoadTableBtn(model.Ban.ToList());
             }
+            btnThanhToan.Enabled = true;
+            btnThemMon.Enabled = true;
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            HoaDon hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == maBanHT && c.ngayRa == null);
-            if (hoaDon != null)
-            {
-                var maKM = cbKhuyenMai.SelectedValue;
-                if (maKM == null)
+            
+                HoaDon hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == maBanHT && c.ngayRa == null);
+                if (hoaDon != null)
                 {
-                    maKM = 0;
+                    var maKM = cbKhuyenMai.SelectedValue;
+
+                    if (maKM != null)
+                    {
+                        hoaDon.ngayRa = DateTime.Now;
+                        hoaDon.maKhuyenMai = (int)maKM;
+                        hoaDon.trangThai = true;
+                    }
+                    else
+                    {
+                        hoaDon.ngayRa = DateTime.Now;
+                        hoaDon.trangThai = true;
+                    }
+
+                    model.SaveChanges();
                 }
-                hoaDon.ngayRa = DateTime.Now;
-                hoaDon.maKhuyenMai = (int)maKM;
-                hoaDon.trangThai = true;
-                model.SaveChanges();
-            }
-            LoadTableBtn(model.Ban.ToList());
+                LoadTableBtn(model.Ban.ToList());
+            
         }
 
         private void btnKhuyenMai_Click(object sender, EventArgs e)
@@ -180,20 +199,57 @@ namespace QuanLyQuanCaffe
             txbTongTien.Text = tongTien.ToString();
 
         }
-        private void LayMonAn(int maMon, int soLuong)
+        private bool LayMonAn(int maMon, int soLuong)
         {
             MonAn monAn = model.MonAn.FirstOrDefault(x => x.DonVi.ma == 1 && x.ma == maMon);
             if (monAn != null)
             {
-                string query = "UPDATE NguyenLieu SET NguyenLieu.trongLuong = NguyenLieu.trongLuong - CongThuc.chiPhi*" + soLuong + " FROM MonAn, CongThuc, NguyenLieu WHERE MonAn.ma = maMon AND NguyenLieu.ma = maNguyenLieu AND MonAn.ma = " + maMon;
-                _ = model.Database.ExecuteSqlCommand(query);
+                if (LayNguyenLieu(maMon, soLuong))
+                {
+                    return true;
+                }
             }
             else
             {
-                Kho kho = model.Kho.FirstOrDefault(x => x.ma == maMon);
-                kho.tonKho = kho.tonKho - soLuong;
-                model.SaveChanges();
+                if (LayKho(maMon, soLuong))
+                {
+                    return true;
+                }
             }
+            return false;
+        }
+        private bool LayKho(int maMon, int soLuong)
+        {
+            Kho kho = model.Kho.FirstOrDefault(x => x.ma == maMon);
+            if (kho != null)
+            {
+                if (kho.tonKho < soLuong)
+                {
+                    return false;
+                }
+                else
+                {
+                    kho.tonKho = kho.tonKho - soLuong;
+                    model.SaveChanges();
+                    return true;
+                }
+            }
+            return false;
+        }
+        private bool LayNguyenLieu(int maMon,int soLuong)
+        {
+            List<CongThuc> listCongThuc = model.CongThuc.Where(c => c.maMon == maMon).ToList();
+            foreach (var item in listCongThuc)
+            {
+                if (item.NguyenLieu.trongLuong < soLuong * item.chiPhi)
+                {
+                    return false;
+                }
+
+            }
+            string query = "UPDATE NguyenLieu SET NguyenLieu.trongLuong = NguyenLieu.trongLuong - CongThuc.chiPhi*" + soLuong + " FROM MonAn, CongThuc, NguyenLieu WHERE MonAn.ma = maMon AND NguyenLieu.ma = maNguyenLieu AND MonAn.ma = " + maMon;
+            _ = model.Database.ExecuteSqlCommand(query);
+            return true;
         }
     }
 }
