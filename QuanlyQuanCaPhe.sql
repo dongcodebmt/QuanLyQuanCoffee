@@ -49,6 +49,13 @@ CREATE TABLE Ban
 	CHECK (trangThai = 0 OR trangThai = 1)
 )
 
+INSERT INTO BAN VALUES (N'Bàn 1',1)
+INSERT INTO BAN VALUES (N'Bàn 2',1)
+INSERT INTO BAN VALUES (N'Bàn 3',1)
+INSERT INTO BAN VALUES (N'Bàn 4',1)
+INSERT INTO BAN VALUES (N'Bàn 5',1)
+INSERT INTO BAN VALUES (N'Bàn 6',1)
+
 CREATE TABLE LoaiMonAn
 (
 	ma INT IDENTITY PRIMARY KEY,
@@ -81,6 +88,10 @@ CREATE TABLE MonAn
 	FOREIGN KEY (maLoaiMonAn) REFERENCES LoaiMonAn(ma)
 )
 
+INSERT INTO MONAN VALUES (N'Cà phê',1,12000,1,1)
+INSERT INTO MonAn Values (N'Coca Cola',1,10000,2,1)
+INSERT INTO MonAN values (N'7 Up',1,11000,2,1)
+
 CREATE TABLE Kho 
 (
 	ma INT PRIMARY KEY,
@@ -93,6 +104,8 @@ CREATE TABLE NguyenLieu (
 	ten NVARCHAR(255) NOT NULL,
 	trongLuong FLOAT NOT NULL DEFAULT 0,
 )
+INSERT INTO NguyenLieu Values (N'Cà phê xay',1000)
+INSERT INTO NguyenLieu Values (N'Đường',1000)
 
 CREATE TABLE CongThuc(
 	ma INT IDENTITY PRIMARY KEY,
@@ -103,6 +116,9 @@ CREATE TABLE CongThuc(
 	FOREIGN KEY (maMon) REFERENCES MonAn(ma),
 	FOREIGN KEY (maNguyenLieu) REFERENCES NguyenLieu(ma),
 )
+
+INSERT INTO CongThuc values (1,1,100)
+INSERT INTO CongThuc VALUES (1,2,100)
 
 CREATE TABLE PhieuNhap
 (
@@ -135,6 +151,10 @@ CREATE TABLE KhuyenMai
 	trangThai BIT NOT NULL,
 	CHECK (tyLe >= 0 AND tyLe <= 100)
 )
+INSERT INTO KhuyenMai VALUES (N'Khuyến Mãi 1',N'KM1',20,1)
+INSERT INTO KhuyenMai VALUES (N'Khuyến Mãi 2',N'KM2',10,1)
+
+
 
 CREATE TABLE HoaDon
 (

@@ -44,12 +44,12 @@ namespace QuanLyQuanCaffe
             this.btnThemMon = new System.Windows.Forms.Button();
             this.btnChuyenBan = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.lbKhuyenMai = new System.Windows.Forms.Label();
             this.cbKhuyenMai = new System.Windows.Forms.ComboBox();
             this.btnInHD = new System.Windows.Forms.Button();
             this.btTongCong = new System.Windows.Forms.Label();
             this.txbTongTien = new System.Windows.Forms.TextBox();
             this.btnThanhToan = new System.Windows.Forms.Button();
+            this.btnKhuyenMai = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmSLMonAn)).BeginInit();
             this.panel4.SuspendLayout();
@@ -180,7 +180,7 @@ namespace QuanLyQuanCaffe
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.lbKhuyenMai);
+            this.panel4.Controls.Add(this.btnKhuyenMai);
             this.panel4.Controls.Add(this.cbKhuyenMai);
             this.panel4.Controls.Add(this.btnInHD);
             this.panel4.Controls.Add(this.btTongCong);
@@ -191,19 +191,10 @@ namespace QuanLyQuanCaffe
             this.panel4.Size = new System.Drawing.Size(436, 97);
             this.panel4.TabIndex = 15;
             // 
-            // lbKhuyenMai
-            // 
-            this.lbKhuyenMai.AutoSize = true;
-            this.lbKhuyenMai.Location = new System.Drawing.Point(12, 18);
-            this.lbKhuyenMai.Name = "lbKhuyenMai";
-            this.lbKhuyenMai.Size = new System.Drawing.Size(62, 13);
-            this.lbKhuyenMai.TabIndex = 11;
-            this.lbKhuyenMai.Text = "Khuyến mãi";
-            // 
             // cbKhuyenMai
             // 
             this.cbKhuyenMai.FormattingEnabled = true;
-            this.cbKhuyenMai.Location = new System.Drawing.Point(108, 15);
+            this.cbKhuyenMai.Location = new System.Drawing.Point(15, 15);
             this.cbKhuyenMai.Name = "cbKhuyenMai";
             this.cbKhuyenMai.Size = new System.Drawing.Size(174, 21);
             this.cbKhuyenMai.TabIndex = 10;
@@ -251,6 +242,16 @@ namespace QuanLyQuanCaffe
             this.btnThanhToan.UseVisualStyleBackColor = true;
             this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
+            // btnKhuyenMai
+            // 
+            this.btnKhuyenMai.Location = new System.Drawing.Point(207, 15);
+            this.btnKhuyenMai.Name = "btnKhuyenMai";
+            this.btnKhuyenMai.Size = new System.Drawing.Size(75, 23);
+            this.btnKhuyenMai.TabIndex = 11;
+            this.btnKhuyenMai.Text = "Khuyến mãi";
+            this.btnKhuyenMai.UseVisualStyleBackColor = true;
+            this.btnKhuyenMai.Click += new System.EventHandler(this.btnKhuyenMai_Click);
+            // 
             // frmQuanLyBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,6 +294,6 @@ namespace QuanLyQuanCaffe
         private System.Windows.Forms.TextBox txbTongTien;
         private System.Windows.Forms.Button btnThanhToan;
         private System.Windows.Forms.Label lbSoLuong;
-        private System.Windows.Forms.Label lbKhuyenMai;
+        private System.Windows.Forms.Button btnKhuyenMai;
     }
 }

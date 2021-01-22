@@ -19,6 +19,7 @@ namespace QuanLyQuanCaffe
         {
             InitializeComponent();
             model = new QLCFContext();
+            maBanHT = 0;
         }
 
         private void frmQuanLyCuaHang_Load(object sender, EventArgs e)
@@ -26,6 +27,7 @@ namespace QuanLyQuanCaffe
             LoadTableBtn(model.Ban.ToList());
             FillComboxMonAn(model.MonAn.ToList());
             FillComboxKhuyenMai(model.KhuyenMai.ToList());
+            cbKhuyenMai.SelectedItem = null;
         }
 
         private void LoadTableBtn(List<Ban> listBan)
@@ -68,8 +70,6 @@ namespace QuanLyQuanCaffe
                 int maHD = hoaDon.ma;
                 List<CTHD> listCT = model.CTHD.Where(c => c.maHoaDon == maHD).ToList();
                 decimal tongTien = 0;
-                int maKM = Int32.Parse(cbKhuyenMai.SelectedValue.ToString());
-                KhuyenMai khuyenMai = model.KhuyenMai.FirstOrDefault(x => x.ma == maKM);
                 foreach (CTHD item in listCT)
                 {
                     ListViewItem lsvItem = new ListViewItem(item.MonAn.ten);
@@ -85,7 +85,6 @@ namespace QuanLyQuanCaffe
                     lsvCTHD.Items.Add(lsvItem);
                 }
                 decimal tongTienRound = Decimal.Round(tongTien, 2);
-                tongTienRound = tongTienRound - (tongTienRound * (decimal)khuyenMai.tyLe) / 100;
                 txbTongTien.Text = tongTienRound.ToString();
             }
         }
@@ -104,39 +103,47 @@ namespace QuanLyQuanCaffe
 
         private void btnThemMon_Click(object sender, EventArgs e)
         {
-            int maMon = Int32.Parse(cbMonAn.SelectedValue.ToString());
-            int SLMon = (int)nmSLMonAn.Value;
-            HoaDon hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == maBanHT && c.ngayRa == null);
-            if (hoaDon == null)
+            if (maBanHT == 0)
             {
-                HoaDon HD = new HoaDon();
-                HD.ngayVao = DateTime.Now;
-                HD.ngayRa = null;
-                HD.maBan = maBanHT;
-                HD.maKhuyenMai = null;
-                HD.trangThai = false;
-                model.HoaDon.Add(HD);
-                model.SaveChanges();
-            }
-
-            hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == maBanHT && c.ngayRa == null);
-            CTHD cTHD = model.CTHD.FirstOrDefault(c => c.maHoaDon == hoaDon.ma && c.maMonAn == maMon);
-            if (cTHD != null)
-            {
-                cTHD.soLuong = cTHD.soLuong + SLMon;
-                model.SaveChanges();
-            }
+                MessageBox.Show("Vui lòng chọn bàn!");
+            } 
             else
             {
-                CTHD x = new CTHD();
-                x.maHoaDon = hoaDon.ma;
-                x.maMonAn = maMon;
-                x.soLuong = SLMon;
-                model.CTHD.Add(x);
-                model.SaveChanges();
+                int maMon = Int32.Parse(cbMonAn.SelectedValue.ToString());
+                int SLMon = (int)nmSLMonAn.Value;
+                HoaDon hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == maBanHT && c.ngayRa == null);
+                if (hoaDon == null)
+                {
+                    HoaDon HD = new HoaDon();
+                    HD.ngayVao = DateTime.Now;
+                    HD.ngayRa = null;
+                    HD.maBan = maBanHT;
+                    HD.maKhuyenMai = null;
+                    HD.trangThai = false;
+                    model.HoaDon.Add(HD);
+                    model.SaveChanges();
+                }
+
+                hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == maBanHT && c.ngayRa == null);
+                CTHD cTHD = model.CTHD.FirstOrDefault(c => c.maHoaDon == hoaDon.ma && c.maMonAn == maMon);
+                if (cTHD != null)
+                {
+                    cTHD.soLuong = cTHD.soLuong + SLMon;
+                    model.SaveChanges();
+                }
+                else
+                {
+                    CTHD x = new CTHD();
+                    x.maHoaDon = hoaDon.ma;
+                    x.maMonAn = maMon;
+                    x.soLuong = SLMon;
+                    model.CTHD.Add(x);
+                    model.SaveChanges();
+                }
+                ShowHoaDon(maBanHT);
+                LayMonAn(maMon, SLMon);
+                LoadTableBtn(model.Ban.ToList());
             }
-            ShowHoaDon(maBanHT);
-            LoadTableBtn(model.Ban.ToList());
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
@@ -144,11 +151,49 @@ namespace QuanLyQuanCaffe
             HoaDon hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == maBanHT && c.ngayRa == null);
             if (hoaDon != null)
             {
+                var maKM = cbKhuyenMai.SelectedValue;
+                if (maKM == null)
+                {
+                    maKM = 0;
+                }
                 hoaDon.ngayRa = DateTime.Now;
-                hoaDon.maKhuyenMai = Int32.Parse(cbKhuyenMai.SelectedValue.ToString());
+                hoaDon.maKhuyenMai = (int)maKM;
+                hoaDon.trangThai = true;
                 model.SaveChanges();
             }
             LoadTableBtn(model.Ban.ToList());
+        }
+
+        private void btnKhuyenMai_Click(object sender, EventArgs e)
+        {
+            decimal tongTien = decimal.Parse(txbTongTien.Text);
+            var maKM = cbKhuyenMai.SelectedValue;
+            if (maKM == null)
+            {
+                maKM = 0;
+            }
+            KhuyenMai khuyenMai = model.KhuyenMai.FirstOrDefault(x => x.ma == (int)maKM);
+            if (khuyenMai != null)
+            {
+                tongTien = tongTien - (tongTien * (decimal)khuyenMai.tyLe) / 100;
+            }
+            txbTongTien.Text = tongTien.ToString();
+
+        }
+        private void LayMonAn(int maMon, int soLuong)
+        {
+            MonAn monAn = model.MonAn.FirstOrDefault(x => x.DonVi.ma == 1 && x.ma == maMon);
+            if (monAn != null)
+            {
+                string query = "UPDATE NguyenLieu SET NguyenLieu.trongLuong = NguyenLieu.trongLuong - CongThuc.chiPhi*" + soLuong + " FROM MonAn, CongThuc, NguyenLieu WHERE MonAn.ma = maMon AND NguyenLieu.ma = maNguyenLieu AND MonAn.ma = " + maMon;
+                _ = model.Database.ExecuteSqlCommand(query);
+            }
+            else
+            {
+                Kho kho = model.Kho.FirstOrDefault(x => x.ma == maMon);
+                kho.tonKho = kho.tonKho - soLuong;
+                model.SaveChanges();
+            }
         }
     }
 }
