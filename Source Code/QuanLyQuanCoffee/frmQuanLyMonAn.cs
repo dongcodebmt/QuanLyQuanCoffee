@@ -24,7 +24,7 @@ namespace QuanLyQuanCaffe
         {
             FillComboBoxLoaiMonAn(model.LoaiMonAn.ToList());
             FillComboBoxDonVi(model.DonVi.ToList());
-            BildingToDataGirdView(model.MonAn.ToList());
+            BildingToDataGirdView(model.MonAn.Where(x => x.trangThai == true).ToList());
             DataSetting();
             txtMaMonAn.Enabled = false;
             ButtonLock(false);
@@ -102,6 +102,7 @@ namespace QuanLyQuanCaffe
                 m.gia = decimal.Parse(txtGia.Text);
                 m.maLoaiMonAn = Convert.ToInt32(cbLoaiMonAn.SelectedValue);
                 m.maDonVi = Convert.ToInt32(cbDonVi.SelectedValue);
+                m.trangThai = true;
                 model.MonAn.Add(m);
             }
             else
@@ -110,9 +111,10 @@ namespace QuanLyQuanCaffe
                 m1.ten = txtTenMonAn.Text;
                 m1.maLoaiMonAn = Convert.ToInt32(cbLoaiMonAn.SelectedValue);
                 m1.maDonVi = Convert.ToInt32(cbDonVi.SelectedValue);
+                m1.trangThai = true;
             }
             model.SaveChanges();
-            BildingToDataGirdView(model.MonAn.ToList()); 
+            BildingToDataGirdView(model.MonAn.Where(x => x.trangThai == true).ToList()); 
             ButtonLock(false);
             TB_CBLock(false);
             TB_CBNull();
@@ -146,6 +148,22 @@ namespace QuanLyQuanCaffe
             txtGia.Text = null;
             cbLoaiMonAn.SelectedItem = null;
             cbDonVi.SelectedItem = null;
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            MonAn monAn = model.MonAn.FirstOrDefault(x => x.ma.ToString() == txtMaMonAn.Text);
+            if (monAn != null)
+            {
+                monAn.trangThai = false;
+                model.SaveChanges();
+            }
+            else
+            {
+                MessageBox.Show("Món ăn không tồn tại");
+            }
+            TB_CBNull();
+            BildingToDataGirdView(model.MonAn.Where(x => x.trangThai == true).ToList());
         }
     }
 }

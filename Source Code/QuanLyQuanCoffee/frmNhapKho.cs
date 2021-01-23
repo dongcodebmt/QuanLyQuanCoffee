@@ -24,7 +24,7 @@ namespace QuanLyQuanCaffe
         {
             rbtnThung.Checked = true;
             BilingListToDataGridView(model.PhieuNhap.OrderByDescending(x => x.ma).ToList());
-            FillDataToComboBox(model.MonAn.Where(x => x.DonVi.ma != 1).ToList());
+            FillDataToComboBox(model.MonAn.Where(x => x.DonVi.ma != 1 && x.trangThai == true).ToList());
             cbMonAn.SelectedItem = null;
         }
 

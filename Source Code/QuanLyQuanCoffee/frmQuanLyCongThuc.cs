@@ -28,7 +28,7 @@ namespace QuanLyQuanCaffe
         {
             ButtonLock(false);
             TB_CBLock(false);
-            BilingListToDataGridView(model.CongThuc.ToList());
+            BilingListToDataGridView(model.CongThuc.Where(x => x.MonAn.trangThai == true).ToList());
             FillDataToComboBox();
             DataSetting();
             TB_CBNull();

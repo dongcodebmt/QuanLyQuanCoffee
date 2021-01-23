@@ -25,7 +25,7 @@ namespace QuanLyQuanCaffe
         private void frmQuanLyCuaHang_Load(object sender, EventArgs e)
         {
             LoadTableBtn(model.Ban.ToList());
-            FillComboxMonAn(model.MonAn.ToList());
+            FillComboxMonAn(model.MonAn.Where(x => x.trangThai == true).ToList());
             FillComboxKhuyenMai(model.KhuyenMai.ToList());
             FillDataToCBBan(model.Ban.ToList());
             cbKhuyenMai.SelectedItem = null;
