@@ -29,10 +29,10 @@ namespace QuanLyQuanCaffe
         {
             BilingMacDinh();
             FillDataToComboBox(model.Quyen.ToList());
-            DataSetting();
             ButtonLock(false);
             TB_CBLock(false);
             TB_CBNull();
+            DataSetting();
         }
 
         private void BilingMacDinh()

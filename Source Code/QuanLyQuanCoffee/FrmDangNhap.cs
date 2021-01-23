@@ -47,8 +47,8 @@ namespace QuanLyQuanCaffe
             }
             else
             {
-                XacThucTaiKhoan(taiKhoan);
-                MessageBox.Show("Đăng nhập thành công!");
+                PhanQuyen phanQuyen = model.PhanQuyen.FirstOrDefault(x => x.maTaiKhoan == taiKhoan.ma);
+                XacThucTaiKhoan(phanQuyen);
                 this.Close();
             }
         }

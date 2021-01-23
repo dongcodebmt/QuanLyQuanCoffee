@@ -18,6 +18,8 @@ namespace QuanLyQuanCaffe.Database
         [Key]
         public int ma { get; set; }
 
+        public int maNhanVien { get; set; }
+
         public DateTime ngayVao { get; set; }
 
         public DateTime? ngayRa { get; set; }
@@ -34,5 +36,7 @@ namespace QuanLyQuanCaffe.Database
         public virtual ICollection<CTHD> CTHD { get; set; }
 
         public virtual KhuyenMai KhuyenMai { get; set; }
+
+        public virtual TaiKhoan TaiKhoan { get; set; }
     }
 }

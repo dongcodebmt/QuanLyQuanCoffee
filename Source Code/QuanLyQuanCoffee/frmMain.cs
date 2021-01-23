@@ -47,9 +47,32 @@ namespace QuanLyQuanCaffe
         }
         private void frmDangNhap_XacThucTaiKhoan(object sender)
         {
-            TaiKhoan taiKhoan = (TaiKhoan)sender;
-            maTaiKhoan = taiKhoan.ma;
+            PhanQuyen quyen = (PhanQuyen)sender;
+            maTaiKhoan = quyen.TaiKhoan.ma;
             IsLockAction(true);
+            phanQuyen(quyen.maPhanQuyen);
+            if (!CheckForm("frmQuanLyBanHang"))
+            {
+                frmQuanLyBanHang frm = new frmQuanLyBanHang();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
+        private void phanQuyen(int maQuyen)
+        {
+            // 1 - Quản trị viên hệ thống
+            // 2 - Quản lý
+            // 3 - Nhân viên
+            if (maQuyen == 3)
+            {
+                miQuanLyTaiKhoan.Visible = false;
+                miQuanLyMonAn.Visible = false;
+                miQuanLyKhuyenMai.Visible = false;
+                miQuanLyBan.Visible = false;
+                miQuanLyCongThuc.Visible = false;
+                miQuanLyDoanhThu.Visible = false;
+                miQuanLyMonAn.Visible = false;
+            }
         }
         private bool CheckForm(string frmName)
         {
@@ -208,6 +231,16 @@ namespace QuanLyQuanCaffe
             if (!CheckForm("frmThongTinKho"))
             {
                 frmThongTinKho frm = new frmThongTinKho();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
+
+        private void miSinhVienThucHien_Click(object sender, EventArgs e)
+        {
+            if (!CheckForm("frmThongTin"))
+            {
+                frmThongTin frm = new frmThongTin();
                 frm.MdiParent = this;
                 frm.Show();
             }

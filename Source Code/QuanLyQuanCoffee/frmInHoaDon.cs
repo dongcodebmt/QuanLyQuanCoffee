@@ -25,8 +25,8 @@ namespace QuanLyQuanCaffe
 
         private void frmInHoaDon_Load(object sender, EventArgs e)
         {
-            HoaDon hoaDon = model.HoaDon.FirstOrDefault(x => x.ma == 20);
-            List<CTHD> cTHDs = model.CTHD.Where(x => x.maHoaDon == 20).ToList();
+            HoaDon hoaDon = model.HoaDon.FirstOrDefault(x => x.ma == maHDHT);
+            List<CTHD> cTHDs = model.CTHD.Where(x => x.maHoaDon == maHDHT).ToList();
             double tamTinh = 0;
             double tyLe = 0;
             double tongTien = 0;
@@ -51,7 +51,7 @@ namespace QuanLyQuanCaffe
             {
                 new ReportParameter("maHD", hoaDon.ma.ToString()),
                 new ReportParameter("ban", hoaDon.Ban.ten),
-                new ReportParameter("nguoiPV", "Dong"),
+                new ReportParameter("nguoiPV", hoaDon.TaiKhoan.hoTen),
                 new ReportParameter("gioVao", hoaDon.ngayVao.ToString()),
                 new ReportParameter("gioIn", DateTime.Now.ToString()),
                 new ReportParameter("tamTinh", tamTinh.ToString() + " VND"),

@@ -40,7 +40,7 @@ namespace QuanLyQuanCaffe
                 string i;
                 btn.Click += Btn_Click;
                 btn.Tag = item;
-                HoaDon hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == item.ma && c.ngayRa == null);
+                HoaDon hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == item.ma && c.trangThai == false);
                 //if (item.trangThai == true)
                 if (hoaDon != null)
                 {
@@ -68,7 +68,7 @@ namespace QuanLyQuanCaffe
         private void ShowHoaDon(int id)
         {
             lsvCTHD.Items.Clear();
-            HoaDon hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == id && c.ngayRa == null);
+            HoaDon hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == id && c.trangThai == false);
             if (hoaDon != null)
             {
                 int maHD = hoaDon.ma;
@@ -120,10 +120,11 @@ namespace QuanLyQuanCaffe
             }
             else
             {
-                HoaDon hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == maBanHT && c.ngayRa == null);
+                HoaDon hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == maBanHT && c.trangThai == false);
                 if (hoaDon == null)
                 {
                     HoaDon HD = new HoaDon();
+                    HD.maNhanVien = frmMain.maTaiKhoan;
                     HD.ngayVao = DateTime.Now;
                     HD.ngayRa = null;
                     HD.maBan = maBanHT;
@@ -133,7 +134,7 @@ namespace QuanLyQuanCaffe
                     model.SaveChanges();
                 }
 
-                hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == maBanHT && c.ngayRa == null);
+                hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == maBanHT && c.trangThai == false);
                 CTHD cTHD = model.CTHD.FirstOrDefault(c => c.maHoaDon == hoaDon.ma && c.maMonAn == maMon);
                 if (cTHD != null)
                 {
@@ -157,7 +158,7 @@ namespace QuanLyQuanCaffe
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            HoaDon hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == maBanHT && c.ngayRa == null);
+            HoaDon hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == maBanHT && c.trangThai == false);
             if (hoaDon != null)
             {
                 var maKM = cbKhuyenMai.SelectedValue;
@@ -247,8 +248,6 @@ namespace QuanLyQuanCaffe
                 }
             }
             model.SaveChanges();
-            //string query = "UPDATE NguyenLieu SET NguyenLieu.trongLuong = NguyenLieu.trongLuong - CongThuc.chiPhi*" + soLuong + " FROM MonAn, CongThuc, NguyenLieu WHERE MonAn.ma = maMon AND NguyenLieu.ma = maNguyenLieu AND MonAn.ma = " + maMon;
-            //model.Database.ExecuteSqlCommand(query);
             return true;
         }
         private void ButtonLock(bool isLock)
@@ -262,8 +261,8 @@ namespace QuanLyQuanCaffe
         private void btnChuyenBan_Click(object sender, EventArgs e)
         {
             int maBan = Int32.Parse(cbBan.SelectedValue.ToString());
-            HoaDon hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == maBan && c.ngayRa == null);
-            HoaDon hoaDonHT = model.HoaDon.FirstOrDefault(c => c.maBan == maBanHT && c.ngayRa == null);
+            HoaDon hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == maBan && c.trangThai == false);
+            HoaDon hoaDonHT = model.HoaDon.FirstOrDefault(c => c.maBan == maBanHT && c.trangThai == false);
             if (hoaDon == null)
             {
                 hoaDonHT.maBan = maBan;

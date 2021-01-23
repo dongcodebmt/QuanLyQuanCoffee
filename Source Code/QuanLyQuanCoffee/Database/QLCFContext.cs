@@ -112,6 +112,12 @@ namespace QuanLyQuanCaffe.Database
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<TaiKhoan>()
+                .HasMany(e => e.HoaDon)
+                .WithRequired(e => e.TaiKhoan)
+                .HasForeignKey(e => e.maNhanVien)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<TaiKhoan>()
                 .HasMany(e => e.PhanQuyen)
                 .WithRequired(e => e.TaiKhoan)
                 .HasForeignKey(e => e.maTaiKhoan)
