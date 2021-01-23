@@ -50,7 +50,7 @@ namespace QuanLyQuanCaffe
             PhanQuyen quyen = (PhanQuyen)sender;
             maTaiKhoan = quyen.TaiKhoan.ma;
             IsLockAction(true);
-            phanQuyen(quyen.maPhanQuyen);
+            PhanQuyen(quyen.maPhanQuyen);
             if (!CheckForm("frmQuanLyBanHang"))
             {
                 frmQuanLyBanHang frm = new frmQuanLyBanHang();
@@ -58,21 +58,29 @@ namespace QuanLyQuanCaffe
                 frm.Show();
             }
         }
-        private void phanQuyen(int maQuyen)
+        private void PhanQuyen(int maQuyen)
         {
             // 1 - Quản trị viên hệ thống
             // 2 - Quản lý
             // 3 - Nhân viên
-            if (maQuyen == 3)
+            if (maQuyen == 1 || maQuyen == 2)
             {
-                miQuanLyTaiKhoan.Visible = false;
-                miQuanLyMonAn.Visible = false;
-                miQuanLyKhuyenMai.Visible = false;
-                miQuanLyBan.Visible = false;
-                miQuanLyCongThuc.Visible = false;
-                miQuanLyDoanhThu.Visible = false;
-                miQuanLyMonAn.Visible = false;
+                ChucNangQuanLy(true);
+            } 
+            else
+            {
+                ChucNangQuanLy(false);
             }
+        }
+        private void ChucNangQuanLy(bool isLock)
+        {
+            miQuanLyTaiKhoan.Visible = isLock;
+            miQuanLyMonAn.Visible = isLock;
+            miQuanLyKhuyenMai.Visible = isLock;
+            miQuanLyBan.Visible = isLock;
+            miQuanLyCongThuc.Visible = isLock;
+            miQuanLyDoanhThu.Visible = isLock;
+            miQuanLyMonAn.Visible = isLock;
         }
         private bool CheckForm(string frmName)
         {
