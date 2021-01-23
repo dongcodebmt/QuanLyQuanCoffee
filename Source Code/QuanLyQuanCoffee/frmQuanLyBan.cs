@@ -24,18 +24,12 @@ namespace QuanLyQuanCaffe
         {
 
         }
-
-       
-
         private void frmQuanLyBan_Load(object sender, EventArgs e)
         {
             List<Ban> listBan = model.Ban.ToList();
             BildingToDataGirdView(listBan);
-            txtMaBan.ReadOnly = true;
-            btnLuu.Visible = false;
-            btnHuy.Visible = false;
-            ReadOnlyAll();
-            
+            ButtonLock(false);
+            TB_CBLock(false);
         }
 
         private void BildingToDataGirdView(List<Ban> listBan)
@@ -65,45 +59,25 @@ namespace QuanLyQuanCaffe
         private void SCBan_CLick(object sender, EventArgs e)
         {
             if(dataGVBan.SelectedRows.Count>0 && dataGVBan.SelectedRows[0].Cells[0] != null)
-                {
+            {
                 txtMaBan.Text = dataGVBan.SelectedRows[0].Cells[1].Value.ToString();
                 txtTenBan.Text = dataGVBan.SelectedRows[0].Cells[2].Value.ToString();
                 txtTrangThai.Text = dataGVBan.SelectedRows[0].Cells[3].Value.ToString();
-                } 
-        }
-        private void ReadOnlyAll()
-        {
-           
-            txtTenBan.ReadOnly = true;
-            txtTrangThai.ReadOnly = true;
-        }
-        private void UnReadOnlyAll()
-        {
-            txtTenBan.ReadOnly = false;
-            txtTrangThai.ReadOnly = false;
+            } 
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             txtMaBan.Text = "";
-            txtTenBan.ReadOnly = false;
-            btnLuu.Visible = true;
-            btnHuy.Visible = true;
-            btnThem.Visible = false;
-            btnSua.Visible = false;
-            btnXoa.Visible = false;
-
+            ButtonLock(true);
+            TB_CBNull();
+            TB_CBLock(true);
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            UnReadOnlyAll();
-            txtTrangThai.ReadOnly = true;
-            btnLuu.Visible = true;
-            btnHuy.Visible = true;
-            btnThem.Visible = false;
-            btnSua.Visible = false;
-            btnXoa.Visible = false;
+            ButtonLock(true);
+            TB_CBLock(true);
             if (txtMaBan.Text == "")
             {
                 MessageBox.Show("Vui lòng chọn bàn để sửa");
@@ -112,8 +86,6 @@ namespace QuanLyQuanCaffe
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-           
-            
             if (txtMaBan.Text == "")
             {
                 MessageBox.Show("Không tim thấy bàn cần xóa");
@@ -125,36 +97,66 @@ namespace QuanLyQuanCaffe
                 model.Ban.Remove(b);
                 model.SaveChanges();
             }
+            TB_CBNull();
             BildingToDataGirdView(model.Ban.ToList());
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            
-            if(txtMaBan.Text == "")
+            if (txtTenBan.Text == "")
             {
-                Ban bnew = new Ban();
-                bnew.ten = txtTenBan.Text;
-                bnew.trangThai = true;
-                model.Ban.Add(bnew);
-             
-            }
-            else
-            {
-           
-               
+                if (txtMaBan.Text == "")
+                {
+                    Ban bnew = new Ban();
+                    bnew.ten = txtTenBan.Text;
+                    bnew.trangThai = true;
+                    model.Ban.Add(bnew);
+
+                }
+                else
+                {
                     int s = Int32.Parse(txtMaBan.Text);
                     Ban b = model.Ban.FirstOrDefault(c => c.ma == s);
                     b.ten = txtTenBan.Text;
-                
+
+                }
+                model.SaveChanges();
+                BildingToDataGirdView(model.Ban.ToList());
+                ButtonLock(false);
+                TB_CBLock(false);
+                TB_CBNull();
             }
-            model.SaveChanges();
-            BildingToDataGirdView(model.Ban.ToList());
-            btnThem.Visible = true;
-            btnSua.Visible = true;
-            btnXoa.Visible = true;
-            btnLuu.Visible = false;
-            btnHuy.Visible = false;
+            else
+            {
+                MessageBox.Show("Vui lòng nhập tên bàn!");
+            }
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            TB_CBLock(false);
+            ButtonLock(false);
+            TB_CBNull();
+        }
+        private void TB_CBLock(bool isLock)
+        {
+            txtMaBan.ReadOnly = true;
+            txtTenBan.Enabled = isLock;
+            txtTrangThai.ReadOnly = true;
+        }
+        private void ButtonLock(bool isLock)
+        {
+            btnHuy.Visible = isLock;
+            btnLuu.Visible = isLock;
+            btnThem.Visible = !isLock;
+            btnSua.Visible = !isLock;
+            btnXoa.Visible = !isLock;
+        }
+        private void TB_CBNull()
+        {
+            txtMaBan.Text = null;
+            txtTenBan.Text = null;
+            txtTrangThai.Text = null;
         }
     }
 }

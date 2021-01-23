@@ -47,7 +47,7 @@ namespace QuanLyQuanCaffe
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(280, 111);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -58,15 +58,15 @@ namespace QuanLyQuanCaffe
             // txtMa
             // 
             this.txtMa.Location = new System.Drawing.Point(145, 132);
-            this.txtMa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMa.Margin = new System.Windows.Forms.Padding(2);
             this.txtMa.Name = "txtMa";
             this.txtMa.Size = new System.Drawing.Size(101, 20);
             this.txtMa.TabIndex = 1;
             // 
             // txtTen
             // 
-            this.txtTen.Location = new System.Drawing.Point(145, 171);
-            this.txtTen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTen.Location = new System.Drawing.Point(145, 165);
+            this.txtTen.Margin = new System.Windows.Forms.Padding(2);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(101, 20);
             this.txtTen.TabIndex = 1;
@@ -95,7 +95,7 @@ namespace QuanLyQuanCaffe
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 174);
+            this.label3.Location = new System.Drawing.Point(28, 168);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 13);
@@ -105,7 +105,7 @@ namespace QuanLyQuanCaffe
             // btnThem
             // 
             this.btnThem.Location = new System.Drawing.Point(30, 238);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(56, 19);
             this.btnThem.TabIndex = 5;
@@ -116,7 +116,7 @@ namespace QuanLyQuanCaffe
             // btnSua
             // 
             this.btnSua.Location = new System.Drawing.Point(112, 238);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(56, 19);
             this.btnSua.TabIndex = 6;
@@ -127,7 +127,7 @@ namespace QuanLyQuanCaffe
             // btnXoa
             // 
             this.btnXoa.Location = new System.Drawing.Point(203, 237);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(56, 19);
             this.btnXoa.TabIndex = 7;
@@ -138,7 +138,7 @@ namespace QuanLyQuanCaffe
             // txtTrongLuong
             // 
             this.txtTrongLuong.Location = new System.Drawing.Point(145, 197);
-            this.txtTrongLuong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTrongLuong.Margin = new System.Windows.Forms.Padding(2);
             this.txtTrongLuong.Name = "txtTrongLuong";
             this.txtTrongLuong.Size = new System.Drawing.Size(101, 20);
             this.txtTrongLuong.TabIndex = 1;
@@ -169,7 +169,7 @@ namespace QuanLyQuanCaffe
             this.Controls.Add(this.txtTen);
             this.Controls.Add(this.txtMa);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmQuanLyNguyenLieu";
             this.Text = "Quản lý nguyên liệu";
             this.Load += new System.EventHandler(this.frmQuanLyNguyenLieu1_Load);

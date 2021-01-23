@@ -93,27 +93,34 @@ namespace QuanLyQuanCaffe
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
-        {            
-            MonAn m1 = model.MonAn.FirstOrDefault(c => c.ma.ToString() == txtMaMonAn.Text);
-            if(m1 == null)
+        {
+            if (cbDonVi.SelectedValue == null || cbLoaiMonAn.SelectedValue == null || txtTenMonAn.Text == "" || txtGia.Text == "")
             {
-                MonAn m = new MonAn();
-                m.ten = txtTenMonAn.Text;
-                m.gia = decimal.Parse(txtGia.Text);
-                m.maLoaiMonAn = Convert.ToInt32(cbLoaiMonAn.SelectedValue);
-                m.maDonVi = Convert.ToInt32(cbDonVi.SelectedValue);
-                m.trangThai = true;
-                model.MonAn.Add(m);
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
             }
             else
             {
-                m1.gia = decimal.Parse(txtGia.Text);
-                m1.ten = txtTenMonAn.Text;
-                m1.maLoaiMonAn = Convert.ToInt32(cbLoaiMonAn.SelectedValue);
-                m1.maDonVi = Convert.ToInt32(cbDonVi.SelectedValue);
-                m1.trangThai = true;
+                MonAn m1 = model.MonAn.FirstOrDefault(c => c.ma.ToString() == txtMaMonAn.Text);
+                if (m1 == null)
+                {
+                    MonAn m = new MonAn();
+                    m.ten = txtTenMonAn.Text;
+                    m.gia = decimal.Parse(txtGia.Text);
+                    m.maLoaiMonAn = Convert.ToInt32(cbLoaiMonAn.SelectedValue);
+                    m.maDonVi = Convert.ToInt32(cbDonVi.SelectedValue);
+                    m.trangThai = true;
+                    model.MonAn.Add(m);
+                }
+                else
+                {
+                    m1.gia = decimal.Parse(txtGia.Text);
+                    m1.ten = txtTenMonAn.Text;
+                    m1.maLoaiMonAn = Convert.ToInt32(cbLoaiMonAn.SelectedValue);
+                    m1.maDonVi = Convert.ToInt32(cbDonVi.SelectedValue);
+                    m1.trangThai = true;
+                }
+                model.SaveChanges();
             }
-            model.SaveChanges();
             BildingToDataGirdView(model.MonAn.Where(x => x.trangThai == true).ToList()); 
             ButtonLock(false);
             TB_CBLock(false);

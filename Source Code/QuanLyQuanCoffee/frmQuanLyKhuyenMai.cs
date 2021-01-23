@@ -80,25 +80,31 @@ namespace QuanLyQuanCaffe
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            KhuyenMai KM = model.KhuyenMai.FirstOrDefault(x => x.maKhyenMai.ToUpper() == txtMaKM.Text.ToUpper());
-            if (KM == null)
+            if (txtMaKM.Text == "" || txtTen.Text == "" || txtTyLe.Text == "")
             {
-                KhuyenMai khuyenMai = new KhuyenMai();
-                khuyenMai.ten = txtTen.Text;
-                khuyenMai.maKhyenMai = txtMaKM.Text.ToUpper();
-                khuyenMai.tyLe = Int32.Parse(txtTyLe.Text);
-                khuyenMai.trangThai = true;
-                model.KhuyenMai.Add(khuyenMai);
-            }
-            else
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
+            } else
             {
-                KM.ten = txtTen.Text;
-                KM.maKhyenMai = txtMaKM.Text.ToUpper();
-                KM.tyLe = Int32.Parse(txtTyLe.Text);
-                KM.trangThai = true;
-            }
+                KhuyenMai KM = model.KhuyenMai.FirstOrDefault(x => x.maKhyenMai.ToUpper() == txtMaKM.Text.ToUpper());
+                if (KM == null)
+                {
+                    KhuyenMai khuyenMai = new KhuyenMai();
+                    khuyenMai.ten = txtTen.Text;
+                    khuyenMai.maKhyenMai = txtMaKM.Text.ToUpper();
+                    khuyenMai.tyLe = Int32.Parse(txtTyLe.Text);
+                    khuyenMai.trangThai = true;
+                    model.KhuyenMai.Add(khuyenMai);
+                }
+                else
+                {
+                    KM.ten = txtTen.Text;
+                    KM.maKhyenMai = txtMaKM.Text.ToUpper();
+                    KM.tyLe = Int32.Parse(txtTyLe.Text);
+                    KM.trangThai = true;
+                }
 
-            model.SaveChanges();
+                model.SaveChanges();
+            }
             BilingListToDataGridView(model.KhuyenMai.Where(x => x.trangThai == true).ToList());
             ButtonLock(false);
             TB_CBLock(false);

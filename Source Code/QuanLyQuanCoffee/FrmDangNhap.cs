@@ -31,25 +31,35 @@ namespace QuanLyQuanCaffe
         {
             string tenTaiKhoan = txtTenTaiKhoan.Text.ToLower();
             string matKhau = txtMatKhau.Text;
-
-            TaiKhoan taiKhoan = model.TaiKhoan.FirstOrDefault(x => x.tenDangNhap == tenTaiKhoan);
-
-            if (taiKhoan == null)
+            if (tenTaiKhoan == "")
             {
-                MessageBox.Show("Tài khoản không tồn tại!");
-                txtTenTaiKhoan.Text = null;
-                txtMatKhau.Text = null;
+                MessageBox.Show("Vui lòng nhập tên tài khoản!");
             }
-            else if (!BCrypt.Net.BCrypt.Verify(matKhau, taiKhoan.matKhau))
+            else if (matKhau == "")
             {
-                MessageBox.Show("Đăng nhập thất bại!");
-                txtMatKhau.Text = null;
+                MessageBox.Show("Vui lòng nhập mật khẩu!");
             }
             else
             {
-                PhanQuyen phanQuyen = model.PhanQuyen.FirstOrDefault(x => x.maTaiKhoan == taiKhoan.ma);
-                XacThucTaiKhoan(phanQuyen);
-                this.Close();
+                TaiKhoan taiKhoan = model.TaiKhoan.FirstOrDefault(x => x.tenDangNhap == tenTaiKhoan);
+
+                if (taiKhoan == null)
+                {
+                    MessageBox.Show("Tài khoản không tồn tại!");
+                    txtTenTaiKhoan.Text = null;
+                    txtMatKhau.Text = null;
+                }
+                else if (!BCrypt.Net.BCrypt.Verify(matKhau, taiKhoan.matKhau))
+                {
+                    MessageBox.Show("Đăng nhập thất bại!");
+                    txtMatKhau.Text = null;
+                }
+                else
+                {
+                    PhanQuyen phanQuyen = model.PhanQuyen.FirstOrDefault(x => x.maTaiKhoan == taiKhoan.ma);
+                    XacThucTaiKhoan(phanQuyen);
+                    this.Close();
+                }
             }
         }
 

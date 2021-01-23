@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -144,59 +145,94 @@ namespace QuanLyQuanCaffe
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (KiemTraMK(txtMatKhau.Text, txtNhapLaiMK.Text))
+            var isNam = int.TryParse(txtNamSinh.Text, out _);
+            if (txtTenTaiKhoan.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập tài khoản!");
+            } else if (txtMatKhau.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập mật khẩu");
+            }
+            else if (!KiemTraMK(txtMatKhau.Text, txtNhapLaiMK.Text))
+            {
+                MessageBox.Show("Mật khẩu không khớp!");
+            }
+            else if (txtMatKhau.Text.Length < 8)
+            {
+                MessageBox.Show("Mật khẩu quá yếu!");
+            }
+            else if (cbQuyen.SelectedValue == null)
+            {
+                MessageBox.Show("Vui lòng chọn quyền!");
+            }
+            else if (rbtnKhongXacDinh.Checked == false && rbtnNam.Checked == false && rbtnNu.Checked == false)
+            {
+                MessageBox.Show("Vui lòng chọn giới tính!");
+            }
+            else if (txtHoTen.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập họ tên!");
+            }
+            else if (txtNamSinh.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập năm sinh!");
+            }
+            else if (isNam == false)
+            {
+                MessageBox.Show("Vui nhập đúng năm năm sinh!");
+            }
+            else if (txtSDT.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập số điện thoại!");
+            }
+            else if (IsPhoneNumber(txtSDT.Text))
+            {
+                MessageBox.Show("Vui lòng nhập đúng số điện thoại!");
+            }
+            else if (txtSDT.Text.Length > 10)
+            {
+                MessageBox.Show("Vui lòng nhập đúng số điện thoại!");
+            }
+            else
             {
                 TaiKhoan TK = model.TaiKhoan.FirstOrDefault(x => x.tenDangNhap == txtTenTaiKhoan.Text);
                 if (TK == null)
                 {
-                    try
-                    {
-                        TaiKhoan taiKhoanMoi = new TaiKhoan();
-                        taiKhoanMoi.tenDangNhap = txtTenTaiKhoan.Text.ToLower();
-                        taiKhoanMoi.matKhau = BCrypt.Net.BCrypt.HashPassword(txtMatKhau.Text);
-                        taiKhoanMoi.hoTen = txtHoTen.Text;
-                        taiKhoanMoi.namSinh = txtNamSinh.Text;
-                        taiKhoanMoi.SDT = txtSDT.Text;
-                        taiKhoanMoi.gioiTinh = GetSex();
-                        taiKhoanMoi.trangThai = true;
-                        model.TaiKhoan.Add(taiKhoanMoi);
-                        model.SaveChanges();
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
-                    }
-
+                    TaiKhoan taiKhoanMoi = new TaiKhoan();
+                    taiKhoanMoi.tenDangNhap = txtTenTaiKhoan.Text.ToLower();
+                    taiKhoanMoi.matKhau = BCrypt.Net.BCrypt.HashPassword(txtMatKhau.Text);
+                    taiKhoanMoi.hoTen = txtHoTen.Text;
+                    taiKhoanMoi.namSinh = txtNamSinh.Text;
+                    taiKhoanMoi.SDT = txtSDT.Text;
+                    taiKhoanMoi.gioiTinh = GetSex();
+                    taiKhoanMoi.trangThai = true;
+                    model.TaiKhoan.Add(taiKhoanMoi);
+                    model.SaveChanges();
                     PhanQuyen(txtTenTaiKhoan.Text.ToLower(), Int32.Parse(cbQuyen.SelectedValue.ToString()));
+                    MessageBox.Show("Tạo tài khoản thành công!");
+                    BilingMacDinh();
                 }
                 else
                 {
-                    try
-                    {
-                        TK.matKhau = BCrypt.Net.BCrypt.HashPassword(txtMatKhau.Text);
-                        TK.hoTen = txtHoTen.Text;
-                        TK.namSinh = txtNamSinh.Text;
-                        TK.SDT = txtSDT.Text;
-                        TK.gioiTinh = GetSex();
-                        TK.trangThai = true;
-                        model.SaveChanges();
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
-                    }
-
+                    TK.matKhau = BCrypt.Net.BCrypt.HashPassword(txtMatKhau.Text);
+                    TK.hoTen = txtHoTen.Text;
+                    TK.namSinh = txtNamSinh.Text;
+                    TK.SDT = txtSDT.Text;
+                    TK.gioiTinh = GetSex();
+                    TK.trangThai = true;
+                    model.SaveChanges();
                     PhanQuyen(txtTenTaiKhoan.Text.ToLower(), Int32.Parse(cbQuyen.SelectedValue.ToString()));
+                    MessageBox.Show("Sửa thông tin thành công!");
+                    BilingMacDinh();
                 }
             }
-            else
-            {
-                MessageBox.Show("Mật khẩu không khớp!");
-            }
-            BilingMacDinh();
             ButtonLock(false);
             TB_CBLock(false);
             TB_CBNull();
+        }
+        public static bool IsPhoneNumber(string number)
+        {
+            return Regex.Match(number, @"^(\+[0-9]{9})$").Success;
         }
         private void PhanQuyen(string tenTaiKhoan, int maPhanQuyen)
         {
