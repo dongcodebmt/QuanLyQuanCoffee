@@ -247,6 +247,7 @@
     <EmbeddedResource Include="frmThongTinTaiKhoan.resx">
       <DependentUpon>frmThongTinTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reporting\DoanhThu.rdlc" />
     <EmbeddedResource Include="Reporting\HoaDon.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -255,8 +256,6 @@
     <EmbeddedResource Include="frmQuanLyMonAn.resx">
       <DependentUpon>frmQuanLyMonAn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThongKeDoanhThu.rdlc" />
-    <EmbeddedResource Include="ThongTinQuanCoffee.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\QuanLyQuanCaffe.Reporting.rptCTHD.datasource" />
     <None Include="Properties\Settings.settings">

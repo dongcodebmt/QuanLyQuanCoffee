@@ -46,34 +46,38 @@ namespace QuanLyQuanCaffe
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(374, 137);
+            this.dataGridView1.Location = new System.Drawing.Point(280, 111);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(550, 329);
+            this.dataGridView1.Size = new System.Drawing.Size(412, 267);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.SelectionChanged);
             // 
             // txtMa
             // 
-            this.txtMa.Location = new System.Drawing.Point(193, 163);
+            this.txtMa.Location = new System.Drawing.Point(145, 132);
+            this.txtMa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMa.Name = "txtMa";
-            this.txtMa.Size = new System.Drawing.Size(133, 22);
+            this.txtMa.Size = new System.Drawing.Size(101, 20);
             this.txtMa.TabIndex = 1;
             // 
             // txtTen
             // 
-            this.txtTen.Location = new System.Drawing.Point(193, 211);
+            this.txtTen.Location = new System.Drawing.Point(145, 171);
+            this.txtTen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(133, 22);
+            this.txtTen.Size = new System.Drawing.Size(101, 20);
             this.txtTen.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 166);
+            this.label1.Location = new System.Drawing.Point(28, 135);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 17);
+            this.label1.Size = new System.Drawing.Size(85, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Mã Nguyên Liệu";
             // 
@@ -81,26 +85,29 @@ namespace QuanLyQuanCaffe
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(469, 77);
+            this.label2.Location = new System.Drawing.Point(352, 63);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(432, 36);
+            this.label2.Size = new System.Drawing.Size(349, 29);
             this.label2.TabIndex = 3;
             this.label2.Text = "Quản lý thông tin nguyên liệu";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(37, 214);
+            this.label3.Location = new System.Drawing.Point(28, 174);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 17);
+            this.label3.Size = new System.Drawing.Size(89, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Tên Nguyên Liệu";
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(40, 293);
+            this.btnThem.Location = new System.Drawing.Point(30, 238);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 23);
+            this.btnThem.Size = new System.Drawing.Size(56, 19);
             this.btnThem.TabIndex = 5;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
@@ -108,9 +115,10 @@ namespace QuanLyQuanCaffe
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(150, 293);
+            this.btnSua.Location = new System.Drawing.Point(112, 238);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(75, 23);
+            this.btnSua.Size = new System.Drawing.Size(56, 19);
             this.btnSua.TabIndex = 6;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
@@ -118,9 +126,10 @@ namespace QuanLyQuanCaffe
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(271, 292);
+            this.btnXoa.Location = new System.Drawing.Point(203, 237);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 23);
+            this.btnXoa.Size = new System.Drawing.Size(56, 19);
             this.btnXoa.TabIndex = 7;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -128,25 +137,27 @@ namespace QuanLyQuanCaffe
             // 
             // txtTrongLuong
             // 
-            this.txtTrongLuong.Location = new System.Drawing.Point(193, 242);
+            this.txtTrongLuong.Location = new System.Drawing.Point(145, 197);
+            this.txtTrongLuong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTrongLuong.Name = "txtTrongLuong";
-            this.txtTrongLuong.Size = new System.Drawing.Size(133, 22);
+            this.txtTrongLuong.Size = new System.Drawing.Size(101, 20);
             this.txtTrongLuong.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(37, 245);
+            this.label4.Location = new System.Drawing.Point(28, 199);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 17);
+            this.label4.Size = new System.Drawing.Size(64, 13);
             this.label4.TabIndex = 4;
             this.label4.Text = "Trọng lượng";
             // 
-            // frmQuanLyNguyenLieu1
+            // frmQuanLyNguyenLieu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(953, 509);
+            this.ClientSize = new System.Drawing.Size(715, 414);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
@@ -158,8 +169,9 @@ namespace QuanLyQuanCaffe
             this.Controls.Add(this.txtTen);
             this.Controls.Add(this.txtMa);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "frmQuanLyNguyenLieu1";
-            this.Text = "frmQuanLyNguyenLieu1";
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "frmQuanLyNguyenLieu";
+            this.Text = "Quản lý nguyên liệu";
             this.Load += new System.EventHandler(this.frmQuanLyNguyenLieu1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
