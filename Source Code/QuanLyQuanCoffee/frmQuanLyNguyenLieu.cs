@@ -28,7 +28,9 @@ namespace QuanLyQuanCaffe
             Setting();
             BildingToDataGirdViewNguyenLieu(listNguyenLieu);
             InitializeComponent();
-            ReadOnlyAll();
+             ReadOnlyAll();
+            //btnLuu.Visible = false;
+            //txtTenNL.Enabled = false;
             
         }
         private void BildingToDataGirdViewNguyenLieu(List<NguyenLieu> listNguyenLieu)
@@ -52,10 +54,8 @@ namespace QuanLyQuanCaffe
         }
         private void ReadOnlyAll()
         {
-            btnLuu.Visible = false;
-            btnHuy.Visible = false;
-            txtMaNL.Enabled = true;
-            txtTenNL.Enabled = true;
+            txtMaNL.ReadOnly = true;
+            txtTenNL.ReadOnly = true;
         }
         private void UnReadOnlyAll()
         {
@@ -70,7 +70,14 @@ namespace QuanLyQuanCaffe
 
         }
 
-        
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            NguyenLieu n = new NguyenLieu();
+            n.ten = txtTenNL.Text;
+            n.trongLuong = 0;
+            model.NguyenLieu.Add(n);
+            model.SaveChanges();
+        }
     }
 }
 

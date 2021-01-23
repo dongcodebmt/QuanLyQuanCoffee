@@ -132,6 +132,12 @@
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQuanLyBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLyBan.Designer.cs">
+      <DependentUpon>frmQuanLyBan.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmQuanLyBanHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLyBan.resx">
+      <DependentUpon>frmQuanLyBan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLyBanHang.resx">
       <DependentUpon>frmQuanLyBanHang.cs</DependentUpon>
