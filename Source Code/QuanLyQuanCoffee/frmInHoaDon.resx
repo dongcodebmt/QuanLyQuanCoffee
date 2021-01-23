@@ -117,26 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnThemMon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAA7NJREFUWEe1
-        l1tIU3Ecx313GiiWIKggJnNS7tY2Ny9hK00tELF8ECWwdY8eQiPIty4E+bBZRhB4e6qniKgsu9LFStA1
-        cWkilZctN6UnH4Rfv9/ZOdvZ9j9nx7QffNjOOf//9/v7///nfzlJSmOxtjQNaUF6kTFkBQEe+k/36BmV
-        SeOrbTxQTIP0I6uIYJgIKkt1NLzM+gMrqxAnsoawTJRAdUlDxcsqC6ygRiYRlui/QFpqXl4+sKAJCfIV
-        NxPSNPE27MAC1PL/YS5A2uyewAc05pvZ7VKQR/w7gTfpZYkUrLOCv60IFhtM4sqbhZO3DQXeoKkW9bb7
-        Go0Q7FbBck8yBK+nw9xhvVhgo5BXZIrixYDoYRhvtQk+Nm4Hf1cqeE5kw+Rec1wZJnU28DUZYLFetny/
-        YE4rnOQi47Gb4fuFTJi9lAFPS4vhqz3BkOCQTZ/OAff5GhhtyYMFh5pdLuSZRgnQ0skqEGb+VD6s3Mah
-        uJkMvhtbIHBlKwQ6s2CpPRd+n80Hv6MQ/C3F4DtkhF9n8rhEp+/24K8WvjTngbtWBws1NpZ2CyVA6zfr
-        YRhfs5ZLQAkzF7fB1J1uCIx+4pKY6GyCtwfV8GG3Aebjk+ilBGgTiX0QzQErLN9SMQ1jCbhS4FW1hu8B
-        HLLj2TBUXsz1xpsKPfzcbxVrj1EC4l1NkuDVDKYhiyVnCnzrKIDxozlcMmQu8KJMB7PV4SRWKIEoIymW
-        OnKZZlKMNOVHGYt5hkxVWThdxQn4HRqmkRQvq4qY5mImcForHgJ6w0l4uj0TPCezZRl35KBBaNwT8EfZ
-        S8hhg2VnKkyey+IWJ4H3DQVxDFfuYJmxGKcEEk5DAZr7sV3Nwn2MeoBpGEsfJZBwIRJYwF4Y2aPHabVT
-        FoaRFK2UgOxSLMaD06feZACzXgeXLRGhJzYttO3SgRHvH8FfuhaZSLGKpAv7AR0gmaZiXBVm0Ov1HHaD
-        Liw2aNWG7xN9eC08k2GQM6dA8bjtmMVjewkYeJNWbKkg9hBbXIGtp/tl+PsgcQ+sDZVqi3j7UKBB9IFE
-        gud2C3SV6OBRjMl9bPU1HJZ7ylrv4m0jgeKKj2QzVSUwjEsqQ1gJXmw9+5iO4ooPpT9wU3ldrmcZyBFE
-        Cnk7dqC44mP5HG6v73CbjTGRgszlj+VCoLjiDxM6aHyuNLIMxXgR+ZbHBoqv69PMjUe1GFNiDXFJjrmS
-        QHHFH6fefRZAMzKmRWYgbqptJNAg4ec5Dkevx25qHS7jV7iEkZT0F0qOtoVbr+sbAAAAAElFTkSuQmCC
-</value>
-  </data>
+  <metadata name="CTHDBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="HoaDonBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>179, 17</value>
+  </metadata>
 </root>

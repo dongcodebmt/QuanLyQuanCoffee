@@ -137,7 +137,7 @@ namespace QuanLyQuanCaffe
         {
             if (!CheckForm("frmNhapCongThuc"))
             {
-                frmNhapCongThuc frm = new frmNhapCongThuc();
+                frmQuanLyCongThuc frm = new frmQuanLyCongThuc();
                 frm.MdiParent = this;
                 frm.Show();
             }
@@ -168,6 +168,46 @@ namespace QuanLyQuanCaffe
             if (!CheckForm("frmQuanLyKhuyenMai"))
             {
                 frmQuanLyKhuyenMai frm = new frmQuanLyKhuyenMai();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
+
+        private void miQuanLyDoanhThu_Click(object sender, EventArgs e)
+        {
+            if (!CheckForm("frmQuanLyDoanhThu"))
+            {
+                frmQuanLyDoanhThu frm = new frmQuanLyDoanhThu();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
+
+        private void miQuanLyBan_Click(object sender, EventArgs e)
+        {
+            if (!CheckForm("frmQuanLyBan"))
+            {
+                frmQuanLyBan frm = new frmQuanLyBan();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
+
+        private void miQuanLyCongThuc_Click(object sender, EventArgs e)
+        {
+            if (!CheckForm("frmQuanLyCongThuc"))
+            {
+                frmQuanLyCongThuc frm = new frmQuanLyCongThuc();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
+
+        private void miThongTInKho_Click(object sender, EventArgs e)
+        {
+            if (!CheckForm("frmThongTinKho"))
+            {
+                frmThongTinKho frm = new frmThongTinKho();
                 frm.MdiParent = this;
                 frm.Show();
             }

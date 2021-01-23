@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace QuanLyQuanCaffe
 {
-    public partial class frmQuanLyNguyenLieu1 : Form
+    public partial class frmQuanLyNguyenLieu : Form
     {
         QLCFContext model;
-        public frmQuanLyNguyenLieu1()
+        public frmQuanLyNguyenLieu()
         {
             model = new QLCFContext();
             InitializeComponent();

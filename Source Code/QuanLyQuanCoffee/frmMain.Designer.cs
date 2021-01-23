@@ -39,14 +39,17 @@ namespace QuanLyQuanCaffe
             this.miQuanLyTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
             this.miQuanLyMonAn = new System.Windows.Forms.ToolStripMenuItem();
             this.miQuanLyBanHang = new System.Windows.Forms.ToolStripMenuItem();
+            this.miQuanLyKhuyenMai = new System.Windows.Forms.ToolStripMenuItem();
             this.miXuatNhapKho = new System.Windows.Forms.ToolStripMenuItem();
             this.miNhapKho = new System.Windows.Forms.ToolStripMenuItem();
             this.miNhapNguyenLieu = new System.Windows.Forms.ToolStripMenuItem();
-            this.miNhapCongThuc = new System.Windows.Forms.ToolStripMenuItem();
             this.miThongTin = new System.Windows.Forms.ToolStripMenuItem();
             this.miSinhVienThucHien = new System.Windows.Forms.ToolStripMenuItem();
             this.miThoat = new System.Windows.Forms.ToolStripMenuItem();
-            this.miQuanLyKhuyenMai = new System.Windows.Forms.ToolStripMenuItem();
+            this.miQuanLyCongThuc = new System.Windows.Forms.ToolStripMenuItem();
+            this.miQuanLyBan = new System.Windows.Forms.ToolStripMenuItem();
+            this.miQuanLyDoanhThu = new System.Windows.Forms.ToolStripMenuItem();
+            this.miThongTInKho = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,10 +109,13 @@ namespace QuanLyQuanCaffe
             // miQuanLyCuaHang
             // 
             this.miQuanLyCuaHang.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miQuanLyTaiKhoan,
             this.miQuanLyMonAn,
             this.miQuanLyBanHang,
-            this.miQuanLyKhuyenMai});
+            this.miQuanLyKhuyenMai,
+            this.miQuanLyCongThuc,
+            this.miQuanLyBan,
+            this.miQuanLyTaiKhoan,
+            this.miQuanLyDoanhThu});
             this.miQuanLyCuaHang.Name = "miQuanLyCuaHang";
             this.miQuanLyCuaHang.Size = new System.Drawing.Size(112, 20);
             this.miQuanLyCuaHang.Text = "Quản lý cửa hàng";
@@ -135,12 +141,19 @@ namespace QuanLyQuanCaffe
             this.miQuanLyBanHang.Text = "Quản lý bán hàng";
             this.miQuanLyBanHang.Click += new System.EventHandler(this.miQuanLyBanHang_Click);
             // 
+            // miQuanLyKhuyenMai
+            // 
+            this.miQuanLyKhuyenMai.Name = "miQuanLyKhuyenMai";
+            this.miQuanLyKhuyenMai.Size = new System.Drawing.Size(180, 22);
+            this.miQuanLyKhuyenMai.Text = "Quản lý khuyến mãi";
+            this.miQuanLyKhuyenMai.Click += new System.EventHandler(this.miQuanLyKhuyenMai_Click);
+            // 
             // miXuatNhapKho
             // 
             this.miXuatNhapKho.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miNhapKho,
             this.miNhapNguyenLieu,
-            this.miNhapCongThuc});
+            this.miThongTInKho});
             this.miXuatNhapKho.Name = "miXuatNhapKho";
             this.miXuatNhapKho.Size = new System.Drawing.Size(96, 20);
             this.miXuatNhapKho.Text = "Xuất nhập kho";
@@ -148,23 +161,16 @@ namespace QuanLyQuanCaffe
             // miNhapKho
             // 
             this.miNhapKho.Name = "miNhapKho";
-            this.miNhapKho.Size = new System.Drawing.Size(168, 22);
+            this.miNhapKho.Size = new System.Drawing.Size(228, 22);
             this.miNhapKho.Text = "Nhập kho";
             this.miNhapKho.Click += new System.EventHandler(this.miNhapKho_Click);
             // 
             // miNhapNguyenLieu
             // 
             this.miNhapNguyenLieu.Name = "miNhapNguyenLieu";
-            this.miNhapNguyenLieu.Size = new System.Drawing.Size(168, 22);
+            this.miNhapNguyenLieu.Size = new System.Drawing.Size(228, 22);
             this.miNhapNguyenLieu.Text = "Nhập nguyên liệu";
             this.miNhapNguyenLieu.Click += new System.EventHandler(this.miNhapNguyenLieu_Click);
-            // 
-            // miNhapCongThuc
-            // 
-            this.miNhapCongThuc.Name = "miNhapCongThuc";
-            this.miNhapCongThuc.Size = new System.Drawing.Size(168, 22);
-            this.miNhapCongThuc.Text = "Nhập công thức";
-            this.miNhapCongThuc.Click += new System.EventHandler(this.miNhapCongThuc_Click);
             // 
             // miThongTin
             // 
@@ -189,12 +195,33 @@ namespace QuanLyQuanCaffe
             this.miThoat.Text = "Thoát phần mềm";
             this.miThoat.Click += new System.EventHandler(this.miThoat_Click);
             // 
-            // miQuanLyKhuyenMai
+            // miQuanLyCongThuc
             // 
-            this.miQuanLyKhuyenMai.Name = "miQuanLyKhuyenMai";
-            this.miQuanLyKhuyenMai.Size = new System.Drawing.Size(180, 22);
-            this.miQuanLyKhuyenMai.Text = "Quản lý khuyến mãi";
-            this.miQuanLyKhuyenMai.Click += new System.EventHandler(this.miQuanLyKhuyenMai_Click);
+            this.miQuanLyCongThuc.Name = "miQuanLyCongThuc";
+            this.miQuanLyCongThuc.Size = new System.Drawing.Size(180, 22);
+            this.miQuanLyCongThuc.Text = "Quản lý công thức";
+            this.miQuanLyCongThuc.Click += new System.EventHandler(this.miQuanLyCongThuc_Click);
+            // 
+            // miQuanLyBan
+            // 
+            this.miQuanLyBan.Name = "miQuanLyBan";
+            this.miQuanLyBan.Size = new System.Drawing.Size(180, 22);
+            this.miQuanLyBan.Text = "Quản lý bàn";
+            this.miQuanLyBan.Click += new System.EventHandler(this.miQuanLyBan_Click);
+            // 
+            // miQuanLyDoanhThu
+            // 
+            this.miQuanLyDoanhThu.Name = "miQuanLyDoanhThu";
+            this.miQuanLyDoanhThu.Size = new System.Drawing.Size(180, 22);
+            this.miQuanLyDoanhThu.Text = "Quản lý doanh thu";
+            this.miQuanLyDoanhThu.Click += new System.EventHandler(this.miQuanLyDoanhThu_Click);
+            // 
+            // miThongTInKho
+            // 
+            this.miThongTInKho.Name = "miThongTInKho";
+            this.miThongTInKho.Size = new System.Drawing.Size(228, 22);
+            this.miThongTInKho.Text = "Thông tin kho và nguyên liệu";
+            this.miThongTInKho.Click += new System.EventHandler(this.miThongTInKho_Click);
             // 
             // frmMain
             // 
@@ -230,9 +257,12 @@ namespace QuanLyQuanCaffe
         private System.Windows.Forms.ToolStripMenuItem miQuanLyTaiKhoan;
         private System.Windows.Forms.ToolStripMenuItem miNhapKho;
         private System.Windows.Forms.ToolStripMenuItem miNhapNguyenLieu;
-        private System.Windows.Forms.ToolStripMenuItem miNhapCongThuc;
         private System.Windows.Forms.ToolStripMenuItem miQuanLyMonAn;
         private System.Windows.Forms.ToolStripMenuItem miQuanLyBanHang;
         private System.Windows.Forms.ToolStripMenuItem miQuanLyKhuyenMai;
+        private System.Windows.Forms.ToolStripMenuItem miQuanLyCongThuc;
+        private System.Windows.Forms.ToolStripMenuItem miQuanLyBan;
+        private System.Windows.Forms.ToolStripMenuItem miQuanLyDoanhThu;
+        private System.Windows.Forms.ToolStripMenuItem miThongTInKho;
     }
 }

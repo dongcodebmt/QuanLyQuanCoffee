@@ -167,11 +167,13 @@ namespace QuanLyQuanCaffe
                     hoaDon.ngayRa = DateTime.Now;
                     hoaDon.maKhuyenMai = (int)maKM;
                     hoaDon.trangThai = true;
+                    InHD(hoaDon.ma);
                 }
                 else
                 {
                     hoaDon.ngayRa = DateTime.Now;
                     hoaDon.trangThai = true;
+                    InHD(hoaDon.ma);
                 }
 
                 model.SaveChanges();
@@ -221,11 +223,7 @@ namespace QuanLyQuanCaffe
             Kho kho = model.Kho.FirstOrDefault(x => x.ma == maMon);
             if (kho != null)
             {
-                if (kho.tonKho < soLuong)
-                {
-                    return false;
-                }
-                else
+                if (kho.tonKho >= soLuong)
                 {
                     kho.tonKho = kho.tonKho - soLuong;
                     model.SaveChanges();
@@ -243,10 +241,14 @@ namespace QuanLyQuanCaffe
                 {
                     return false;
                 }
-
+                else
+                {
+                    item.NguyenLieu.trongLuong = item.NguyenLieu.trongLuong - soLuong * item.chiPhi;
+                }
             }
-            string query = "UPDATE NguyenLieu SET NguyenLieu.trongLuong = NguyenLieu.trongLuong - CongThuc.chiPhi*" + soLuong + " FROM MonAn, CongThuc, NguyenLieu WHERE MonAn.ma = maMon AND NguyenLieu.ma = maNguyenLieu AND MonAn.ma = " + maMon;
-            _ = model.Database.ExecuteSqlCommand(query);
+            model.SaveChanges();
+            //string query = "UPDATE NguyenLieu SET NguyenLieu.trongLuong = NguyenLieu.trongLuong - CongThuc.chiPhi*" + soLuong + " FROM MonAn, CongThuc, NguyenLieu WHERE MonAn.ma = maMon AND NguyenLieu.ma = maNguyenLieu AND MonAn.ma = " + maMon;
+            //model.Database.ExecuteSqlCommand(query);
             return true;
         }
         private void ButtonLock(bool isLock)
@@ -254,7 +256,6 @@ namespace QuanLyQuanCaffe
             btnThanhToan.Enabled = isLock;
             btnThemMon.Enabled = isLock;
             btnKhuyenMai.Enabled = isLock;
-            btnInHD.Enabled = isLock;
             btnChuyenBan.Enabled = isLock;
         }
 
@@ -287,6 +288,13 @@ namespace QuanLyQuanCaffe
             cbBan.DataSource = bans;
             cbBan.DisplayMember = "ten";
             cbBan.ValueMember = "ma";
+        }
+
+        private void InHD(int maHD)
+        {
+            frmInHoaDon frm = new frmInHoaDon();
+            frmInHoaDon.maHDHT = maHD;
+            frm.Show();
         }
     }
 }

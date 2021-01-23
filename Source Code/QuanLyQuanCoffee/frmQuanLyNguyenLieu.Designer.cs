@@ -1,7 +1,7 @@
 ﻿
 namespace QuanLyQuanCaffe
 {
-    partial class frmQuanLyNguyenLieu1
+    partial class frmQuanLyNguyenLieu
     {
         /// <summary>
         /// Required designer variable.

@@ -23,7 +23,7 @@ namespace QuanLyQuanCaffe
         private void frmNhapKho_Load(object sender, EventArgs e)
         {
             rbtnThung.Checked = true;
-            BilingListToDataGridView(model.PhieuNhap.ToList());
+            BilingListToDataGridView(model.PhieuNhap.OrderByDescending(x => x.ma).ToList());
             FillDataToComboBox(model.MonAn.Where(x => x.DonVi.ma != 1).ToList());
             cbMonAn.SelectedItem = null;
         }
@@ -109,7 +109,7 @@ namespace QuanLyQuanCaffe
                 model.SaveChanges();
             }
 
-            BilingListToDataGridView(model.PhieuNhap.ToList());
+            BilingListToDataGridView(model.PhieuNhap.OrderByDescending(x => x.ma).ToList());
         }
     }
 }

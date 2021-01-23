@@ -37,6 +37,7 @@ namespace QuanLyQuanCaffe
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lsvBan = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cbBan = new System.Windows.Forms.ComboBox();
             this.lbBan = new System.Windows.Forms.Label();
             this.lbMonAn = new System.Windows.Forms.Label();
             this.cbMonAn = new System.Windows.Forms.ComboBox();
@@ -46,12 +47,11 @@ namespace QuanLyQuanCaffe
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnKhuyenMai = new System.Windows.Forms.Button();
             this.cbKhuyenMai = new System.Windows.Forms.ComboBox();
-            this.btnInHD = new System.Windows.Forms.Button();
             this.btTongCong = new System.Windows.Forms.Label();
             this.txbTongTien = new System.Windows.Forms.TextBox();
             this.btnThanhToan = new System.Windows.Forms.Button();
-            this.cbBan = new System.Windows.Forms.ComboBox();
             this.lbTenBan = new System.Windows.Forms.Label();
+            this.lbKhuyenMai = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmSLMonAn)).BeginInit();
             this.panel4.SuspendLayout();
@@ -114,6 +114,14 @@ namespace QuanLyQuanCaffe
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(398, 97);
             this.panel2.TabIndex = 14;
+            // 
+            // cbBan
+            // 
+            this.cbBan.FormattingEnabled = true;
+            this.cbBan.Location = new System.Drawing.Point(51, 15);
+            this.cbBan.Name = "cbBan";
+            this.cbBan.Size = new System.Drawing.Size(186, 21);
+            this.cbBan.TabIndex = 13;
             // 
             // lbBan
             // 
@@ -184,9 +192,9 @@ namespace QuanLyQuanCaffe
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.lbKhuyenMai);
             this.panel4.Controls.Add(this.btnKhuyenMai);
             this.panel4.Controls.Add(this.cbKhuyenMai);
-            this.panel4.Controls.Add(this.btnInHD);
             this.panel4.Controls.Add(this.btTongCong);
             this.panel4.Controls.Add(this.txbTongTien);
             this.panel4.Controls.Add(this.btnThanhToan);
@@ -197,9 +205,9 @@ namespace QuanLyQuanCaffe
             // 
             // btnKhuyenMai
             // 
-            this.btnKhuyenMai.Location = new System.Drawing.Point(207, 15);
+            this.btnKhuyenMai.Location = new System.Drawing.Point(335, 5);
             this.btnKhuyenMai.Name = "btnKhuyenMai";
-            this.btnKhuyenMai.Size = new System.Drawing.Size(75, 23);
+            this.btnKhuyenMai.Size = new System.Drawing.Size(98, 42);
             this.btnKhuyenMai.TabIndex = 11;
             this.btnKhuyenMai.Text = "Khuyến mãi";
             this.btnKhuyenMai.UseVisualStyleBackColor = true;
@@ -208,22 +216,10 @@ namespace QuanLyQuanCaffe
             // cbKhuyenMai
             // 
             this.cbKhuyenMai.FormattingEnabled = true;
-            this.cbKhuyenMai.Location = new System.Drawing.Point(15, 15);
+            this.cbKhuyenMai.Location = new System.Drawing.Point(108, 17);
             this.cbKhuyenMai.Name = "cbKhuyenMai";
             this.cbKhuyenMai.Size = new System.Drawing.Size(174, 21);
             this.cbKhuyenMai.TabIndex = 10;
-            // 
-            // btnInHD
-            // 
-            this.btnInHD.Image = ((System.Drawing.Image)(resources.GetObject("btnInHD.Image")));
-            this.btnInHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInHD.Location = new System.Drawing.Point(326, 51);
-            this.btnInHD.Name = "btnInHD";
-            this.btnInHD.Size = new System.Drawing.Size(98, 42);
-            this.btnInHD.TabIndex = 4;
-            this.btnInHD.Text = "In Hóa Đơn";
-            this.btnInHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInHD.UseVisualStyleBackColor = true;
             // 
             // btTongCong
             // 
@@ -248,21 +244,13 @@ namespace QuanLyQuanCaffe
             // 
             // btnThanhToan
             // 
-            this.btnThanhToan.Location = new System.Drawing.Point(326, 3);
+            this.btnThanhToan.Location = new System.Drawing.Point(335, 51);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(98, 42);
             this.btnThanhToan.TabIndex = 3;
             this.btnThanhToan.Text = "Thanh toán";
             this.btnThanhToan.UseVisualStyleBackColor = true;
             this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
-            // 
-            // cbBan
-            // 
-            this.cbBan.FormattingEnabled = true;
-            this.cbBan.Location = new System.Drawing.Point(51, 15);
-            this.cbBan.Name = "cbBan";
-            this.cbBan.Size = new System.Drawing.Size(186, 21);
-            this.cbBan.TabIndex = 13;
             // 
             // lbTenBan
             // 
@@ -273,6 +261,15 @@ namespace QuanLyQuanCaffe
             this.lbTenBan.Size = new System.Drawing.Size(209, 25);
             this.lbTenBan.TabIndex = 18;
             this.lbTenBan.Text = "Vui lòng chọn bàn!";
+            // 
+            // lbKhuyenMai
+            // 
+            this.lbKhuyenMai.AutoSize = true;
+            this.lbKhuyenMai.Location = new System.Drawing.Point(12, 20);
+            this.lbKhuyenMai.Name = "lbKhuyenMai";
+            this.lbKhuyenMai.Size = new System.Drawing.Size(62, 13);
+            this.lbKhuyenMai.TabIndex = 12;
+            this.lbKhuyenMai.Text = "Khuyến mãi";
             // 
             // frmQuanLyBanHang
             // 
@@ -313,7 +310,6 @@ namespace QuanLyQuanCaffe
         private System.Windows.Forms.Button btnChuyenBan;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ComboBox cbKhuyenMai;
-        private System.Windows.Forms.Button btnInHD;
         private System.Windows.Forms.Label btTongCong;
         private System.Windows.Forms.TextBox txbTongTien;
         private System.Windows.Forms.Button btnThanhToan;
@@ -321,5 +317,6 @@ namespace QuanLyQuanCaffe
         private System.Windows.Forms.Button btnKhuyenMai;
         private System.Windows.Forms.ComboBox cbBan;
         private System.Windows.Forms.Label lbTenBan;
+        private System.Windows.Forms.Label lbKhuyenMai;
     }
 }

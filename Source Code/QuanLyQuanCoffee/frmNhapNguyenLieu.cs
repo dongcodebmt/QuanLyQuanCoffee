@@ -22,7 +22,7 @@ namespace QuanLyQuanCaffe
 
         private void frmNhapNguyenLieu_Load(object sender, EventArgs e)
         {
-            List<PhieuNhapNN> phieuNhapNNs = model.PhieuNhapNN.ToList();
+            List<PhieuNhapNN> phieuNhapNNs = model.PhieuNhapNN.OrderByDescending(x => x.ma).ToList();
             BilingListToDataGridView(phieuNhapNNs);
             List<NguyenLieu> nguyenLieus = model.NguyenLieu.ToList();
             FillDataToComboBox(nguyenLieus);
@@ -72,7 +72,7 @@ namespace QuanLyQuanCaffe
                 nguyenLieu.trongLuong = nguyenLieu.trongLuong + phieuNhapNN.soLuong;
                 model.SaveChanges();
             }
-            BilingListToDataGridView(model.PhieuNhapNN.ToList());
+            BilingListToDataGridView(model.PhieuNhapNN.OrderByDescending(x => x.ma).ToList());
         }
     }
 }
