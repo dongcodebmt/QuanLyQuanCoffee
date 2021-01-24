@@ -262,37 +262,38 @@ namespace QuanLyQuanCaffe
             int maBan = Int32.Parse(cbBan.SelectedValue.ToString());
             HoaDon hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == maBan && c.trangThai == false);
             HoaDon hoaDonHT = model.HoaDon.FirstOrDefault(c => c.maBan == maBanHT && c.trangThai == false);
-            try
+            if (hoaDonHT == null)
             {
-                if (hoaDon == null)
+                MessageBox.Show("Chưa có hóa đơn!");
+            }
+            else if (maBan == hoaDonHT.maBan)
+            {
+                MessageBox.Show("Vui lòng chọn bàn!");
+            }
+            else if (hoaDon == null)
+            {
+                hoaDonHT.maBan = maBan;
+                model.SaveChanges();
+            }
+            else
+            {
+                List<CTHD> cTHDs = model.CTHD.Where(c => c.maHoaDon == hoaDonHT.ma).ToList();
+                foreach (var item in cTHDs)
                 {
-                    hoaDonHT.maBan = maBan;
-                    model.SaveChanges();
-                }
-                else
-                {
-                    List<CTHD> cTHDs = model.CTHD.Where(c => c.maHoaDon == hoaDonHT.ma).ToList();
-                    foreach (var item in cTHDs)
+                    CTHD cTHD = model.CTHD.FirstOrDefault(c => c.maMonAn == item.maMonAn && c.HoaDon.ma == hoaDon.ma);
+                    if (cTHD == null)
                     {
-                        CTHD cTHD = model.CTHD.FirstOrDefault(c => c.maMonAn == item.maMonAn && c.HoaDon.maBan == maBan);
-                        if (item.maMonAn == cTHD.maMonAn)
-                        {
-                            item.maHoaDon = hoaDon.ma;
-                            item.soLuong += cTHD.soLuong;
-                            model.CTHD.Remove(cTHD);
-                        } 
-                        else
-                        {
-                            item.maHoaDon = hoaDon.ma;
-                        }
+                        item.maHoaDon = hoaDon.ma;
                     }
-                    model.HoaDon.Remove(hoaDonHT);
-                    model.SaveChanges();
+                    else if (item.maMonAn == cTHD.maMonAn)
+                    {
+                        item.soLuong = item.soLuong + cTHD.soLuong;
+                        item.maHoaDon = hoaDon.ma;
+                        model.CTHD.Remove(cTHD);
                     }
                 }
-            catch
-            {
-
+                model.HoaDon.Remove(hoaDonHT);
+                model.SaveChanges();
             }
             LoadTableBtn(model.Ban.ToList());
             ShowHoaDon(maBanHT);
