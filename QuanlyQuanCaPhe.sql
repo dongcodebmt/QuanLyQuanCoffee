@@ -170,7 +170,7 @@ CREATE TABLE HoaDon
 	trangThai BIT NOT NULL DEFAULT 0, -- 1 đã thanh toán ; 0 chưa thanh toán	
 	
 	FOREIGN KEY (maBan) REFERENCES Ban(ma),
-	FOREIGN KEY (maKhuyenMai) REFERENCES KhuyenMai(ma)
+	FOREIGN KEY (maKhuyenMai) REFERENCES KhuyenMai(ma),
 	FOREIGN KEY (maNhanVien) REFERENCES TaiKhoan(ma)
 )
 

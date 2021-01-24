@@ -215,7 +215,7 @@ namespace QuanLyQuanCaffe
             this.Controls.Add(this.dataGVBan);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmQuanLyBan";
-            this.Text = "frmQuanLyBan";
+            this.Text = "Quản lý bàn";
             this.Load += new System.EventHandler(this.frmQuanLyBan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGVBan)).EndInit();
             this.groupBox1.ResumeLayout(false);

@@ -50,6 +50,7 @@ namespace QuanLyQuanCaffe
             this.miThongTin = new System.Windows.Forms.ToolStripMenuItem();
             this.miSinhVienThucHien = new System.Windows.Forms.ToolStripMenuItem();
             this.miThoat = new System.Windows.Forms.ToolStripMenuItem();
+            this.miQuanLyNguyenLieu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,7 +116,8 @@ namespace QuanLyQuanCaffe
             this.miQuanLyCongThuc,
             this.miQuanLyBan,
             this.miQuanLyTaiKhoan,
-            this.miQuanLyDoanhThu});
+            this.miQuanLyDoanhThu,
+            this.miQuanLyNguyenLieu});
             this.miQuanLyCuaHang.Name = "miQuanLyCuaHang";
             this.miQuanLyCuaHang.Size = new System.Drawing.Size(112, 20);
             this.miQuanLyCuaHang.Text = "Quản lý cửa hàng";
@@ -213,7 +215,7 @@ namespace QuanLyQuanCaffe
             // miSinhVienThucHien
             // 
             this.miSinhVienThucHien.Name = "miSinhVienThucHien";
-            this.miSinhVienThucHien.Size = new System.Drawing.Size(180, 22);
+            this.miSinhVienThucHien.Size = new System.Drawing.Size(175, 22);
             this.miSinhVienThucHien.Text = "Sinh viên thực hiện";
             this.miSinhVienThucHien.Click += new System.EventHandler(this.miSinhVienThucHien_Click);
             // 
@@ -223,6 +225,13 @@ namespace QuanLyQuanCaffe
             this.miThoat.Size = new System.Drawing.Size(110, 20);
             this.miThoat.Text = "Thoát phần mềm";
             this.miThoat.Click += new System.EventHandler(this.miThoat_Click);
+            // 
+            // miQuanLyNguyenLieu
+            // 
+            this.miQuanLyNguyenLieu.Name = "miQuanLyNguyenLieu";
+            this.miQuanLyNguyenLieu.Size = new System.Drawing.Size(180, 22);
+            this.miQuanLyNguyenLieu.Text = "Quản lý nguyên liệu";
+            this.miQuanLyNguyenLieu.Click += new System.EventHandler(this.miQuanLyNguyenLieu_Click);
             // 
             // frmMain
             // 
@@ -265,5 +274,6 @@ namespace QuanLyQuanCaffe
         private System.Windows.Forms.ToolStripMenuItem miQuanLyBan;
         private System.Windows.Forms.ToolStripMenuItem miQuanLyDoanhThu;
         private System.Windows.Forms.ToolStripMenuItem miThongTInKho;
+        private System.Windows.Forms.ToolStripMenuItem miQuanLyNguyenLieu;
     }
 }

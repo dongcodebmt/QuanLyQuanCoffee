@@ -81,6 +81,7 @@ namespace QuanLyQuanCaffe
             miQuanLyCongThuc.Visible = isLock;
             miQuanLyDoanhThu.Visible = isLock;
             miQuanLyMonAn.Visible = isLock;
+            miQuanLyNguyenLieu.Visible = isLock;
         }
         private bool CheckForm(string frmName)
         {
@@ -249,6 +250,16 @@ namespace QuanLyQuanCaffe
             if (!CheckForm("frmThongTin"))
             {
                 frmThongTin frm = new frmThongTin();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
+
+        private void miQuanLyNguyenLieu_Click(object sender, EventArgs e)
+        {
+            if (!CheckForm("frmQuanLyNguyenLieu"))
+            {
+                frmQuanLyNguyenLieu frm = new frmQuanLyNguyenLieu();
                 frm.MdiParent = this;
                 frm.Show();
             }

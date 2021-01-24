@@ -76,7 +76,7 @@ namespace QuanLyQuanCaffe
             this.Controls.Add(this.lbName2);
             this.Controls.Add(this.lbName1);
             this.Name = "frmThongTin";
-            this.Text = "frmThongTin";
+            this.Text = "Thông tin";
             this.Load += new System.EventHandler(this.frmThongTin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

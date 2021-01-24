@@ -168,16 +168,15 @@ namespace QuanLyQuanCaffe
                     hoaDon.ngayRa = DateTime.Now;
                     hoaDon.maKhuyenMai = (int)maKM;
                     hoaDon.trangThai = true;
-                    InHD(hoaDon.ma);
                 }
                 else
                 {
                     hoaDon.ngayRa = DateTime.Now;
                     hoaDon.trangThai = true;
-                    InHD(hoaDon.ma);
                 }
 
                 model.SaveChanges();
+                InHD(hoaDon.ma);
             }
             LoadTableBtn(model.Ban.ToList());
             ShowHoaDon(maBanHT);
@@ -263,20 +262,37 @@ namespace QuanLyQuanCaffe
             int maBan = Int32.Parse(cbBan.SelectedValue.ToString());
             HoaDon hoaDon = model.HoaDon.FirstOrDefault(c => c.maBan == maBan && c.trangThai == false);
             HoaDon hoaDonHT = model.HoaDon.FirstOrDefault(c => c.maBan == maBanHT && c.trangThai == false);
-            if (hoaDon == null)
+            try
             {
-                hoaDonHT.maBan = maBan;
-                model.SaveChanges();
-            }
-            else
-            {
-                List<CTHD> cTHDs = model.CTHD.Where(c => c.maHoaDon == hoaDonHT.ma).ToList();
-                foreach (var item in cTHDs)
+                if (hoaDon == null)
                 {
-                    item.maHoaDon = hoaDon.ma;
+                    hoaDonHT.maBan = maBan;
+                    model.SaveChanges();
                 }
-                model.HoaDon.Remove(hoaDonHT);
-                model.SaveChanges();
+                else
+                {
+                    List<CTHD> cTHDs = model.CTHD.Where(c => c.maHoaDon == hoaDonHT.ma).ToList();
+                    foreach (var item in cTHDs)
+                    {
+                        CTHD cTHD = model.CTHD.FirstOrDefault(c => c.maMonAn == item.maMonAn && c.HoaDon.maBan == maBan);
+                        if (item.maMonAn == cTHD.maMonAn)
+                        {
+                            item.maHoaDon = hoaDon.ma;
+                            item.soLuong += cTHD.soLuong;
+                            model.CTHD.Remove(cTHD);
+                        } 
+                        else
+                        {
+                            item.maHoaDon = hoaDon.ma;
+                        }
+                    }
+                    model.HoaDon.Remove(hoaDonHT);
+                    model.SaveChanges();
+                    }
+                }
+            catch
+            {
+
             }
             LoadTableBtn(model.Ban.ToList());
             ShowHoaDon(maBanHT);
