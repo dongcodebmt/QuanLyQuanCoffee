@@ -52,7 +52,7 @@ namespace QuanLyQuanCaffe
                 new ReportParameter("tongMon", tongMon + " mặt hàng"),
             };
 
-            this.reportDoanhThu.LocalReport.ReportPath = "D:/Cloud/C#/QuanLyQuanCoffee/Source Code/QuanLyQuanCoffee/Reporting/DoanhThu.rdlc";
+            this.reportDoanhThu.LocalReport.ReportPath = "DoanhThu.rdlc";
             this.reportDoanhThu.LocalReport.DataSources.Clear();
             this.reportDoanhThu.LocalReport.SetParameters(HD);
             this.reportDoanhThu.RefreshReport();

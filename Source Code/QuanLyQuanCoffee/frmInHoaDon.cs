@@ -59,7 +59,7 @@ namespace QuanLyQuanCaffe
                 new ReportParameter("tongTien", tongTien.ToString() + " VND"),
             };
 
-            this.reportHoaDon.LocalReport.ReportPath = "D:/Cloud/C#/QuanLyQuanCoffee/Source Code/QuanLyQuanCoffee/Reporting/HoaDon.rdlc";
+            this.reportHoaDon.LocalReport.ReportPath = "HoaDon.rdlc";
             var reportDataSource = new ReportDataSource("rptCTHD", listCTHD);
             this.reportHoaDon.LocalReport.DataSources.Clear();
             this.reportHoaDon.LocalReport.DataSources.Add(reportDataSource);
